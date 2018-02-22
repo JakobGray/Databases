@@ -1,5 +1,5 @@
 <?php
-    include_once("/config.php");
+    include_once("./config.php");
 
     $dsn = "mysql:host={$SERVER};dbname={$DATABASE}";
     $username = $USERNAME;

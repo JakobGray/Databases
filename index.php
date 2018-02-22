@@ -10,6 +10,7 @@ error_reporting(E_ALL);
 //session_set_cookie_params($lifetime);
 session_start();
 
+include_once("models/database.php");
 date_default_timezone_set("America/New_York");
 
 // Designate action variable
@@ -35,7 +36,7 @@ echo "Hello";
     $statement->closeCursor();
     $entries;
 foreach ($entries as $entry) :
-echo $entry;
+print_r($entry);
 endforeach;
         break;
 }
