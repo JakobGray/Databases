@@ -24,6 +24,18 @@ if ($action == NULL) {
 switch ($action) {
  
     case 'home':    // Displays all articles
+echo "Hello";
         include('views/home.php');
+echo "Hello";
+    global $db;
+    $query = 'show tables';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $entries = $statement->fetchAll();
+    $statement->closeCursor();
+    $entries;
+foreach ($entries as $entry) :
+echo $entry;
+endforeach;
         break;
 }
