@@ -9,7 +9,7 @@
         $db = new PDO($dsn, $username, $password);
     } catch (PDOException $e) {
         $error_message = $e->getMessage();
-        include('model/database_error.php');
+        include('models/database_error.php');
         exit();
     }
 ?>

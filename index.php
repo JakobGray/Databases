@@ -25,18 +25,18 @@ if ($action == NULL) {
 switch ($action) {
  
     case 'home':    // Displays all articles
-echo "Hello";
         include('views/home.php');
-echo "Hello";
-    global $db;
-    $query = 'show tables';
-    $statement = $db->prepare($query);
-    $statement->execute();
-    $entries = $statement->fetchAll();
-    $statement->closeCursor();
-    $entries;
-foreach ($entries as $entry) :
-print_r($entry);
-endforeach;
+        echo "Hello";
+        global $db;
+        $query = 'show tables';
+        $statement = $db->prepare($query);
+        $statement->execute();
+        $entries = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+        $entries;
+
+        foreach ($entries as $key => $entry) :
+            echo '<p><b>' . $key . '</b>' . ' => ' . $thing . '</p>';
+        endforeach;
         break;
 }
