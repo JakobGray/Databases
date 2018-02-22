@@ -26,17 +26,17 @@ switch ($action) {
  
     case 'home':    // Displays all articles
         include('views/home.php');
-        echo "Hello";
+        echo "<br>Hello";
         global $db;
         $query = 'show tables';
         $statement = $db->prepare($query);
         $statement->execute();
-        $entries = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $entries = $statement->fetchAll();
         $statement->closeCursor();
         $entries;
 
         foreach ($entries as $key => $entry) :
-            echo '<p><b>' . $key . '</b>' . ' => ' . $thing . '</p>';
+            echo '<p>' . $entry[0] . '</p>';
         endforeach;
         break;
 }
