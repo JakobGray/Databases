@@ -11,6 +11,7 @@ error_reporting(E_ALL);
 session_start();
 
 include_once("models/database.php");
+include("models/loginDB.php");
 date_default_timezone_set("America/New_York");
 
 // Designate action variable
@@ -18,7 +19,7 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action == NULL) {
-        $action = 'show_login';
+        $action = 'greet';
     }
 }
 
@@ -41,7 +42,20 @@ switch ($action) {
         break;
 
 
-    case 'show_login':
-      include('views/login.php');
+    case 'greet':
+      include('views/welcome.php');
       break;
+
+    case 'sign-up':
+      $username = filter_input(INPUT_POST, 'username');
+      $password = filter_input(INPUT_POST, 'password');
+      if ($username == NULL || $password == NULL) {
+            echo "Missing required components!!!!";
+            header("Location: .");
+        } else {
+            add_new_user($username, $password);
+            header("Location: .");
+        }
+      break;
+
 }
