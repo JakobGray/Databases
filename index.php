@@ -18,12 +18,12 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action == NULL) {
-        $action = 'home';
+        $action = 'show_login';
     }
 }
 
 switch ($action) {
- 
+
     case 'home':    // Displays all articles
         include('views/home.php');
         echo "<br>Hello";
@@ -39,4 +39,9 @@ switch ($action) {
             echo '<p>' . $entry[0] . '</p>';
         endforeach;
         break;
+
+
+    case 'show_login':
+      include('view/login.php');
+      break;
 }
