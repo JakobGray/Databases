@@ -1,6 +1,6 @@
 <?php include('views/header.php'); ?>
 
-<form action='index.php' method='POST' accept-charset="UTF-8">
+<form action='../index.php' method='POST' accept-charset="UTF-8">
   <input type="hidden" name="action" value="sign-up">
 
   <input type='text' name='username' maxlength="50" required>

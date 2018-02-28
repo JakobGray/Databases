@@ -27,7 +27,7 @@ switch ($action) {
 
     case 'home':    // Displays all articles
         include('views/home.php');
-        echo "<br>Hello";
+        
         global $db;
         $query = 'show tables';
         $statement = $db->prepare($query);
