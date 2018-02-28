@@ -1,4 +1,4 @@
-<?php include('view/header.php'); ?>
+<?php include('views/header.php'); ?>
 
 <div class="jumbotron">
     <h1 data-step="1" data-intro="This is a tooltip!">Welcome to Vault 101  </h1>
@@ -37,4 +37,4 @@
 
 <script type="text/javascript" src="/Articles/js/login.js"></script>
 
-<?php include('view/footer.php'); ?>
+<?php include('views/footer.php'); ?>

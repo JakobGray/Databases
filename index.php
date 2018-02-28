@@ -42,6 +42,6 @@ switch ($action) {
 
 
     case 'show_login':
-      include('view/login.php');
+      include('views/login.php');
       break;
 }
