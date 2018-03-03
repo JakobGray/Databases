@@ -25,24 +25,24 @@ if ($action == NULL) {
 
 switch ($action) {
 
-    case 'home':    // Displays all articles
-        include('views/home.php');
-        
-        global $db;
-        $query = 'show tables';
-        $statement = $db->prepare($query);
-        $statement->execute();
-        $entries = $statement->fetchAll();
-        $statement->closeCursor();
-        $entries;
+    // case 'home':    // Displays all articles
+    //     include('views/home.php');
+    //
+    //     global $db;
+    //     $query = 'show tables';
+    //     $statement = $db->prepare($query);
+    //     $statement->execute();
+    //     $entries = $statement->fetchAll();
+    //     $statement->closeCursor();
+    //     $entries;
+    //
+    //     foreach ($entries as $key => $entry) :
+    //         echo '<p>' . $entry[0] . '</p>';
+    //     endforeach;
+    //     break;
 
-        foreach ($entries as $key => $entry) :
-            echo '<p>' . $entry[0] . '</p>';
-        endforeach;
-        break;
 
-
-    case 'greet':
+    case 'home':
       include('views/welcome.php');
       break;
 
