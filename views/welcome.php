@@ -1,6 +1,6 @@
 <?php
 include('views/header.php');
-include('../models/loginDB.php');
+include_once('./models/loginDB.php');
 ?>
 
 <div class="jumbotron">
@@ -15,10 +15,11 @@ include('../models/loginDB.php');
   <table border=1>
     <th>Prompt</th><th>Answer</th>
     <?php
-    foreach ($question as $q) {
-      echo "<tr><td>$q{'tfprompt'}</td><td>$q{'answer'}</td></tr>"
-    }
-     ?>
+    foreach ($questions as $q):
+?>
+<tr><td><?php echo $q{'tf_prompt'} ?></td><td><?php echo $q{'answer'} ?></td></tr>
+
+<?php endforeach; ?>
   </table>
 </div>
 

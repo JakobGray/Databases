@@ -16,7 +16,7 @@ function get_tf_questions() {
   global $db;
   $query = $db->prepare("SELECT tf_prompt, answer FROM tf_question");
   $query->execute();
-  $result = $query->fetchAll(PDO::FETCH_ASSOC));
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
   $query->closeCursor();
   return $result;
 }
