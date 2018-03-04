@@ -61,7 +61,7 @@ switch ($action) {
       case 'add_question':
         $prompt = filter_input(INPUT_POST, 'prompt');
         $answer = filter_input(INPUT_POST, 'answer');
-        create_new_question($prompt, $answer)
+        create_new_question($prompt, $answer);
         header("Location: .");
         break;
 
