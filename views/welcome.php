@@ -24,5 +24,6 @@ include_once('./models/loginDB.php');
 </div>
 
 <a class="btn btn-large" href="views/add_question.php">Add Question</a>
+<a class="btn btn-large" href="views/tf_quiz.php">Take Quiz</a>
 
 <?php include('views/footer.php'); ?>
