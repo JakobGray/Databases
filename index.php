@@ -65,4 +65,7 @@ switch ($action) {
         header("Location: .");
         break;
 
+      case "take_tf_quiz":
+        include('views/tf_quiz.php');
+        break;
 }
