@@ -23,4 +23,6 @@ include_once('./models/loginDB.php');
   </table>
 </div>
 
+<a class="btn btn-large" href="views/add_question.php">Add Question</a>
+
 <?php include('views/footer.php'); ?>

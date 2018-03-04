@@ -20,3 +20,14 @@ function get_tf_questions() {
   $query->closeCursor();
   return $result;
 }
+
+function create_new_question($prompt, $answer) {
+  global $db;
+  $query = 'INSERT INTO tf_question (tf_prompt, answer)
+          VALUES (:prompt, :answer)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':prompt', $prompt);
+  $statement->bindValue(':answer', $answer);
+  $statement->execute();
+  $statement->closeCursor();
+}
