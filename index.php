@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 session_start();
 
 include_once("models/database.php");
-include("models/loginDB.php");
+include_once("models/loginDB.php");
 date_default_timezone_set("America/New_York");
 
 // Designate action variable
