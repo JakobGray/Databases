@@ -1,35 +1,4 @@
 // Array of all the questions and choices to populate the questions. This might be saved in some JSON file or a database and we would have to read the data in.
-var all_questions = [{
-  question_string: "What can happen to a dog left unattended in a car?",
-  choices: {
-    correct: "All of These",
-    wrong: ["Overheating", "Heat stroke", "Death"]
-  }
-}, {
-  question_string: "What is a dog unable to do to cool down?",
-  choices: {
-    correct: "Sweat",
-    wrong: ["Pant", "Dribble", "Keep Still"]
-  }
-}, {
-  question_string: "Which breed is likely to struggle in a hot car more than some others because of their reputation for respiratory issues?",
-  choices: {
-    correct: "Pug",
-    wrong: ["German Shepherd", "Dachshund", "Labrador"]
-  }
-}, {
-  question_string: "If you leave a dog unattended in a car with the window open, how does this affect the temperature inside?",
-  choices: {
-    correct: "It hardly makes any difference",
-    wrong: ["It makes some difference", "It completely cools the car down", "It makes a lot of difference"]
-  }
-},  {
-  question_string: "How is a dog’s brain affected when left alone in a hot car?",
-  choices: {
-    correct: "It can swell, clots can form and the dog can suffer from brain damage",
-    wrong: ["There is no effect", "It shrinks", "It can swell and clots can form, but there is no lasting damage"]
-  }
-}];
 
 // An object for a Quiz, which will contain Question objects.
 var Quiz = function(quiz_name) {
@@ -146,28 +115,16 @@ Quiz.prototype.render = function(container) {
 }
 
 // An object for a Question, which contains the question, the correct choice, and wrong choices. This block is the constructor.
-var Question = function(question_string, correct_choice, wrong_choices) {
+var Question = function(question_string, correct_choice) {
   // Private fields for an instance of a Question object.
   this.question_string = question_string;
-  this.choices = [];
+  this.choices = ['True', 'False'];
   this.user_choice_index = null; // Index of the user's choice selection
 
-  // Random assign the correct choice an index
-  this.correct_choice_index = Math.floor(Math.random(0, wrong_choices.length + 1));
-
-  // Fill in this.choices with the choices
-  var number_of_choices = wrong_choices.length + 1;
-  for (var i = 0; i < number_of_choices; i++) {
-    if (i === this.correct_choice_index) {
-      this.choices[i] = correct_choice;
-    } else {
-      // Randomly pick a wrong choice to put in this index
-      var wrong_choice_index = Math.floor(Math.random(0, wrong_choices.length));
-      this.choices[i] = wrong_choices[wrong_choice_index];
-
-      // Remove the wrong choice from the wrong choice array so that we don't pick it again
-      wrong_choices.splice(wrong_choice_index, 1);
-    }
+  if (correct_choice == 'True') {
+    this.correct_choice_index = 0
+  } else {
+    this.correct_choice_index = 0
   }
 }
 
@@ -213,7 +170,7 @@ Question.prototype.render = function(container) {
   // Add a listener for the radio button to change which one the user has clicked on
   $('input[name=choices]').change(function(index) {
     var selected_radio_button_value = $('input[name=choices]:checked').val();
-    
+
     // Change the user choice index
     self.user_choice_index = parseInt(selected_radio_button_value.substr(selected_radio_button_value.length - 1, 1));
 
@@ -230,7 +187,7 @@ $(document).ready(function() {
   // Create Question objects from all_questions and add them to the Quiz object
   for (var i = 0; i < all_questions.length; i++) {
     // Create a new Question object
-    var question = new Question(all_questions[i].question_string, all_questions[i].choices.correct, all_questions[i].choices.wrong);
+    var question = new Question(all_questions[i].tf_prompt, all_questions[i].answer);
 
     // Add the question to the instance of the Quiz object that we created previously
     quiz.add_question(question);
