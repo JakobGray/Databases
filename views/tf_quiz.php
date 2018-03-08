@@ -1,7 +1,5 @@
 <?php
 include('views/header.php');
-include_once("models/database.php");
-include_once("models/loginDB.php");
 $questions = get_tf_questions();
 ?>
 <link rel="stylesheet" href="./styles/tf_quiz.css">

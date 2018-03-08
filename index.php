@@ -25,7 +25,7 @@ if ($action == NULL) {
 
 switch ($action) {
 
-    // case 'home':    // Displays all articles
+    // case 'home':
     //     include('views/home.php');
     //
     //     global $db;
