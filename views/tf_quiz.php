@@ -10,6 +10,8 @@ $questions = get_tf_questions();
     var all_questions = <?php echo json_encode($questions); ?>;
     console.log(JSON.stringify(all_questions, null, 2));
 </script>
+<script src="./js/tf_quiz.js"></script>
+
 
 <div class="cover">
   <div class="container">
@@ -33,5 +35,3 @@ $questions = get_tf_questions();
 </div>
 
 <?php include('views/footer.php'); ?>
-
-<script src="./js/tf_quiz.js"></script>
