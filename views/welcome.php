@@ -25,7 +25,7 @@ include_once('./models/loginDB.php');
 
 <a class="btn btn-large" href="views/add_question.php">Add Question</a>
 
-<form action='../index.php' method='GET' id="form1">
+<form action='.' method='GET' id="tf_form">
   <input type="hidden" name="action" value="take_tf_quiz">
   <a type="submit" form="tf_form" class="btn btn-large">Take Quiz</a>
 </form>
