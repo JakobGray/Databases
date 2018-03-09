@@ -33,7 +33,6 @@ Quiz.prototype.render = function(container) {
   // Helper function for changing the question and updating the buttons
   function change_question() {
     self.questions[current_question_index].render(question_container);
-    console.log(self.questions[current_question_index].correct_choice_index);
     $('#prev-question-button').prop('disabled', current_question_index === 0);
     $('#next-question-button').prop('disabled', current_question_index === self.questions.length - 1);
 
@@ -106,8 +105,6 @@ Quiz.prototype.render = function(container) {
   question_container.bind('user-select-change', function() {
     var all_questions_answered = true;
     for (var i = 0; i < self.questions.length; i++) {
-      console.log(self.questions[i].user_choice_index);
-      console.log(self.questions[i].correct_choice_index);
       if (self.questions[i].user_choice_index === null) {
         all_questions_answered = false;
         break;
@@ -123,7 +120,7 @@ var Question = function(question_string, correct_choice) {
   this.question_string = question_string;
   this.choices = ['True', 'False'];
   this.user_choice_index = null; // Index of the user's choice selection
-  console.log(correct_choice);
+
   if (correct_choice == 'True') {
     this.correct_choice_index = 0
   } else {
@@ -190,7 +187,6 @@ $(document).ready(function() {
   // Create Question objects from all_questions and add them to the Quiz object
   for (var i = 0; i < all_questions.length; i++) {
     // Create a new Question object
-    console.log(all_questions[i].answer);
     var question = new Question(all_questions[i].tf_prompt, all_questions[i].answer);
 
     // Add the question to the instance of the Quiz object that we created previously
