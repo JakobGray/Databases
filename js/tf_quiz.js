@@ -106,6 +106,8 @@ Quiz.prototype.render = function(container) {
   question_container.bind('user-select-change', function() {
     var all_questions_answered = true;
     for (var i = 0; i < self.questions.length; i++) {
+      console.log(self.questions[i].user_choice_index);
+      console.log(self.questions[i].correct_choice_index);
       if (self.questions[i].user_choice_index === null) {
         all_questions_answered = false;
         break;
