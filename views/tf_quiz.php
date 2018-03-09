@@ -2,8 +2,6 @@
 include('views/header.php');
 $questions = get_tf_questions();
 ?>
-<link rel="stylesheet/less" type="text/css" href="styles.less" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
 <link rel="stylesheet" href="./styles/tf_quiz.css">
 
 <script type="text/javascript">
