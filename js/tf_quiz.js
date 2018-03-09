@@ -33,6 +33,7 @@ Quiz.prototype.render = function(container) {
   // Helper function for changing the question and updating the buttons
   function change_question() {
     self.questions[current_question_index].render(question_container);
+    console.log(self.questions[current_question_index].correct_choice_index);
     $('#prev-question-button').prop('disabled', current_question_index === 0);
     $('#next-question-button').prop('disabled', current_question_index === self.questions.length - 1);
 
