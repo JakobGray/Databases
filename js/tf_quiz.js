@@ -124,7 +124,7 @@ var Question = function(question_string, correct_choice) {
   if (correct_choice == 'True') {
     this.correct_choice_index = 0
   } else {
-    this.correct_choice_index = 0
+    this.correct_choice_index = 1
   }
 }
 
