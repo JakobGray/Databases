@@ -120,7 +120,7 @@ var Question = function(question_string, correct_choice) {
   this.question_string = question_string;
   this.choices = ['True', 'False'];
   this.user_choice_index = null; // Index of the user's choice selection
-
+  console.log(correct_choice);
   if (correct_choice == 'True') {
     this.correct_choice_index = 0
   } else {
@@ -187,6 +187,7 @@ $(document).ready(function() {
   // Create Question objects from all_questions and add them to the Quiz object
   for (var i = 0; i < all_questions.length; i++) {
     // Create a new Question object
+    console.log(all_questions[i].answer);
     var question = new Question(all_questions[i].tf_prompt, all_questions[i].answer);
 
     // Add the question to the instance of the Quiz object that we created previously
