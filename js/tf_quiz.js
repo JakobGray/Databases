@@ -80,21 +80,7 @@ Quiz.prototype.render = function(container) {
     // Display the score with the appropriate message
     var percentage = score / self.questions.length;
     console.log(percentage);
-    var message;
-		if (percentage === 1) {
-      message = 'Well done! You should use your knowledge to inform others about the dangers of leaving dogs in hot cars.'
-    } else if (percentage >= .8) {
-      message = 'Almost there, why not explore our site further to learn more?'
-    } else if (percentage >= .6) {
-      message = 'Still a bit further to go, have a look at the rest of our site to learn more.'
-    } else if (percentage >= .4) {
-      message = 'Still a bit further to go, have a look at the rest of our site to learn more.'
-		} else if (percentage >= .2) {
-      message = ' Try again. Explore our site to learn more about why you should never leave a dog in a hot car.'
-    } else {
-      message = 'Try again. Explore our site to learn more about why you should never leave a dog in a hot car.'
-    }
-    $('#quiz-results-message').text(message);
+
     $('#quiz-results-score').html('You got <b>' + score + '/' + self.questions.length + '</b> questions correct.');
     $("a[href='tweet-result']").prop('href', 'https://twitter.com/home?status=This%20is%20my%20score%20' + score + '%20https://www.animalfriends.org.uk/');
     $('#quiz-results').slideDown();
