@@ -1,13 +1,19 @@
-<?php include('views/header.php'); ?>
+<?php include('./header.php'); ?>
 
-<form action='../index.php' method='POST' accept-charset="UTF-8">
+<form action="../index.php" method='POST' accept-charset="UTF-8">
   <input type="hidden" name="action" value="sign-up">
-  Username:<br>
-  <input type='text' name='username' maxlength="50" required>
-  Password:<br>
-  <input type='password' name='password' maxlength="50" required
-  
-  <input type='submit' value='Sign Up'>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" class="form-control" id="username" name='username' maxlength="50" required>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" name='password' maxlength="50" required>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Are you a cool dude?</label>
+  </div>
+  <button type="submit" class="btn btn-default">Sign Up</button>
 </form>
 
-<?php include('views/footer.php'); ?>
+<?php include('./footer.php'); ?>
