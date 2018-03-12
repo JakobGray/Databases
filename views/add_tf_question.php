@@ -1,4 +1,4 @@
-<?php include('views/header.php'); ?>
+<?php include('./header.php'); ?>
 
 <form action='../index.php' method='POST' accept-charset="UTF-8">
   <input type="hidden" name="action" value="add_tf_question">
@@ -13,4 +13,4 @@
   <input type='submit' value='Submit'>
 </form>
 
-<?php include('views/footer.php'); ?>
+<?php include('./footer.php'); ?>

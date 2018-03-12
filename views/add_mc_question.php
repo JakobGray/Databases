@@ -1,6 +1,7 @@
-<?php include('views/header.php'); ?>
+<?php include('./header.php'); ?>
 
 <form action="../index.php" method='POST' accept-charset="UTF-8">
+  <input type="hidden" name="action" value="add_mc_question">
   <div class="form-group">
     <label for="prompt">Question Prompt:</label>
     <input type="text" class="form-control" id="prompt" name='prompt' maxlength="300" required>
@@ -24,4 +25,4 @@
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
-<?php include('views/footer.php'); ?>
+<?php include('./footer.php'); ?>
