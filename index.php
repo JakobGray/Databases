@@ -58,10 +58,20 @@ switch ($action) {
         }
       break;
 
-      case 'add_question':
+      case 'add_tf_question':
         $prompt = filter_input(INPUT_POST, 'prompt');
         $answer = filter_input(INPUT_POST, 'answer');
-        create_new_question($prompt, $answer);
+        create_new_tf_question($prompt, $answer);
+        header("Location: .");
+        break;
+
+      case 'add_mc_question':
+        $prompt = filter_input(INPUT_POST, 'prompt');
+        $answer = filter_input(INPUT_POST, 'answer');
+        $choice1 = filter_input(INPUT_POST, 'choice1');
+        $choice2 = filter_input(INPUT_POST, 'choice2');
+        $choice3 = filter_input(INPUT_POST, 'choice3');
+        create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3);
         header("Location: .");
         break;
 

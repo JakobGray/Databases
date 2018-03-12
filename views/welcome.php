@@ -23,7 +23,8 @@ include_once('./models/loginDB.php');
   </table>
 </div>
 
-<a class="btn btn-large" href="views/add_question.php">Add Question</a>
+<a class="btn btn-large" href="views/add_tf_question.php">Add TF Question</a>
+<a class="btn btn-large" href="views/add_mc_question.php">Add MC Question</a>
 
 <form action='.' method='POST' id="tf_form">
   <input type="hidden" name="action" value="take_tf_quiz">
