@@ -29,7 +29,7 @@ h1 {
 
 #quiz button {
   background: none;
-  color: @brand-primary;
+  color: #65a5b7;
   cursor: pointer;
 }
 
@@ -41,7 +41,7 @@ h1 {
 #quiz button:disabled {
   opacity: 0.3;
   background: none;
-  color: @brand-primary;
+  color: #65a5b7;
   cursor: default;
 }
 
@@ -63,7 +63,7 @@ h1 {
   display: block;
   margin: 4px;
   padding: 8px;
-  background: @brand-primary;
+  background: #65a5b7;
   color: #000;
   min-width: 100px;
   border-radius: 4px;
@@ -81,12 +81,12 @@ h1 {
 }
 
 #question label:hover {
-  background: blue;
+  background-color: blue;
   /* @brand-primary-darken; */
 }
 
 #question input[type=radio]:checked + label {
-  background: blue;
+  background-color: blue;
   /* @brand-primary-darken; */
 }
 
