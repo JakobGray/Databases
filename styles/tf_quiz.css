@@ -11,16 +11,16 @@ body {
 }
 
 h1 {
-  color: @brand-primary;
+  color: #65a5b7;
 }
 
 .fa-3x {
   padding: 1rem;
-  color: @brand-primary;
+  color: #65a5b7;
 }
 
 .fa-3x:hover {
-  color: @brand-primary-darken;
+  color: #4d8291;
 }
 
 #quiz {
@@ -34,8 +34,7 @@ h1 {
 }
 
 #quiz button:hover {
-  color: blue;
-  /* @brand-primary-darken; */
+  color: #4d8291;
 }
 
 #quiz button:disabled {
@@ -86,8 +85,7 @@ h1 {
 }
 
 #question input[type=radio]:checked + label {
-  background-color: blue;
-  /* @brand-primary-darken; */
+  background-color: #4d8291;
 }
 
 #quiz-results {
