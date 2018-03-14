@@ -34,7 +34,8 @@ h1 {
 }
 
 #quiz button:hover {
-  color: @brand-primary-darken;
+  color: blue;
+  /* @brand-primary-darken; */
 }
 
 #quiz button:disabled {
@@ -80,11 +81,13 @@ h1 {
 }
 
 #question label:hover {
-  background: @brand-primary-darken;
+  background: blue;
+  /* @brand-primary-darken; */
 }
 
 #question input[type=radio]:checked + label {
-  background: @brand-primary-darken;
+  background: blue;
+  /* @brand-primary-darken; */
 }
 
 #quiz-results {
