@@ -78,4 +78,8 @@ switch ($action) {
       case "take_tf_quiz":
         include('views/tf_quiz.php');
         break;
+
+      case "take_mc_quiz":
+        include('views/mc_quiz.php');
+        break;
 }

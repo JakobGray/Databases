@@ -32,6 +32,15 @@ function create_new_tf_question($prompt, $answer) {
   $statement->closeCursor();
 }
 
+function get_mc_questions() {
+  global $db;
+  $query = $db->prepare("SELECT mc_prompt, answer, option1, option2, option3 FROM mc_question");
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
+}
+
 function create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3) {
   global $db;
   $query = 'INSERT INTO mc_question (mc_prompt, answer, option1, option2, option3)
