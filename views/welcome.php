@@ -33,7 +33,7 @@ include_once('./models/loginDB.php');
 
 <form action='.' method='POST' id="mc_form">
   <input type="hidden" name="action" value="take_mc_quiz">
-  <button type="submit" form="tf_form" class="btn btn-large">Take MC Quiz</a>
+  <button type="submit" form="mc_form" class="btn btn-large">Take MC Quiz</a>
 </form>
 
 <?php include('views/footer.php'); ?>
