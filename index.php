@@ -23,10 +23,10 @@ if ($action == NULL) {
     }
 }
 
-// Verify login status
-if (!isset($_SESSION['is_valid_admin']) && $action != 'login') {
-    $action = 'show_login';
-}
+// // Verify login status
+// if (!isset($_SESSION['is_valid_admin']) && $action != 'login') {
+//     $action = 'show_login';
+// }
 
 switch ($action) {
 
