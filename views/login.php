@@ -10,7 +10,7 @@
     <a class="btn btn-large btn-success" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login Here</a>
 </div>
 
-<link rel="stylesheet" type="text/css" href="/Databases/styles/login.css" />
+<link rel="stylesheet" type="text/css" href="./styles/login.css" />
 
 <div id="id01" class="modal">
     <div class='modal-content animate'>
@@ -19,7 +19,6 @@
 
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
-                <img src="/Articles/images/building.jpg" alt="Avatar" class="avatar">
             </div>
 
             <div class="container">
@@ -39,6 +38,6 @@
 </div>
 
 
-<script type="text/javascript" src="/Databases/js/login.js"></script>
+<script type="text/javascript" src="./js/login.js"></script>
 
 <?php include('views/footer.php'); ?>
