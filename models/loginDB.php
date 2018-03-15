@@ -19,6 +19,7 @@ function is_valid_user_login($username, $password) {
     $query = 'SELECT username FROM user
             WHERE username = :username AND password = :password';
     $statement = $db->prepare($query);
+    $statement->bindValue(':username', $username);
     $statement->bindValue(':password', $password);
     $statement->execute();
     $valid = ($statement->rowCount() == 1);
