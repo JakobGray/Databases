@@ -10,7 +10,7 @@
     <a class="btn btn-large btn-success" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login Here</a>
 </div>
 
-<link rel="stylesheet" type="text/css" href="/public_html/Databases/styles/login.css" />
+<link rel="stylesheet" type="text/css" href="http://plato.cs.virginia.edu/~jdg7sh/Databases/styles/login.css" />
 
 <div id="id01" class="modal">
     <div class='modal-content animate'>
@@ -41,6 +41,6 @@
 </div>
 
 
-<script type="text/javascript" src="public_html/Databases/js/login.js"></script>
+<script type="text/javascript" src="http://plato.cs.virginia.edu/~jdg7sh/Databases/js/login.js"></script>
 
 <?php include('views/footer.php'); ?>
