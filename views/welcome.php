@@ -44,5 +44,9 @@ if (isset($_SESSION['is_valid_user'])) {
   <button type="submit" form="mc_form" class="btn btn-large">Take MC Quiz</a>
 </form>
 
+<form action='.' method='POST' id="script_form">
+  <input type="hidden" name="action" value="take_script_quiz">
+  <button type="submit" form="script_form" class="btn btn-large">Take Advanced Quiz</a>
+</form>
 
 <?php include('views/footer.php'); ?>
