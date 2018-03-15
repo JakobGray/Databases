@@ -50,6 +50,24 @@ switch ($action) {
             include('views/login.php');
             break;
 
+    case 'login':   // Validates password and sets session variable to allow site access
+        $username1 = filter_input(INPUT_POST, 'username');
+        $password1 = filter_input(INPUT_POST, 'password');
+        $remember = filter_input(INPUT_POST, 'remember');
+        if (is_valid_admin_login($username, $password1)) {
+            $_SESSION['is_valid_admin'] = true;
+            // if ($remember == 'yes') {
+            //     $lifetime = 60 * 60 * 24 * 7;  // 1 week
+            //     session_set_cookie_params($lifetime);
+            //     session_regenerate_id();
+            // }
+            include('views/welcome.php');
+        } else {
+            $login_message = 'You must login to proceed.';
+            include('views/login.php');
+        }
+        break;
+
     case 'home':
       include('views/welcome.php');
       break;

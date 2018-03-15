@@ -20,8 +20,11 @@
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
             </div>
-
+            
             <div class="container">
+
+                <label><b>Username</b></label>
+                <input id='userID' type="text" placeholder="Enter Username" name="username" maxlength='50' required>
 
                 <label><b>Password</b></label>
                 <input id='passID' type="password" placeholder="Enter Password" name="password" maxlength='50' required>

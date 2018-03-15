@@ -13,7 +13,7 @@ function add_new_user($username, $password) {
 }
 
 // Verifies that there is a matching ID in the database to the password inserted
-function is_valid_admin_login($username, $password) {
+function is_valid_user_login($username, $password) {
     global $db;
     $password = sha1($username . $password);
     $query = 'SELECT username FROM user
