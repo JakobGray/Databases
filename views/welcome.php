@@ -28,13 +28,22 @@ include_once('./models/loginDB.php');
   </table>
 </div>
 
-<a class="btn btn-large" href="views/add_tf_question.php">Add TF Question</a>
-<a class="btn btn-large" href="views/add_mc_question.php">Add MC Question</a>
 <?php
 if (isset($_SESSION['is_valid_user'])) {
   echo isset($_SESSION['is_valid_user']);
   include('./views/add_forms.php');
 }
 ?>
+
+<form action='.' method='POST' id="tf_form">
+  <input type="hidden" name="action" value="take_tf_quiz">
+  <button type="submit" form="tf_form" class="btn btn-large">Take Quiz</a>
+</form>
+
+<form action='.' method='POST' id="mc_form">
+  <input type="hidden" name="action" value="take_mc_quiz">
+  <button type="submit" form="mc_form" class="btn btn-large">Take MC Quiz</a>
+</form>
+
 
 <?php include('views/footer.php'); ?>
