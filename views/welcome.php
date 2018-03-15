@@ -30,7 +30,6 @@ include_once('./models/loginDB.php');
 
 <?php
 if (isset($_SESSION['is_valid_user'])) {
-  echo isset($_SESSION['is_valid_user']);
   include('./views/add_forms.php');
 }
 ?>
