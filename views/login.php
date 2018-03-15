@@ -10,7 +10,7 @@
     <a class="btn btn-large btn-success" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login Here</a>
 </div>
 
-<link rel="stylesheet" type="text/css" href="/Articles/styles/login.css" />
+<link rel="stylesheet" type="text/css" href="/Databases/styles/login.css" />
 
 <div id="id01" class="modal">
     <div class='modal-content animate'>
@@ -39,6 +39,6 @@
 </div>
 
 
-<script type="text/javascript" src="/Articles/js/login.js"></script>
+<script type="text/javascript" src="/Databases/js/login.js"></script>
 
 <?php include('views/footer.php'); ?>
