@@ -12,6 +12,34 @@ function add_new_user($username, $password) {
     $statement->closeCursor();
 }
 
+// Verifies that there is a matching ID in the database to the password inserted
+function is_valid_admin_login($username, $password) {
+    global $db;
+    $password = sha1($username . $password);
+    $query = 'SELECT username FROM user
+            WHERE username = :username AND password = :password';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':password', $password);
+    $statement->execute();
+    $valid = ($statement->rowCount() == 1);
+    $statement->closeCursor();
+    return $valid;
+}
+// Unused
+function get_user_info($username, $password) {
+    global $db;
+    $password = sha1($username . $password);
+    $query = 'SELECT username FROM user
+            WHERE username = :username AND password = :password';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':username', $username);
+    $statement->bindValue(':password', $password);
+    $statement->execute();
+    $name = $statement->fetch();
+    $statement->closeCursor();
+    return $name;
+}
+
 function get_tf_questions() {
   global $db;
   $query = $db->prepare("SELECT tf_prompt, answer FROM tf_question");

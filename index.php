@@ -23,6 +23,11 @@ if ($action == NULL) {
     }
 }
 
+// Verify login status
+if (!isset($_SESSION['is_valid_admin']) && $action != 'login') {
+    $action = 'show_login';
+}
+
 switch ($action) {
 
     // case 'home':
@@ -41,6 +46,9 @@ switch ($action) {
     //     endforeach;
     //     break;
 
+    case 'show_login':
+            include('views/login.php');
+            break;
 
     case 'home':
       include('views/welcome.php');
