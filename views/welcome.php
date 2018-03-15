@@ -31,8 +31,8 @@ include_once('./models/loginDB.php');
 <a class="btn btn-large" href="views/add_tf_question.php">Add TF Question</a>
 <a class="btn btn-large" href="views/add_mc_question.php">Add MC Question</a>
 <?php
-if (isset($_SESSION['is_valid_admin'])) {
-  include('views/add_forms.php');
+if (isset($_SESSION['is_valid_user'])) {
+  include('./views/add_forms.php');
 }
 ?>
 

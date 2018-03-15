@@ -55,7 +55,7 @@ switch ($action) {
         $password1 = filter_input(INPUT_POST, 'password');
         $remember = filter_input(INPUT_POST, 'remember');
         if (is_valid_user_login($username1, $password1)) {
-            $_SESSION['is_valid_admin'] = true;
+            $_SESSION['is_valid_user'] = true;
             // if ($remember == 'yes') {
             //     $lifetime = 60 * 60 * 24 * 7;  // 1 week
             //     session_set_cookie_params($lifetime);
