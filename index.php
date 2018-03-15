@@ -54,7 +54,7 @@ switch ($action) {
         $username1 = filter_input(INPUT_POST, 'username');
         $password1 = filter_input(INPUT_POST, 'password');
         $remember = filter_input(INPUT_POST, 'remember');
-        if (is_valid_admin_login($username, $password1)) {
+        if (is_valid_user_login($username, $password1)) {
             $_SESSION['is_valid_admin'] = true;
             // if ($remember == 'yes') {
             //     $lifetime = 60 * 60 * 24 * 7;  // 1 week
