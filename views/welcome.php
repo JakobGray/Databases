@@ -32,6 +32,7 @@ include_once('./models/loginDB.php');
 <a class="btn btn-large" href="views/add_mc_question.php">Add MC Question</a>
 <?php
 if (isset($_SESSION['is_valid_user'])) {
+  echo isset($_SESSION['is_valid_user']);
   include('./views/add_forms.php');
 }
 ?>
