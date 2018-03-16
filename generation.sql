@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS user;
 CREATE TABLE `user` (
   `username` varchar(100) NOT NULL UNIQUE,
   `password` varchar(200) NOT NULL,
-  `status` varchar(50) DEFAULT 'Regular',
+  `status`   varchar(50) DEFAULT 'Regular',
   PRIMARY KEY (username)
 ) ENGINE=InnoDB;
 
@@ -35,12 +35,38 @@ CREATE TABLE mc_question (
   QID        INT(11) NOT NULL AUTO_INCREMENT,
   mc_prompt  VARCHAR(300),
   answer     VARCHAR(100),
-  option1		VARCHAR(100),
-	option2		VARCHAR(100),
-  option3		VARCHAR(100),
+  option1		 VARCHAR(100),
+	option2		 VARCHAR(100),
+  option3		 VARCHAR(100),
   PRIMARY KEY (QID)
 );
 
 INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`) VALUES
 ("Azula’s best friends are...", 'Mai and Ty Lee', 'Katara and Toph', 'Ozai and Iroh', 'Momo and Appa'),
 ("Who is Gimli's father?", "Gloin", "Gatrie", "Glaive", "Gareth");
+
+
+DROP TABLE IF EXISTS script_question;
+CREATE TABLE script_question (
+  QID           INT(11) NOT NULL AUTO_INCREMENT,
+  script_text   TEXT,
+  answer        VARCHAR(100),
+  PRIMARY KEY (QID)
+);
+
+INSERT INTO script_question (`script_text`, `answer`) VALUES
+(
+"Iroh: Water is the element of change. [Draws the waterbending insignia.] The people of the Water Tribe are capable of adapting to many things. They have a deep sense of community and love that holds them together through anything.
+Zuko:	Why are you telling me these things?
+Iroh:	It is important to draw wisdom from many different places. If you take it from only one place, it becomes rigid and stale. [Divides the four insignias into separate sections.] Understanding others, the other elements, and the other nations will help you become whole. [Draws a circle around the insignias.]
+Zuko:	All this four elements talk is sounding like Avatar stuff.
+Iroh:	It is the combination of the four elements in one person that makes the Avatar so powerful. But it can make you more powerful, too. You see the technique I'm about to teach you is one I learned by studying the waterbenders." ,
+"Bitter Work"),
+(
+"Katara:	Sokka's right. We need to find King Bumi, so Aang can learn earthbending somewhere safe.
+Chong:	Sounds like you're headed to Omashu.
+Sokka: smacks his forehead in frustration.
+Chong:	There's an old story about a secret pass right through the mountains.
+Katara:	Is this real or a legend?
+Chong:	Oh, it's a real legend. And it's as old as earthbending itself. [Begins strumming his lute and singing.] Two lovers, forbidden from one another, the war divides their people and the mountain divides them apart! Built a path to be together! [Stops playing.] Yeah, I forget the next couple of lines, but then it goes ... [Resumes singing.] Secret tunnel! Secret tunnel! Through the mountains, secret, secret, secret, secret tunnel! Yeah!",
+"The Cave of Two Lovers");
