@@ -3,23 +3,16 @@ const testArea = document.querySelector("#test-area");
 const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
 
-var text = [
-  "Water is the element of change. The people of the Water Tribe are capable of adapting to many things. They have a deep sense of community and love that holds them together through anything.",
-  "Why are you telling me these things?",
-  "It is important to draw wisdom from many different places. If we take it from only one place, it becomes rigid and stale. Understanding others, the other elements, and the other nations  will help you become whole.",
-  "All this four elements talk is sounding like Avatar stuff.",
-  "It is the combination of the four elements in one person that makes the Avatar so powerful. But, it can make you more powerful too. You see, the technique I am about to teach you is one I learned by studying the waterbenders."
-]
+// var text = `
+// Katara:	Sokka's right. We need to find King Bumi, so Aang can learn earthbending somewhere safe.
+// Chong:	Sounds like you're headed to Omashu.
+// Sokka: smacks his forehead in frustration.
+// Chong:	There's an old story about a secret pass right through the mountains.
+// Katara:	Is this real or a legend?
+// Chong:	Oh, it's a real legend. And it's as old as earthbending itself. [Begins strumming his lute and singing.] Two lovers, forbidden from one another, the war divides their people and the mountain divides them apart! Built a path to be together! [Stops playing.] Yeah, I forget the next couple of lines, but then it goes ... [Resumes singing.] Secret tunnel! Secret tunnel! Through the mountains, secret, secret, secret, secret tunnel! Yeah!
+// `;
+// var answer = "The Cave of Two Lovers";
 
-var text = `
-Katara:	Sokka's right. We need to find King Bumi, so Aang can learn earthbending somewhere safe.
-Chong:	Sounds like you're headed to Omashu.
-Sokka: smacks his forehead in frustration.
-Chong:	There's an old story about a secret pass right through the mountains.
-Katara:	Is this real or a legend?
-Chong:	Oh, it's a real legend. And it's as old as earthbending itself. [Begins strumming his lute and singing.] Two lovers, forbidden from one another, the war divides their people and the mountain divides them apart! Built a path to be together! [Stops playing.] Yeah, I forget the next couple of lines, but then it goes ... [Resumes singing.] Secret tunnel! Secret tunnel! Through the mountains, secret, secret, secret, secret tunnel! Yeah!
-`;
-var answer = "Bitter Work";
 const originText = answer;
 
 var timer = [0,0,0,0];

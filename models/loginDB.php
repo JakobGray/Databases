@@ -83,3 +83,12 @@ function create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3) 
   $statement->execute();
   $statement->closeCursor();
 }
+
+function get_scripts() {
+  global $db;
+  $query = $db->prepare("SELECT script_text, answer FROM script_question");
+  $query->execute();
+  $result = $query->fetch](PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
+}

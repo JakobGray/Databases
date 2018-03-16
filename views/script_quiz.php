@@ -1,9 +1,20 @@
+<?php
+$scripts = get_scripts();
+?>
 <html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Episode Trivia</title>
+
+    <script type="text/javascript">
+        var all_scripts = <?php echo json_encode($scripts); ?>;
+        var text = $scripts['script_text'];
+        var answer = $scripts['answer'];
+        console.log(JSON.stringify(all_scripts, null, 2));
+    </script>
+
     <script src="./js/script_quiz.js" async></script>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css" media="all">
     <link rel="stylesheet" href="./styles/script_quiz.css">
