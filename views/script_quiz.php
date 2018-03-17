@@ -1,5 +1,5 @@
 <?php
-$scripts = get_scripts();
+$all_scripts = get_scripts();
 ?>
 <html lang="en-US">
 
@@ -9,10 +9,10 @@ $scripts = get_scripts();
     <title>Episode Trivia</title>
 
     <script type="text/javascript">
-        var scripts = <?php echo json_encode($scripts); ?>;
-        var text = scripts['script_text'];
-        var answer = scripts['answer'];
-        console.log(JSON.stringify(scripts, null, 2));
+        var all_scripts = <?php echo json_encode($scripts); ?>;
+        var text = all_scripts[1]['script_text'];
+        var answer = all_scripts[1]['answer'];
+        console.log(JSON.stringify(all_scripts, null, 2));
     </script>
 
     <script src="./js/script_quiz.js" async></script>
