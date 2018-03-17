@@ -12,7 +12,7 @@ $scripts = get_scripts();
         var scripts = <?php echo json_encode($scripts); ?>;
         var text = scripts['script_text'];
         var answer = scripts['answer'];
-        console.log(JSON.stringify(all_scripts, null, 2));
+        console.log(JSON.stringify(scripts, null, 2));
     </script>
 
     <script src="./js/script_quiz.js" async></script>
