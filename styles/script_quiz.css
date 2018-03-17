@@ -154,13 +154,13 @@ body {
 }
 
 .test-wrapper {
-    height: 200%;
+		max-height: 550px;
+    /* height: 200%; */
     display: flex;
 }
 
 .test-wrapper textarea {
     flex: 1;
-		max-height: 550px;
 }
 
 .meta {
