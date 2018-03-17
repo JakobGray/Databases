@@ -1,5 +1,5 @@
 <?php
-$all_scripts = get_scripts();
+$scripts = get_scripts();
 ?>
 <html lang="en-US">
 
