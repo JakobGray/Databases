@@ -117,7 +117,7 @@ function type(text, screen) {
 
 
 // Event listeners for keyboard input and the reset
-testArea.addEventListener("keypress", start, false);
+window.addEventListener("load", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
 resetButton.addEventListener("click", reset, false);
 
