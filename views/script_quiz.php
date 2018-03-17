@@ -42,7 +42,7 @@ $scripts = get_scripts();
                     <div class="timer">00:00:00</div>
                 </section>
 
-                <button id="reset">Start over</button>
+                <button id="start">Start</button>
             </div><!-- .meta -->
         </section><!-- .test-area -->
     </main>

@@ -1,6 +1,6 @@
 const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
-const resetButton = document.querySelector("#reset");
+const startButton = document.querySelector("#start");
 const theTimer = document.querySelector(".timer");
 
 // var text = `
@@ -117,9 +117,8 @@ function type(text, screen) {
 
 
 // Event listeners for keyboard input and the reset
-window.addEventListener("load", start, false);
-testArea.addEventListener("keyup", spellCheck, false);
-resetButton.addEventListener("click", reset, false);
+// window.addEventListener("load", start, false);
+
 
 window.onload=function(){
 	var screen = document.getElementById('screen');
@@ -128,6 +127,8 @@ window.onload=function(){
   //   'All systems are functioning.',
   //   'I like pie.'
   // ];
-
-	type(text, screen);
+  testArea.addEventListener("keyup", spellCheck, false);
+  startButton.addEventListener("click", start, false);
+  startButton.addEventListener("click", type(text, screen);, false);
+	// type(text, screen);
 };
