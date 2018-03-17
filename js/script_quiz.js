@@ -129,6 +129,6 @@ window.onload=function(){
   // ];
   testArea.addEventListener("keyup", spellCheck, false);
   startButton.addEventListener("click", start, false);
-  // startButton.addEventListener("click", type(text, screen), false);
+  startButton.addEventListener("click", type(text, screen), false);
 	// type(text, screen);
 };
