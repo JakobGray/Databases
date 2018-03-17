@@ -9,9 +9,9 @@ $scripts = get_scripts();
     <title>Episode Trivia</title>
 
     <script type="text/javascript">
-        var all_scripts = <?php echo json_encode($scripts); ?>;
-        var text = $scripts['script_text'];
-        var answer = $scripts['answer'];
+        var scripts = <?php echo json_encode($scripts); ?>;
+        var text = scripts['script_text'];
+        var answer = scripts['answer'];
         console.log(JSON.stringify(all_scripts, null, 2));
     </script>
 
