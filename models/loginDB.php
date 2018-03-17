@@ -88,7 +88,7 @@ function get_scripts() {
   global $db;
   $query = $db->prepare("SELECT script_text, answer FROM script_question");
   $query->execute();
-  $result = $query->fetch](PDO::FETCH_ASSOC);
+  $result = $query->fetch(PDO::FETCH_ASSOC);
   $query->closeCursor();
   return $result;
 }
