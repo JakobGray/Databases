@@ -15,6 +15,16 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`username`, `password`, `status`) VALUES
 ('asdfasdf', '0115ea25dcd5e69157614c0492dda08e58cf4dcd', 'Regular');
 
+DROP TABLE IF EXISTS leaderboard;
+CREATE TABLE leaderboard (
+	LID	     	INT(11) NOT NULL UNIQUE,
+  GID       INT(11) NOT NULL REFERENCES game ON DELETE CASCADE,
+  username  VARCHAR(100) REFERENCES user ON DELETE CASCADE,
+  score     INT(11),
+  primary key (LID, GID, username)
+);
+
+
 
 DROP TABLE IF EXISTS tf_question;
 CREATE TABLE tf_question (
@@ -32,7 +42,7 @@ INSERT INTO tf_question (`tf_prompt`, `answer`) VALUES
 ("Bucky killed T'Chaka (T'Challa’s Father) in Captain America: Civil War.", 'False'),
 ('In the book The Return of the King, Frodo is captured by orcs in Mordor.', 'False'),
 ('Scarlet Witch said no more mutants', 'True'),
-('Magneto killed Xavier and split hte X-Men', 'False'),
+('Magneto killed Xavier and split the X-Men', 'False'),
 ("Black Widow's full name is Natalia Ravenova", 'False'),
 ("Prompt: In the book, The Fellowship of the Ring, Arwen takes Frodo to Rivendell after he is attacked by the Black Riders.", 'False'),
 ("Merry and Pippin are cousins.", 'True'),
@@ -88,11 +98,7 @@ CREATE TABLE c_question (
 );
 
 INSERT INTO c_question (`c_prompt`, `answer`) VALUES
-("The ____ hosts the space gem in the first Avengers Movie", "Tesseract"),
-("Jessica Jones is married to ___", "Luke Cage"),
-("Comic book writer ____ created Hawkeye", "Stan Lee"),
-("Captain America fought against ____ in Civil War", "Iron Man"),
-("Edwin Jarvis is the butler to _____", "Tony Stark");
+("The ____ hosts the space gem in the first Avengers Movie", "Tesseract");
 
 
 
