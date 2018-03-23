@@ -72,6 +72,20 @@ INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`)
 ("Who is Gimli's father?", "Gloin", "Gatrie", "Glaive", "Gareth");
 
 
+DROP TABLE IF EXISTS c_question;
+CREATE TABLE c_question (
+  QID        INT(11) NOT NULL AUTO_INCREMENT,
+  c_prompt  VARCHAR(300),
+  answer     VARCHAR(5),
+  PRIMARY KEY (QID)
+);
+
+INSERT INTO c_question (`c_prompt`, `answer`) VALUES
+("The ____ hosts the space gem in the first Avengers Movie", "Tesseract");
+
+
+
+
 DROP TABLE IF EXISTS script_question;
 CREATE TABLE script_question (
   QID           INT(11) NOT NULL AUTO_INCREMENT,
