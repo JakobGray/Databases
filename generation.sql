@@ -27,6 +27,10 @@ INSERT INTO tf_question (`tf_prompt`, `answer`) VALUES
 ("Thor’s lightning charged Iron Man's armor to 400% in the first Avengers Movie.", 'True'),
 ("Bucky killed T'Chaka (T'Challa’s Father) in Captain America: Civil War.", 'False'),
 ('In the book The Return of the King, Frodo is captured by orcs in Mordor.', 'False'),
+('Scarlet Witch said no more mutants', 'True'),
+('Magneto killed Xavier and split hte X-Men', 'False'),
+("Black Widow's full name is Natalia Ravenova", 'False'),
+
 ('In The Lord of the Rings books, Faramir takes Frodo and Sam to Osgiliath before he lets them continue on their quest.', 'False');
 
 
