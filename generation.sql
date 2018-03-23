@@ -35,6 +35,8 @@ INSERT INTO tf_question (`tf_prompt`, `answer`) VALUES
 ("In the book, The Fellowship of the Ring, Boromir is given a silver belt by the elf Galadriel.", 'True'),
 ("In the book, The Fellowship of the Ring, Sam is given elvish rope by the elf Galadriel.", 'False'),
 ("In the book, Frodo sold Bag End before taking the ring to Rivendell.", 'True'),
+("In the book, after completing the quest of the ring, Sam became the mayor of the Shire.", 'True'),
+("In the book, Boromir blows the horn of Gondor as the Fellowship sets off from Rivendell.", 'True'),
 ('In The Lord of the Rings books, Faramir takes Frodo and Sam to Osgiliath before he lets them continue on their quest.', 'False');
 
 
