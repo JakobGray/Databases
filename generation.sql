@@ -1,5 +1,9 @@
 USE CS4750jdg7sh;
 
+-- create the users and grant priveleges to those users
+GRANT SELECT, INSERT
+ON CS4750jdg7sh.* TO 'CS4750jdg7sha'@'%';
+
 DROP TABLE IF EXISTS user;
 CREATE TABLE `user` (
   `username` varchar(100) NOT NULL UNIQUE,

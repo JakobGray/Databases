@@ -4,9 +4,10 @@
     $dsn = "mysql:host={$SERVER};dbname={$DATABASE}";
     $username = $USERNAME;
     $password = $PASSWORD;
+    $user = $USER
 
     try {
-        $db = new PDO($dsn, $username, $password,
+        $db = new PDO($dsn, $user, $password,
         array('charset'=>'utf8'));
         $db->query("SET CHARACTER SET utf8");
     } catch (PDOException $e) {
