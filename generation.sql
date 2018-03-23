@@ -46,6 +46,7 @@ INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`)
 ("What did Sam Gamgee name his first child?", 'Elinor', 'Frodo', 'Rosy', 'Bilbo'),
 ("Prompt: In the book, The Return of the King, who does Theoden talk with right before he dies?", 'Merry', 'Eowyn', 'Aragorn', 'Eomer'),
 ("What is the name of Gandalf’s horse?", 'Shadowfax', 'Snowmane', 'Asfaloth', 'Brego'),
+("In the book, The Fellowship of the Ring, who does Aragorn meet when he is guiding the hobbits from Bree to Rivendell?", 'Glorfindel', 'Arwen', 'Elladan', 'Elrond'),
 ("Who is Gimli's father?", "Gloin", "Gatrie", "Glaive", "Gareth");
 
 
