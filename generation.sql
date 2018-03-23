@@ -44,7 +44,7 @@ INSERT INTO tf_question (`tf_prompt`, `answer`) VALUES
 ('Scarlet Witch said no more mutants', 'True'),
 ('Magneto killed Xavier and split the X-Men', 'False'),
 ("Black Widow's full name is Natalia Ravenova", 'False'),
-("Prompt: In the book, The Fellowship of the Ring, Arwen takes Frodo to Rivendell after he is attacked by the Black Riders.", 'False'),
+("In the book, The Fellowship of the Ring, Arwen takes Frodo to Rivendell after he is attacked by the Black Riders.", 'False'),
 ("Merry and Pippin are cousins.", 'True'),
 ("In the book, The Fellowship of the Ring, Boromir is given a silver belt by the elf Galadriel.", 'True'),
 ("In the book, The Fellowship of the Ring, Sam is given elvish rope by the elf Galadriel.", 'False'),
