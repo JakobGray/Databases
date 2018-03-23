@@ -56,6 +56,8 @@ INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`)
 ("What is the name of Gandalf’s horse?", 'Shadowfax', 'Snowmane', 'Asfaloth', 'Brego'),
 ("In the book, The Fellowship of the Ring, who does Aragorn meet when he is guiding the hobbits from Bree to Rivendell?", 'Glorfindel', 'Arwen', 'Elladan', 'Elrond'),
 ("In the book, The Fellowship of the Ring, who was the first person at the council of Elrond who volunteered to take the ring to Mordor?", 'Bilbo', 'Frodo', 'Aragorn', 'Boromir'),
+("What is the name ‘Elinor’ based on?", 'A flower', 'An elf', 'A tree', 'A place'),
+("Prompt: At the beginning of The Fellowship of the Ring book, what age was Bilbo celebrating at his birthday?", '111', '103', '92', '113'),
 ("Who is Gimli's father?", "Gloin", "Gatrie", "Glaive", "Gareth");
 
 
