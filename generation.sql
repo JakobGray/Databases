@@ -46,11 +46,25 @@ CREATE TABLE mc_question (
 
 INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`) VALUES
 ("Azula’s best friends are...", 'Mai and Ty Lee', 'Katara and Toph', 'Ozai and Iroh', 'Momo and Appa'),
+
 ("After Flash Thompson finished bullying Peter Parker, he became ...", "Agent Venom", "Hobgoblin", "Spider Man", "Crime Master"),
 ("Spider Man's parents are ...", "Richard and Mary", "Frank and Alice", "Bruce and Katherine", "William and Liz"),
 ("Which member of the Guardians of the Galaxy is related to Thanos?", "Gamora", "Groot", "Drax the Destroyer", "Mantis"),
 ("Who served as Ant Man", "Henry Pym", "Wade Wilson", "Matt Murdock", "Wilson Fisk"),
 ("The Fantastic Four have the headquarters in what buildng?", "Baxter Building", "Stark Tower", "Fantastic Headquarters", "Xavier Institute"),
+
+("What did Sam Gamgee name his first child?", 'Elinor', 'Frodo', 'Rosy', 'Bilbo'),
+("Who helped Ang learn Earth bender? ","Toph ","Ozai", "Katara", "Sokka"),
+("How long was Aang frozen in an iceberg? ","100 years ","100 months","10 days","1000 years"),
+("____ killed the Moon Spirit. ","Zhao ","Iroh "," Suko ","Yue"),
+("Which nation started the 100 years war?","Fire nation ","Water nation","Water nation","Earth Nation ")
+("Prompt: In the book, The Return of the King, who does Theoden talk with right before he dies?", 'Merry', 'Eowyn', 'Aragorn', 'Eomer'),
+("What is the name of Gandalf’s horse?", 'Shadowfax', 'Snowmane', 'Asfaloth', 'Brego'),
+("In the book, The Fellowship of the Ring, who does Aragorn meet when he is guiding the hobbits from Bree to Rivendell?", 'Glorfindel', 'Arwen', 'Elladan', 'Elrond'),
+("In the book, The Fellowship of the Ring, who was the first person at the council of Elrond who volunteered to take the ring to Mordor?", 'Bilbo', 'Frodo', 'Aragorn', 'Boromir'),
+("What is the name ‘Elinor’ based on?", 'A flower', 'An elf', 'A tree', 'A place'),
+("Prompt: At the beginning of The Fellowship of the Ring book, what age was Bilbo celebrating at his birthday?", '111', '103', '92', '113'),
+
 ("Who is Gimli's father?", "Gloin", "Gatrie", "Glaive", "Gareth");
 
 
