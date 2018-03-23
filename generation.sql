@@ -78,7 +78,7 @@ INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`)
 ("Who helped Ang learn Earth bender? ","Toph ","Ozai", "Katara", "Sokka"),
 ("How long was Aang frozen in an iceberg? ","100 years ","100 months","10 days","1000 years"),
 ("____ killed the Moon Spirit. ","Zhao ","Iroh "," Suko ","Yue"),
-("Which nation started the 100 years war?","Fire nation ","Water nation","Water nation","Earth Nation ")
+("Which nation started the 100 years war?","Fire nation ","Water nation","Water nation","Earth Nation "),
 ("Prompt: In the book, The Return of the King, who does Theoden talk with right before he dies?", 'Merry', 'Eowyn', 'Aragorn', 'Eomer'),
 ("What is the name of Gandalf’s horse?", 'Shadowfax', 'Snowmane', 'Asfaloth', 'Brego'),
 ("In the book, The Fellowship of the Ring, who does Aragorn meet when he is guiding the hobbits from Bree to Rivendell?", 'Glorfindel', 'Arwen', 'Elladan', 'Elrond'),
