@@ -102,7 +102,14 @@ INSERT INTO c_question (`c_prompt`, `answer`) VALUES
 ("Jessica Jones is married to ___", "Luke Cage"),
 ("Comic book writer ____ created Hawkeye", "Stan Lee"),
 ("Captain America fought against ____ in Civil War", "Iron Man"),
-("Edwin Jarvis is the butler to _____", "Tony Stark");
+("Edwin Jarvis is the butler to _____", "Tony Stark"),
+("Three rings for _______  _______ under the sky.", "Elven Kings"),
+("I wasn’t droppin no _____ sir!", "eaves"),
+("Nothing important! I heard a great deal about a ring, and a dark lord, and something about the ______  ______  ______  ______.", "end of the world"),
+("It’s talking Merry!  The _____ is talking!", "tree"),
+("Good morning?!  But it’s ______ already!", "nighttime"),
+("In the land of Mordor, where the _____  lie.", "shadows"),
+("That still only counts as _____!", "one");
 
 
 DROP TABLE IF EXISTS script_question;
