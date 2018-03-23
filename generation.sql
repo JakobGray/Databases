@@ -44,7 +44,12 @@ CREATE TABLE mc_question (
 INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`) VALUES
 ("Azula’s best friends are...", 'Mai and Ty Lee', 'Katara and Toph', 'Ozai and Iroh', 'Momo and Appa'),
 ("What did Sam Gamgee name his first child?", 'Elinor', 'Frodo', 'Rosy', 'Bilbo'),
-("Who is Gimli's father?", "Gloin", "Gatrie", "Glaive", "Gareth");
+("Who is Gimli's father?", "Gloin", "Gatrie", "Glaive", "Gareth")
+("Who helped Ang learn Earth bender? ","Toph ","Ozai", "Katara", "Sokka"),
+("How long was Aang frozen in an iceberg? ","100 years ","100 months","10 days","1000 years"),
+("____ killed the Moon Spirit. ","Zhao ","Iroh "," Suko ","Yue"),
+("Which nation started the 100 years war?","Fire nation ","Water nation","Water nation","Earth Nation ")
+;
 
 
 DROP TABLE IF EXISTS script_question;
