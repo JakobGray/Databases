@@ -109,7 +109,12 @@ INSERT INTO c_question (`c_prompt`, `answer`) VALUES
 ("It’s talking Merry!  The _____ is talking!", "tree"),
 ("Good morning?!  But it’s ______ already!", "nighttime"),
 ("In the land of Mordor, where the _____  lie.", "shadows"),
-("That still only counts as _____!", "one");
+("That still only counts as _____!", "one"),
+("The road goes ever on and on, down from the _____ where it began.", "door"),
+("_____?  That’s not bad for a pointy eared elvish princeling.", "42"),
+("_____ roots are not reached by the frost.", "Deep"),
+("The ______  ______  ______  _____ his heart, as he looked up out of the forsaken land, and hope returned to him.", "beauty of it smote"),
+("Anyway, you need someone of intelligence on this mission. ______.  ______.", "Quest Thing");
 
 
 DROP TABLE IF EXISTS script_question;
