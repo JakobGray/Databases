@@ -98,9 +98,11 @@ CREATE TABLE c_question (
 );
 
 INSERT INTO c_question (`c_prompt`, `answer`) VALUES
-("The ____ hosts the space gem in the first Avengers Movie", "Tesseract");
-
-
+("The ____ hosts the space gem in the first Avengers Movie", "Tesseract"),
+("Jessica Jones is married to ___", "Luke Cage"),
+("Comic book writer ____ created Hawkeye", "Stan Lee"),
+("Captain America fought against ____ in Civil War", "Iron Man"),
+("Edwin Jarvis is the butler to _____", "Tony Stark");
 
 
 DROP TABLE IF EXISTS script_question;
