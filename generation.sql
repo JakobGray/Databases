@@ -37,6 +37,10 @@ CREATE TABLE tf_question (
 
 INSERT INTO tf_question (`tf_prompt`, `answer`) VALUES
 ('The Starters from Gen 2 were Totodile, Cyndaquil, and Treecko.', 'False'),
+('During his adventures in Hoenn, Ash Ketchum caught a Torkoal for his team.','True'),
+(" N was the final boss of Pokemon Black and Pokemon White.", "False"),
+("In Pokemon Gold and Pokemon Silver, you explore Kanto and Johto regions.", "True"),
+("The champion of the Sinnoh region is Cynthia", "True"),
 ('Zuko was the prince of the Fire nation', 'True'),
 ("Thor’s lightning charged Iron Man's armor to 400% in the first Avengers Movie.", 'True'),
 ("Bucky killed T'Chaka (T'Challa’s Father) in Captain America: Civil War.", 'False'),
@@ -86,6 +90,12 @@ INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`)
 ("Which nation started the 100 years war?","Fire nation ","Water nation","Air nation","Earth Nation "),
 (" In the book, The Return of the King, who does Theoden talk with right before he dies?", 'Merry', 'Eowyn', 'Aragorn', 'Eomer'),
 
+("Which of these were the evil team of the Unova region?", "Team Plasma", "Team Magma", "Team Galactic", "Team Skull"),
+("Which of these characters traveled with Ash Ketchum in Pokemon X & Y?", "Serena & Clemont", "Brock & Misty", "May & Max", "Cilan & Iris"),
+("In Pokemon Sun and Moon, Lillie's nickname for Cosmog is:", "Nebby", "Smoggy", "Cosmo", "Nova"),
+("In Pokemon Gold and Pokemon Silver, who can you battle on top of Mt. Silver?", "Red", "Blue", "Giovanni", "Silver"),
+("Which of these is NOT an evolution of Eevee?", "Cloudeon", "Sylveon", "Glaceon", "Leafeon"),
+
 ("What is the name of Gandalf’s horse?", 'Shadowfax', 'Snowmane', 'Asfaloth', 'Brego'),
 ("In the book, The Fellowship of the Ring, who does Aragorn meet when he is guiding the hobbits from Bree to Rivendell?", 'Glorfindel', 'Arwen', 'Elladan', 'Elrond'),
 ("In the book, The Fellowship of the Ring, who was the first person at the council of Elrond who volunteered to take the ring to Mordor?", 'Bilbo', 'Frodo', 'Aragorn', 'Boromir'),
@@ -125,7 +135,12 @@ INSERT INTO c_question (`c_prompt`, `answer`) VALUES
 ("Aang and his friends had to go through _____  Pass to get to Ba Sing Se. ","Serpent"),
 ("_____,was born blind, but use to secretly compete in earth bending tournaments. ","Toph"),
 ("Hama, a prisoner of war, taught Katara about _______ _______.","blood bending"),
-("Aang had a crush and eventually got with _______.","Katara");
+("Aang had a crush and eventually got with _______.","Katara"),
+("Hi! I like _____! They're comphy and easy to wear!", "shorts"),
+("I see now that circumstances of one's birth are irrelevant.  It is what you do with the ____ __ ____ that determines who you are.", "gift of life"),
+("The legendary Pokemon on the cover of Pokemon Emerald is ________", "Rayquaza"),
+("Originally from Pokemon X & Y, ________ made an apperance as a newcomer in Super Smash Bros. for Wii U and 3DS.", "Greninja"),
+("The Kalos region is modeled after the real world country of _______", "France");
 
 
 DROP TABLE IF EXISTS script_question;
