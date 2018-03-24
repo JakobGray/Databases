@@ -51,7 +51,12 @@ INSERT INTO tf_question (`tf_prompt`, `answer`) VALUES
 ("In the book, Frodo sold Bag End before taking the ring to Rivendell.", 'True'),
 ("In the book, after completing the quest of the ring, Sam became the mayor of the Shire.", 'True'),
 ("In the book, Boromir blows the horn of Gondor as the Fellowship sets off from Rivendell.", 'True'),
-('In The Lord of the Rings books, Faramir takes Frodo and Sam to Osgiliath before he lets them continue on their quest.', 'False');
+('In The Lord of the Rings books, Faramir takes Frodo and Sam to Osgiliath before he lets them continue on their quest.', 'False'),
+("Rok, the avatar before, Aang started out as an fire-bender.","True"),
+("Sakka was a better water bender than his sister,  Katara. ","False "),
+("Princess Yue of the water tribe was very ill as a child, but was saved by Moon Spirit. ","True"),
+("Ba Sing Se is a small Earth bending village that has no protection. ","False")
+;
 
 
 DROP TABLE IF EXISTS mc_question;
@@ -79,12 +84,13 @@ INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`)
 ("How long was Aang frozen in an iceberg? ","100 years ","100 months","10 days","1000 years"),
 ("____ killed the Moon Spirit. ","Zhao ","Iroh "," Suko ","Yue"),
 ("Which nation started the 100 years war?","Fire nation ","Water nation","Air nation","Earth Nation "),
-("Prompt: In the book, The Return of the King, who does Theoden talk with right before he dies?", 'Merry', 'Eowyn', 'Aragorn', 'Eomer'),
+(" In the book, The Return of the King, who does Theoden talk with right before he dies?", 'Merry', 'Eowyn', 'Aragorn', 'Eomer'),
+
 ("What is the name of Gandalf’s horse?", 'Shadowfax', 'Snowmane', 'Asfaloth', 'Brego'),
 ("In the book, The Fellowship of the Ring, who does Aragorn meet when he is guiding the hobbits from Bree to Rivendell?", 'Glorfindel', 'Arwen', 'Elladan', 'Elrond'),
 ("In the book, The Fellowship of the Ring, who was the first person at the council of Elrond who volunteered to take the ring to Mordor?", 'Bilbo', 'Frodo', 'Aragorn', 'Boromir'),
 ("What is the name ‘Elinor’ based on?", 'A flower', 'An elf', 'A tree', 'A place'),
-("Prompt: At the beginning of The Fellowship of the Ring book, what age was Bilbo celebrating at his birthday?", '111', '103', '92', '113'),
+("At the beginning of The Fellowship of the Ring book, what age was Bilbo celebrating at his birthday?", '111', '103', '92', '113'),
 
 ("Who is Gimli's father?", "Gloin", "Gatrie", "Glaive", "Gareth");
 
@@ -114,7 +120,12 @@ INSERT INTO c_question (`c_prompt`, `answer`) VALUES
 ("_____?  That’s not bad for a pointy eared elvish princeling.", "42"),
 ("_____ roots are not reached by the frost.", "Deep"),
 ("The ______  ______  ______  _____ his heart, as he looked up out of the forsaken land, and hope returned to him.", "beauty of it smote"),
-("Anyway, you need someone of intelligence on this mission. ______.  ______.", "Quest Thing");
+("Anyway, you need someone of intelligence on this mission. ______.  ______.", "Quest Thing"),
+("The ______ warriors were a group of women who fought with metal fans.","Kyoshi"),
+("Aang and his friends had to go through _____  Pass to get to Ba Sing Se. ","Serpent"),
+("_____,was born blind, but use to secretly compete in earth bending tournaments. ","Toph"),
+("Hama, a prisoner of war, taught Katara about _______ _______.","blood bending"),
+("Aang had a crush and eventually got with _______.","Katara");
 
 
 DROP TABLE IF EXISTS script_question;
