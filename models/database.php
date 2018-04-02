@@ -4,7 +4,7 @@
     $dsn = "mysql:host={$SERVER};dbname={$DATABASE}";
     $username = $USERNAME;
     $password = $PASSWORD;
-    $user = $USER;
+    $user = $USERNAME;
 
     try {
         $db = new PDO($dsn, $user, $password,

@@ -7,18 +7,20 @@ include_once('./models/loginDB.php');
     <h1 data-step="1" data-intro="This is a tooltip!">Welcome to Quizzy</h1>
     <p class="lead">This is the website for challenging quizzes and trivia.</p>
     <a class="btn btn-large btn-success" href="views/signup.php">Sign Up</a>
+    <br>
+    <br>
     <!-- <a class="btn btn-large btn-success" href="views/login.php">Log in</a> -->
     <form action='.' method='POST' id="login_form">
       <input type="hidden" name="action" value="show_login">
-      <button type="submit" form="login_form" class="btn btn-large">Log in</a>
+      <button type="submit" form="login_form" class="btn btn-large btn-info">Log in</a>
     </form>
 </div>
 
 <?php $questions = get_tf_questions(); ?>
 
-<div>
+<div class="container" style="display: inline-block">
   <table border=1>
-    <th>Prompt</th><th>Answer</th>
+    <th style="text-align: center">Prompt</th><th>Answer</th>
     <?php
     foreach ($questions as $q):
 ?>
@@ -33,20 +35,21 @@ if (isset($_SESSION['is_valid_user'])) {
   include('./views/add_forms.php');
 }
 ?>
-
+<div class="btn-group">
 <form action='.' method='POST' id="tf_form">
   <input type="hidden" name="action" value="take_tf_quiz">
-  <button type="submit" form="tf_form" class="btn btn-large">Take Quiz</a>
+  <button type="submit" form="tf_form" class="btn btn-large btn-primary">Take T/F Quiz</a>
 </form>
 
 <form action='.' method='POST' id="mc_form">
   <input type="hidden" name="action" value="take_mc_quiz">
-  <button type="submit" form="mc_form" class="btn btn-large">Take MC Quiz</a>
+  <button type="submit" form="mc_form" class="btn btn-large btn-warning">Take MC Quiz</a>
 </form>
 
 <form action='.' method='POST' id="script_form">
   <input type="hidden" name="action" value="take_script_quiz">
-  <button type="submit" form="script_form" class="btn btn-large">Take Advanced Quiz</a>
+  <button type="submit" form="script_form" class="btn btn-large btn-danger">Take Advanced Quiz</a>
 </form>
+</div>
 
 <?php include('views/footer.php'); ?>
