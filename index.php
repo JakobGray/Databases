@@ -102,6 +102,13 @@ switch ($action) {
         header("Location: .");
         break;
 
+      case 'add_c_question':
+        $c_prompt = filter_input(INPUT_POST, 'c_prompt');
+        $answer = filter_input(INPUT_POST, 'answer');
+        create_new_c_question($c_prompt, $answer);
+        header("Location: .");
+        break;
+
       case "take_tf_quiz":
         include('views/tf_quiz.php');
         break;

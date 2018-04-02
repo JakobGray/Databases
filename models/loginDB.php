@@ -84,6 +84,17 @@ function create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3) 
   $statement->closeCursor();
 }
 
+function create_new_c_question($c_prompt, $answer) {
+  global $db;
+  $query = 'INSERT INTO c_question (c_prompt, answer)
+          VALUES (:c_prompt, :answer)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':c_prompt', $c_prompt);
+  $statement->bindValue(':answer', $answer);
+  $statement->execute();
+  $statement->closeCursor();
+}
+
 function get_scripts() {
   global $db;
   $query = $db->prepare("SELECT script_text, answer FROM script_question");
