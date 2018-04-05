@@ -45,6 +45,7 @@ function spellCheck() {
 
     if (textEntered == originText) {
         clearInterval(interval);
+        prompt.className = 'idle';
         testWrapper.style.borderColor = "#429890";
     } else {
         if (textEntered == originTextMatch) {
