@@ -85,6 +85,22 @@ Quiz.prototype.render = function(container) {
     $("a[href='tweet-result']").prop('href', 'https://twitter.com/home?status=This%20is%20my%20score%20' + score + '%20https://www.animalfriends.org.uk/');
     $('#quiz-results').slideDown();
     $('#quiz button').hide();
+
+    // Save results to database
+    $.ajax({
+      type: 'post',
+      url: './models/saveResults.php',
+      data: {
+        quizID: 1,
+        username: 'user',
+        score: Math.ceil(percentage * 100),
+        duration: 0
+      },
+      success: function(data){
+        console.log("Results saved!");
+      }
+    });
+
   });
 
   // Add a listener on the questions container to listen for user select changes. This is for determining whether we can submit answers or not.

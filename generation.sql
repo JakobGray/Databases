@@ -198,7 +198,7 @@ CREATE TABLE score (
   username    varchar(100) NOT NULL UNIQUE,
   quizID      INT(11) NOT NULL,
   score       INT(11),
-  `time`      INT(11),
+  duration    INT(11),
   FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (quizID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (username, quizID)
