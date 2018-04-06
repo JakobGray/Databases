@@ -6,6 +6,7 @@
     $password = $PASSWORD;
     $user = $USERNAME;
     $userID = $USERID;
+    $_SESSION['userID'] = $userID;
 
     try {
         $db = new PDO($dsn, $user, $password,

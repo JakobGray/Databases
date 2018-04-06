@@ -10,7 +10,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <?php include_once("./config.php"); ?>
     </head>
 
     <body>
@@ -25,8 +24,8 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li style='display:inline-block'><a href="/~<?php echo $userID ?>/Databases/index.php">Article Bank</a></li>
-                        <li style='display:inline-block' id='step6'><a href="/~<?php echo $userID ?>/Databases/index.php">Manual Add</a></li>
-                        <li style='display:inline-block' id='step7'><a href="/~<?php echo $userID ?>/Databases/index.php">Batch Upload</a></li>
+                        <li style='display:inline-block' id='step6'><a href="/~<?php echo $_SESSION['userID'] ?>/Databases/index.php">Manual Add</a></li>
+                        <li style='display:inline-block' id='step7'><a href="/~<?php echo $_SESSION['userID'] ?>/Databases/index.php">Batch Upload</a></li>
                         <?php
                         //Search Feature, hide on login page
                         if (isset($_SESSION['is_valid_admin'])) {
