@@ -170,8 +170,6 @@ Chong:	Oh, it's a real legend. And it's as old as earthbending itself. [Begins s
 "The Cave of Two Lovers");
 
 
-
-
 DROP TABLE IF EXISTS game;
 CREATE TABLE game (
   GID        INT(11) NOT NULL AUTO_INCREMENT,
