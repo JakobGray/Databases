@@ -43,7 +43,7 @@ function get_user_info($username, $password) {
 
 function get_tf_questions() {
   global $db;
-  $query = $db->prepare("SELECT tf_prompt, answer FROM tf_question");
+  $query = $db->prepare("SELECT tf_prompt, answer FROM tf_question LIMIT 2");
   $query->execute();
   $result = $query->fetchAll(PDO::FETCH_ASSOC);
   $query->closeCursor();
