@@ -13,7 +13,8 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB;
 
 INSERT INTO `user` (`username`, `password`, `status`) VALUES
-('asdfasdf', '0115ea25dcd5e69157614c0492dda08e58cf4dcd', 'Regular');
+('asdfasdf', '0115ea25dcd5e69157614c0492dda08e58cf4dcd', 'Regular'),
+('user', '45f106ef4d5161e7aa38cf6c666607f25748b6ca', 'Regular');
 
 DROP TABLE IF EXISTS leaderboard;
 CREATE TABLE leaderboard (
@@ -169,8 +170,6 @@ Chong:	Oh, it's a real legend. And it's as old as earthbending itself. [Begins s
 "The Cave of Two Lovers");
 
 
-
-
 DROP TABLE IF EXISTS game;
 CREATE TABLE game (
   GID        INT(11) NOT NULL AUTO_INCREMENT,
@@ -194,6 +193,7 @@ CREATE TABLE have (
   PRIMARY KEY (GID, QID)
 ) ENGINE=INNODB;
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS plays;
 CREATE TABLE plays (
 	GID	INT(11) NOT NULL,
@@ -212,4 +212,15 @@ CREATE TABLE rank (
 	FOREIGN KEY (LID) REFERENCES leaderboard (LID) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
 	PRIMARY KEY (GID, LID, username)
+=======
+DROP TABLE IF EXISTS score;
+CREATE TABLE score (
+  username    varchar(100) NOT NULL UNIQUE,
+  quizID      INT(11) NOT NULL,
+  score       INT(11),
+  `time`      INT(11),
+  FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (quizID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  PRIMARY KEY (username, quizID)
+>>>>>>> d959a863bce1bdccf727645542c5467f14876377
 ) ENGINE=INNODB;
