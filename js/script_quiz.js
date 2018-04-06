@@ -18,6 +18,7 @@ const originText = answer;
 var timer = [0,0,0,0];
 var interval;
 var timerRunning = false;
+var pauseText = false;
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 function leadingZero(time) {
@@ -45,7 +46,7 @@ function spellCheck() {
 
     if (textEntered == originText) {
         clearInterval(interval);
-        text = "";
+        pauseText = true;
         testWrapper.style.borderColor = "#429890";
     } else {
         if (textEntered == originTextMatch) {
@@ -107,7 +108,7 @@ function type(text, screen) {
 		);
 
 		//only run this again if there are letters
-		if( text.length ) {
+		if( text.length & !pauseText) {
 			setTimeout(typer, 40);
 		} else {
 			prompt.className = 'idle';
