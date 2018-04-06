@@ -39,7 +39,7 @@
                     </ul>
                 </div>
             </div>
-            <li><a href="/Articles/index.php?action=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="/~<?php echo $userID ?>/Databases/index.php?action=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
         </nav>
 

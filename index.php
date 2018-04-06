@@ -69,6 +69,20 @@ switch ($action) {
         }
         break;
 
+    case 'logout':  // Don't remember you for next time
+    //        session_destroy();
+        // $name = session_name();
+        // $expire = strtotime('-1 year');
+        // $params = session_get_cookie_params();
+        // $path = $params['path'];
+        // $domain = $params['domain'];
+        // $secure = $params['secure'];
+        // $httponly = $params['httponly'];
+        // setcookie($name, '', $expire, $path, $domain, $secure, $httponly);
+        unset($_SESSION['is_valid_user']);
+        header("Location: .");
+        break;
+
     case 'home':
       include('views/welcome.php');
       break;
