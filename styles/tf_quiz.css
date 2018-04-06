@@ -6,10 +6,6 @@
   font: 16px Raleway, sans-serif;
 }
 
-body {
-  padding-top: 10%;
-}
-
 h1 {
   color: #65a5b7;
 }
@@ -60,11 +56,13 @@ h1 {
 
 #question label {
   display: block;
-  margin: 4px;
+  margin: auto;
+  margin-top: 5px;
   padding: 8px;
   background: #65a5b7;
   color: #000;
   min-width: 100px;
+  max-width: 500px;
   border-radius: 4px;
   cursor: pointer;
   line-height: 1.42857143;
@@ -81,6 +79,7 @@ h1 {
 
 #question label:hover {
   background-color: blue;
+  color: white;
   /* @brand-primary-darken; */
 }
 
@@ -93,7 +92,6 @@ h1 {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  top: 8px;
   left: 0px;
   background: none;
   padding-left: 8px;

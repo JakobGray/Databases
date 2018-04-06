@@ -10,7 +10,7 @@ Create a completion question
 <br>
 </div>
 <div class="panel-body">
-<img class="pull-right" style="width: 500px" src="http://susanfitzell.com/wp-content/uploads/2015/02/20121029-multichoicetest.jpg">
+<img class="pull-right" style="width: 300px" src="https://i.pinimg.com/originals/7e/dd/b1/7eddb1903b4d538420c9cdcd545f96fd.jpg">
 <form action="../index.php" method='POST' accept-charset="UTF-8">
   <input type="hidden" name="action" value="add_c_question">
   <div class="form-group" style="width: 600px">
