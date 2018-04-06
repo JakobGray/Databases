@@ -13,7 +13,8 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB;
 
 INSERT INTO `user` (`username`, `password`, `status`) VALUES
-('asdfasdf', '0115ea25dcd5e69157614c0492dda08e58cf4dcd', 'Regular');
+('asdfasdf', '0115ea25dcd5e69157614c0492dda08e58cf4dcd', 'Regular'),
+('user', '45f106ef4d5161e7aa38cf6c666607f25748b6ca', 'Regular');
 
 DROP TABLE IF EXISTS leaderboard;
 CREATE TABLE leaderboard (
