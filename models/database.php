@@ -5,6 +5,7 @@
     $username = $USERNAME;
     $password = $PASSWORD;
     $user = $USERNAME;
+    $userID = $USERID;
 
     try {
         $db = new PDO($dsn, $user, $password,

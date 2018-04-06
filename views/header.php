@@ -19,13 +19,13 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/Databases/index.php">Quizzy</a>
+                    <a class="navbar-brand" href="/~<?php echo $userID ?>/Databases/index.php">Quizzy</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li style='display:inline-block'><a href="/Articles/index.php">Article Bank</a></li>
-                        <li style='display:inline-block' id='step6'><a href="/Articles/index.php?action=show_manual_add">Manual Add</a></li>
-                        <li style='display:inline-block' id='step7'><a href="/Articles/index.php?action=show_dump_add">Batch Upload</a></li>
+                        <li style='display:inline-block'><a href="/~<?php echo $userID ?>/Databases/index.php">Article Bank</a></li>
+                        <li style='display:inline-block' id='step6'><a href="/~<?php echo $userID ?>/Databases/index.php">Manual Add</a></li>
+                        <li style='display:inline-block' id='step7'><a href="/~<?php echo $userID ?>/Databases/index.php">Batch Upload</a></li>
                         <?php
                         //Search Feature, hide on login page
                         if (isset($_SESSION['is_valid_admin'])) {
