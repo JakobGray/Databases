@@ -22,7 +22,7 @@ CREATE TABLE leaderboard (
   username  VARCHAR(100) REFERENCES user ON DELETE CASCADE,
   score     INT(11),
   primary key (LID, GID, username)
-);
+) ENGINE=INNODB;
 
 
 
@@ -33,7 +33,7 @@ CREATE TABLE tf_question (
   answer     VARCHAR(5),
   PRIMARY KEY (QID),
   CONSTRAINT CHK_tf CHECK (answer='True' OR answer='False')
-);
+) ENGINE=INNODB;
 
 INSERT INTO tf_question (`tf_prompt`, `answer`) VALUES
 ('The Starters from Gen 2 were Totodile, Cyndaquil, and Treecko.', 'False'),
@@ -72,7 +72,7 @@ CREATE TABLE mc_question (
 	option2		 VARCHAR(100),
   option3		 VARCHAR(100),
   PRIMARY KEY (QID)
-);
+) ENGINE=INNODB;
 
 INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`) VALUES
 ("Azula’s best friends are...", 'Mai and Ty Lee', 'Katara and Toph', 'Ozai and Iroh', 'Momo and Appa'),
@@ -111,7 +111,7 @@ CREATE TABLE c_question (
   c_prompt  VARCHAR(300),
   answer     VARCHAR(5),
   PRIMARY KEY (QID)
-);
+) ENGINE=INNODB;
 
 INSERT INTO c_question (`c_prompt`, `answer`) VALUES
 ("The ____ hosts the space gem in the first Avengers Movie", "Tesseract"),
@@ -149,7 +149,7 @@ CREATE TABLE script_question (
   script_text   TEXT,
   answer        VARCHAR(100),
   PRIMARY KEY (QID)
-);
+) ENGINE=INNODB;
 
 INSERT INTO script_question (`script_text`, `answer`) VALUES
 (
@@ -177,10 +177,19 @@ CREATE TABLE game (
   topic       VARCHAR(300),
   num_question    INT(11),
   PRIMARY KEY (GID)
-);
+) ENGINE=INNODB;
 
 INSERT INTO game (`topic`, `num_question`) VALUES
 ("Marvel", 4),
 ("Avatar the Last Airbender", 4),
 ("Lord of the Rings", 4),
 ("Pokemon", 4);
+
+DROP TABLE IF EXISTS have;
+CREATE TABLE have (
+  GID        INT(11) NOT NULL AUTO_INCREMENT,
+  QID        INT(11) NOT NULL,
+  FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (QID) REFERENCES mc_question (QID) ON DELETE CASCADE ON UPDATE CASCADE,
+  PRIMARY KEY (GID, QID)
+) ENGINE=INNODB;
