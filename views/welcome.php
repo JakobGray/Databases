@@ -16,7 +16,7 @@ include_once('./models/loginDB.php');
     </form>
 </div>
 
-<?php include('views/login.php');
+<?php include('views/login.php'); ?>
 <?php $questions = get_tf_questions(); ?>
 
 <div class="container" style="display: inline-block">
