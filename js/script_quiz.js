@@ -46,6 +46,7 @@ function spellCheck() {
 
     if (textEntered == originText) {
         clearInterval(interval);
+        console.log(timer[3])
         pauseText = true;
         testWrapper.style.borderColor = "#429890";
     } else {
