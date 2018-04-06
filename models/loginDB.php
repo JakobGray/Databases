@@ -43,7 +43,7 @@ function get_user_info($username, $password) {
 
 function get_tf_questions() {
   global $db;
-  $query = $db->prepare("SELECT tf_prompt, answer FROM tf_question");
+  $query = $db->prepare("SELECT tf_prompt, answer FROM tf_question LIMIT 2");
   $query->execute();
   $result = $query->fetchAll(PDO::FETCH_ASSOC);
   $query->closeCursor();
@@ -102,4 +102,17 @@ function get_scripts() {
   $result = $query->fetchAll(PDO::FETCH_ASSOC);
   $query->closeCursor();
   return $result;
+}
+
+function save_results($username, $quizID, $score, $time) {
+  global $db;
+  $query = 'INSERT INTO score (username, quizID, score, duration)
+          VALUES (:username, :quizID, :score, :duration)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':username', $username);
+  $statement->bindValue(':quizID', $username);
+  $statement->bindValue(':score', $score);
+  $statement->bindValue(':duration', $duration);
+  $statement->execute();
+  $statement->closeCursor();
 }
