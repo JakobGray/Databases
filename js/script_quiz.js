@@ -108,7 +108,7 @@ function type(text, screen) {
 		);
 
 		//only run this again if there are letters
-		if( text.length & !pauseText) {
+		if( text.length && !pauseText) {
 			setTimeout(typer, 40);
 		} else {
 			prompt.className = 'idle';
