@@ -1,5 +1,5 @@
 <?php
-include('loginDB.php');
+include('./loginDB.php');
 
 $array = filter_input_array(INPUT_GET);
 print_r($array);
