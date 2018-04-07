@@ -87,7 +87,7 @@ Quiz.prototype.render = function(container) {
     $('#quiz button').hide();
 
     // Save results to database
-    $.ajax({
+    $.post({
       type: 'POST',
       url: 'models/saveResults.php',
       data: {
