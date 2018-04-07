@@ -4,6 +4,6 @@ require('./ajaxDB.php');
 
 $array = filter_input_array(INPUT_GET);
 print_r($array);
-// save_results($array['username'], $array['quizID'], $array['score'], $array['duration']);
+save_results($array['username'], $array['quizID'], $array['score'], $array['duration']);
 
 ?>
