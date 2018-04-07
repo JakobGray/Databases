@@ -96,12 +96,7 @@ Quiz.prototype.render = function(container) {
     $.ajax({
       type: 'POST',
       url: 'http://plato.cs.virginia.edu/~jdg7sh/Databases/models/saveResults.php',
-      data: {
-        quizID: 1,
-        username: 'user',
-        score: Math.ceil(percentage * 100),
-        duration: 0
-      },
+      data: "{quizID: 1,username: 'user',score: Math.ceil(percentage * 100),duration: 0}",
       contentType: 'application/json; charset=utf-8',
       success: function(data) {
         console.log("Results saved!");
