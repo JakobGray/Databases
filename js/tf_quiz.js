@@ -88,15 +88,22 @@ Quiz.prototype.render = function(container) {
 
     // Save results to database
     $.ajax({
-      url: './models/saveResults.php',
+      type: 'POST',
+      url: 'models/saveResults.php',
       data: {
-        quizID: 1,
+        quizID: '1',
         username: 'user',
-        score: Math.ceil(percentage * 100),
-        duration: 0
+        score: 'Math.ceil(percentage * 100)',
+        duration: '0'
       },
-      success: function(data){
+      dataType: "json",
+
+      success: function(data) {
         console.log("Results saved!");
+        alert(data);
+      },
+      error: function(data) {
+        alert("Error saving results");
       }
     });
 
