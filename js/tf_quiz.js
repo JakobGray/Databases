@@ -105,7 +105,7 @@ Quiz.prototype.render = function(container) {
       },
       error: function(e) {
         alert(e);
-        console.log(e);
+        console.log(e.Message);
       }
     });
 
