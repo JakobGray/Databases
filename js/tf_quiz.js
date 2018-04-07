@@ -103,9 +103,9 @@ Quiz.prototype.render = function(container) {
         console.log("Results saved!");
         alert(data);
       },
-      error: function(e) {
-        alert(e);
-        console.log(e.Message);
+      error: function(xhr, status, error) {
+        var err = eval("(" + xhr.responseText + ")");
+        alert(err.Message);
       }
     });
 
