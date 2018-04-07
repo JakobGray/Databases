@@ -86,17 +86,18 @@ Quiz.prototype.render = function(container) {
     $('#quiz-results').slideDown();
     $('#quiz button').hide();
 
+    let savedata = {
+      'quizID': 1,
+      'username': 'user',
+      'score': Math.ceil(percentage * 100),
+      'duration': 0
+    }
     // Save results to database
-    $.post({
+    $.ajax({
       type: 'POST',
-      url: 'models/saveResults.php',
-      data: {
-        quizID: '1',
-        username: 'user',
-        score: 'Math.ceil(percentage * 100)',
-        duration: '0'
-      },
-      dataType: "json",
+      url: 'http://plato.cs.virginia.edu/~jdg7sh/Databases/models/saveResults.php',
+      data: JSON.stringify(savedata),
+      dataType: "application/json",
 
       success: function(data) {
         console.log("Results saved!");
