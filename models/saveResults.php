@@ -1,6 +1,6 @@
 <?php
 
-require('./ajaxDB.php');
+// require('./ajaxDB.php');
 
 $array = filter_input_array(INPUT_GET);
 print_r($array);
