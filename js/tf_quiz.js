@@ -102,8 +102,9 @@ Quiz.prototype.render = function(container) {
         console.log("Results saved!");
         alert(data);
       },
-      error: function(data) {
+      error: function(e) {
         alert("Error saving results");
+        console.log(e);
       }
     });
 
