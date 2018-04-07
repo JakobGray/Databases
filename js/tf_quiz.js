@@ -95,7 +95,7 @@ Quiz.prototype.render = function(container) {
     // Save results to database
     $.ajax({
       type: 'GET',
-      url: './models/saveResults.php/',
+      url: './models/saveResults.php',
       data: savedata,
       contentType: 'application/json; charset=utf-8',
       success: function(data) {
