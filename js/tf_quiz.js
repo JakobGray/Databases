@@ -104,7 +104,7 @@ Quiz.prototype.render = function(container) {
         alert(data);
       },
       error: function(e) {
-        alert("Error saving results");
+        alert(e);
         console.log(e);
       }
     });
