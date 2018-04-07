@@ -97,10 +97,10 @@ Quiz.prototype.render = function(container) {
       type: 'POST',
       url: 'http://plato.cs.virginia.edu/~jdg7sh/Databases/models/saveResults.php',
       data: {
-        'quizID': 1,
-        'username': 'user',
-        'score': Math.ceil(percentage * 100),
-        'duration': 0
+        quizID: 1,
+        username: 'user',
+        score: Math.ceil(percentage * 100),
+        duration: 0
       },
       contentType: 'application/json; charset=utf-8',
       success: function(data) {
