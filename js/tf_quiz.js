@@ -98,7 +98,6 @@ Quiz.prototype.render = function(container) {
       url: 'http://plato.cs.virginia.edu/~jdg7sh/Databases/models/saveResults.php',
       data: JSON.stringify(savedata),
       dataType: "application/json",
-      async:    false,
       success: function(data) {
         console.log("Results saved!");
         alert(data);
