@@ -105,6 +105,7 @@ Quiz.prototype.render = function(container) {
       contentType: 'application/json; charset=utf-8',
       success: function(data) {
         console.log("Results saved!");
+        console.log(data);
         alert(data);
       },
       error: function(xhr, status, error) {
