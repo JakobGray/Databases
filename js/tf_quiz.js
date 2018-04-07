@@ -104,8 +104,7 @@ Quiz.prototype.render = function(container) {
         alert(data);
       },
       error: function(xhr, status, error) {
-        var err = eval("(" + xhr.responseText + ")");
-        alert(err.Message);
+          alert(xhr.responseText);
       }
     });
 
