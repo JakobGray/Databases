@@ -1,5 +1,6 @@
 <?php
-include('./loginDB.php');
+require('../model/database.php');
+require('./loginDB.php');
 
 $array = filter_input_array(INPUT_GET);
 print_r($array);
