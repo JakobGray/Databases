@@ -96,7 +96,7 @@ Quiz.prototype.render = function(container) {
     $.ajax({
       type: 'GET',
       url: './models/saveResults.php/',
-      data: "{quizID: 1,username: 'user',score: Math.ceil(percentage * 100),duration: 0}",
+      data: savedata,
       contentType: 'application/json; charset=utf-8',
       success: function(data) {
         console.log("Results saved!");
