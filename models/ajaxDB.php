@@ -1,5 +1,5 @@
 <?php
-// require('./database.php');
+require('./database.php');
 
 function save_results($username, $quizID, $score, $time) {
   global $db;
