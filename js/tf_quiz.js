@@ -94,7 +94,7 @@ Quiz.prototype.render = function(container) {
     }
     // Save results to database
     $.ajax({
-      type: 'POST',
+      type: 'GET',
       url: 'http://plato.cs.virginia.edu/~jdg7sh/Databases/models/saveResults.php',
       data: JSON.stringify(savedata),
       contentType: 'application/json; charset=utf-8',
