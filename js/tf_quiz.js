@@ -88,7 +88,6 @@ Quiz.prototype.render = function(container) {
 
     // Save results to database
     $.ajax({
-      type: 'post',
       url: './models/saveResults.php',
       data: {
         quizID: 1,
