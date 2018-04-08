@@ -87,8 +87,8 @@ Quiz.prototype.render = function(container) {
     $('#quiz button').hide();
 
     let savedata = {
-      'quizID': 1,
-      'username': 'user',
+      'quizID': 2,
+      'username': 'user2',
       'score': Math.ceil(percentage * 100),
       'duration': 0
     }
