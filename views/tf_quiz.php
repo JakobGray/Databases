@@ -1,7 +1,9 @@
 <?php
 include('views/header.php');
 $quizID = filter_input(INPUT_POST, 'quizID');
-echo $_SESSION['username'];
+if ($_SESSION['is_valid_user']) {
+  $username = $_SESSION['username'];
+}
 $questions = get_tf_questions_specific($quizID);
 ?>
 <link rel="stylesheet" href="./styles/tf_quiz.css">
@@ -9,6 +11,7 @@ $questions = get_tf_questions_specific($quizID);
 <script type="text/javascript">
     var all_questions = <?php echo json_encode($questions) ?>;
     var quizID = <?php echo $quizID ?>;
+    var playerID = <?php echo (isset($_SESSION['username'])) ? $_SESSION['username'] : ''; ?>;
     console.log(JSON.stringify(all_questions, null, 2));
 </script>
 <script src="./js/tf_quiz.js"></script>

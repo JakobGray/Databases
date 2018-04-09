@@ -93,20 +93,21 @@ Quiz.prototype.render = function(container) {
       'duration': 0
     }
     // Save results to database
-    $.ajax({
-      type: 'GET',
-      url: './models/saveResults.php',
-      data: savedata,
-      contentType: 'application/json; charset=utf-8',
-      success: function(data) {
-        console.log("Results saved!");
-        console.log(data);
-      },
-      error: function(xhr, status, error) {
-          alert(xhr.responseText);
-      }
-    });
-
+    if (playerID != '') {
+      $.ajax({
+        type: 'GET',
+        url: './models/saveResults.php',
+        data: savedata,
+        contentType: 'application/json; charset=utf-8',
+        success: function(data) {
+          console.log("Results saved!");
+          console.log(data);
+        },
+        error: function(xhr, status, error) {
+            alert(xhr.responseText);
+        }
+      });
+    }
   });
 
   // Add a listener on the questions container to listen for user select changes. This is for determining whether we can submit answers or not.
