@@ -45,8 +45,7 @@ function get_tf_questions_specific($quizID) {
   global $db;
   $query = $db->prepare("SELECT tf_prompt, answer
                         FROM tf_question natural join have natural join game
-                        WHERE GID = :quizID
-                        LIMIT 2");
+                        WHERE GID = :quizID");
   $query->bindValue(':quizID', $quizID);
   $query->execute();
   $result = $query->fetchAll(PDO::FETCH_ASSOC);

@@ -169,21 +169,20 @@ Katara:	Is this real or a legend?
 Chong:	Oh, it's a real legend. And it's as old as earthbending itself. [Begins strumming his lute and singing.] Two lovers, forbidden from one another, the war divides their people and the mountain divides them apart! Built a path to be together! [Stops playing.] Yeah, I forget the next couple of lines, but then it goes ... [Resumes singing.] Secret tunnel! Secret tunnel! Through the mountains, secret, secret, secret, secret tunnel! Yeah!",
 "The Cave of Two Lovers");
 
-
+-- SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS game;
 CREATE TABLE game (
   GID        INT(11) NOT NULL AUTO_INCREMENT,
   name        VARCHAR(100),
   topic       VARCHAR(300),
-  num_question    INT(11),
   PRIMARY KEY (GID)
 ) ENGINE=INNODB;
 
-INSERT INTO game (`topic`, `num_question`) VALUES
-("Marvel", 4),
-("Avatar the Last Airbender", 4),
-("Lord of the Rings", 4),
-("Pokemon", 4);
+INSERT INTO game (`GID`, `name`, `topic`) VALUES
+(1, "Marvel", "Marvel"),
+(2, "Avatar the Last Airbender", "Avatar the Last Airbender"),
+(3, "Lord of the Rings", "Lord of the Rings"),
+(4, "Pokemon", "Pokemon");
 
 DROP TABLE IF EXISTS have;
 CREATE TABLE have (
