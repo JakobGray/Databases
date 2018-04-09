@@ -26,3 +26,20 @@ $(document).ready(function () {
 $(document).on('click', '.glyphicon-remove-circle', function () {
     $(this).parents('.panel').get(0).remove();
 });
+
+$(function () {
+        $('form.ajax').on('submit', function (e) {
+            $.ajax({
+                type: 'post',
+                url: 'pheno_insert.php',
+                data: $('form.ajax').serialize(),
+                success: function (data) {
+                    console.log('trying to send');
+//                    document.location = '.';
+//                    location.reload();
+                    alert(data);
+                }
+            });
+            e.preventDefault();
+        });
+    });
