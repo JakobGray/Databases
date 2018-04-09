@@ -58,6 +58,34 @@ function create_new_tf_question($prompt, $answer) {
   $statement->bindValue(':prompt', $prompt);
   $statement->bindValue(':answer', $answer);
   $statement->execute();
+
+  $last_id = $db->lastInsertId();
+  $statement->closeCursor();
+  return $last_id;
+}
+
+function create_new_tf_quiz($quizname, $topic) {
+  global $db;
+  $query = 'INSERT INTO game (name, topic)
+          VALUES (:quizname, :topic)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':quizname', $quizname);
+  $statement->bindValue(':topic', $topic);
+  $statement->execute();
+
+  $last_id = $db->lastInsertId();
+  $statement->closeCursor();
+  return $last_id;
+}
+
+function link_question($quizID, $questionID) {
+  global $db;
+  $query = 'INSERT INTO have (GID, QID)
+          VALUES (:quizID, :questionID)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':quizID', $quizID);
+  $statement->bindValue(':questionID', $questionID);
+  $statement->execute();
   $statement->closeCursor();
 }
 

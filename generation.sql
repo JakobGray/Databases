@@ -173,6 +173,7 @@ Chong:	Oh, it's a real legend. And it's as old as earthbending itself. [Begins s
 DROP TABLE IF EXISTS game;
 CREATE TABLE game (
   GID        INT(11) NOT NULL AUTO_INCREMENT,
+  name        VARCHAR(100),
   topic       VARCHAR(300),
   num_question    INT(11),
   PRIMARY KEY (GID)

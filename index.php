@@ -106,6 +106,18 @@ switch ($action) {
         header("Location: .");
         break;
 
+      case 'new_tf_quiz':
+        $prompt = filter_input(INPUT_POST, 'prompt');
+        $answer = filter_input(INPUT_POST, 'answer');
+        $quizname = filter_input(INPUT_POST, 'quizname');
+        $topic = filter_input(INPUT_POST, 'topic');
+
+        $quizID = create_new_tf_quiz($quizname, $topic);
+        $questionID = create_new_tf_question($prompt, $answer);
+        link_question($quizID, $questionID);
+        header("Location: .");
+        break;
+
       case 'add_mc_question':
         $prompt = filter_input(INPUT_POST, 'prompt');
         $answer = filter_input(INPUT_POST, 'answer');
