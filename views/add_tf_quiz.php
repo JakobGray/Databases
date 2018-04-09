@@ -1,5 +1,5 @@
 <?php include('./header.php'); ?>
-<script src="../js/new_quiz.js"></script>
+
 <br>
 <!-- <form action='../index.php' method='POST' accept-charset="UTF-8">
   <input type="hidden" name="action" value="new_tf_quiz">
@@ -33,7 +33,7 @@
 
   <label class="pull-left">Quiz Topic:</label>
   <input class="pull-left" type='text' name='topic' maxlength="300">
-  
+
     <div class="panel-group" id="accordion">
         <div class="panel panel-default template" id="panel" style="display: none">
             <div class="panel-heading">
@@ -87,4 +87,5 @@
     <input type="submit" value="submit" id="form_submit">
 </form>
 
+<script src="../js/new_quiz.js"></script>
 <?php include('./footer.php'); ?>
