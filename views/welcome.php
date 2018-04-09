@@ -34,7 +34,7 @@ include_once('./models/loginDB.php');
   <td><?php echo $q{'name'} ?></td>
   <td><?php echo $q{'topic'} ?></td>
   <td>
-    <form action='.' method='POST' id="tf_form">
+    <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_tf_quiz">
       <input type="hidden" name="quizID" value="<?php echo $q{'GID'} ?>">
       <button type="submit" form="tf_form" class="btn btn-large btn-primary">Play</a>
