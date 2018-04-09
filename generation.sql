@@ -215,7 +215,7 @@ CREATE TABLE rank (
 
 DROP TABLE IF EXISTS score;
 CREATE TABLE score (
-  username    varchar(100) NOT NULL UNIQUE,
+  username    varchar(100) NOT NULL,
   quizID      INT(11) NOT NULL,
   score       INT(11),
   duration    INT(11),

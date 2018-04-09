@@ -63,6 +63,15 @@ function get_tf_questions() {
   return $result;
 }
 
+function get_tf_quizzes() {
+  global $db;
+  $query = $db->prepare("SELECT GID, name, topic FROM game");
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
+}
+
 function create_new_tf_question($prompt, $answer) {
   global $db;
   $query = 'INSERT INTO tf_question (tf_prompt, answer)

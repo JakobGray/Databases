@@ -22,15 +22,25 @@ include_once('./models/loginDB.php');
 </div>
 
 <?php include('views/login.php'); ?>
-<?php $questions = get_tf_questions(); ?>
+<?php $quizzes = get_tf_quizzes(); ?>
 
 <div class="container" style="display: inline-block">
   <table border=1>
-    <th style="text-align: center">Prompt</th><th>Answer</th>
+    <th style="text-align: center">Name</th><th>Topic</th><th>Play</th>
     <?php
-    foreach ($questions as $q):
+    foreach ($quizzes as $q):
 ?>
-<tr><td><?php echo $q{'tf_prompt'} ?></td><td><?php echo $q{'answer'} ?></td></tr>
+<tr>
+  <td><?php echo $q{'name'} ?></td>
+  <td><?php echo $q{'topic'} ?></td>
+  <td>
+    <form action='.' method='POST' id="tf_form">
+      <input type="hidden" name="action" value="take_tf_quiz">
+      <input type="hidden" name="quizID" value="<?php echo $q{'GID'} ?>">
+      <button type="submit" form="tf_form" class="btn btn-large btn-primary">Play</a>
+    </form>
+  </td>
+</tr>
 
 <?php endforeach; ?>
   </table>
