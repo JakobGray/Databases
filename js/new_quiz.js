@@ -9,8 +9,6 @@ $(document).ready(function () {
         hash++;
         //Clone the form and place it just before the button's <p>. Also give its id a unique index
         var $newPanel = $template.clone().attr("id", "panel" + hash);
-        $newPanel.find(".collapse").removeClass("in");
-        $newPanel.find(".panel-collapse").attr("id", hash).addClass("collapse").removeClass("in");
 
         $("#accordion").append($newPanel.fadeIn());
         //Make the clone visible by changing CSS

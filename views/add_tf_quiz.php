@@ -39,14 +39,14 @@
             <div class="panel-heading">
                 <div class="panel-heading"> <span class="glyphicon glyphicon-remove-circle pull-right "></span>
                     <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        <a class="accordion-toggle">
                             Question
                         </a>
                     </h4>
                 </div>
             </div>
 
-            <div id="collapseThree" class="panel-collapse collapse">
+            <div id="collapseThree" class="panel">
                 <div class="panel-body">
                     <div class="form-group row">
                         <label for="prompt" class="col-sm-3 col-form-label">Prompt</label>
