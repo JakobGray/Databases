@@ -41,6 +41,19 @@ function get_user_info($username, $password) {
     return $name;
 }
 
+function get_tf_questions_specific($quizID) {
+  global $db;
+  $query = $db->prepare("SELECT tf_prompt, answer
+                        FROM tf_question natural join have natural join game
+                        WHERE GID = :quizID
+                        LIMIT 2");
+  $statement->bindValue(':quizID', $quizID)
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
+}
+
 function get_tf_questions() {
   global $db;
   $query = $db->prepare("SELECT tf_prompt, answer FROM tf_question LIMIT 2");

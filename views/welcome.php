@@ -44,6 +44,7 @@ if (isset($_SESSION['is_valid_user'])) {
 <div class="btn-group">
 <form action='.' method='POST' id="tf_form">
   <input type="hidden" name="action" value="take_tf_quiz">
+  <input type="hidden" name="quizID" value="5">
   <button type="submit" form="tf_form" class="btn btn-large btn-primary">Take T/F Quiz</a>
 </form>
 
