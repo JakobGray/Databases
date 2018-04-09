@@ -8,7 +8,7 @@ echo print_r($array);
 // $topic = $array['topic'];
 // $quizID = create_new_tf_quiz($quizname, $topic);
 
-$keys = array_keys($array);
+$keys = array_keys($array['prompt']);
 echo print_r($keys);
 // for ($i = 1; $i <= sizeof($_POST['prompt']); $i++) {
 //     $prompt = $array['prompt'][$i];
