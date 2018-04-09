@@ -88,7 +88,7 @@ Quiz.prototype.render = function(container) {
 
     let savedata = {
       'quizID': quizID,
-      'username': 'user2',
+      'username': playerID,
       'score': Math.ceil(percentage * 100),
       'duration': 0
     }
