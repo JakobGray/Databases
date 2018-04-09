@@ -101,7 +101,6 @@ Quiz.prototype.render = function(container) {
       success: function(data) {
         console.log("Results saved!");
         console.log(data);
-        alert(data);
       },
       error: function(xhr, status, error) {
           alert(xhr.responseText);
