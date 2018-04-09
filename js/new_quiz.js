@@ -4,6 +4,7 @@ $(document).ready(function () {
     var hash = 0;
     //When the button is clicked (or Enter is pressed while it's selected)
     $(".btn-add-panel").click(function () {
+      console.log("New Panel Added!")
         //Increment the unique index cause we are creating a new instance of the form
         hash++;
         //Clone the form and place it just before the button's <p>. Also give its id a unique index
