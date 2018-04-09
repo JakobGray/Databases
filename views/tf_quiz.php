@@ -1,7 +1,6 @@
 <?php
 include('views/header.php');
 $quizID = filter_input(INPUT_POST, 'quizID');
-echo $quizID;
 $questions = get_tf_questions_specific($quizID);
 ?>
 <link rel="stylesheet" href="./styles/tf_quiz.css">
