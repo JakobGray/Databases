@@ -21,7 +21,15 @@
 
   <input type='submit' value='Submit' class="btn btn-success pull-left">
 </form> -->
-
+<div class="input-group col-md-6">
+    <input id='phenotitle' type="text" class="ui-widget col-md-12" placeholder="Phenoterm">
+    <span class="input-group-btn">
+        <button class="btn btn-default btn-add-panel" type="submit">
+            <i class="glyphicon glyphicon-plus"></i>
+        </button>
+    </span>
+</div>
+<br><br>
 <form action='.' class="ajax" method="post">
     <div class="panel-group" id="accordion">
         <div class="panel panel-default template" id="pheno_panel" style="display: none">
