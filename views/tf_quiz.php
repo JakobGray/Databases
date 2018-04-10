@@ -1,15 +1,15 @@
 <?php
 include('views/header.php');
-$quizID = filter_input(INPUT_POST, 'quizID');
+$gameID = filter_input(INPUT_POST, 'gameID');
 $questions = get_tf_questions_specific($quizID);
-echo $quizID;
+echo $gameID;
 print_r($questions);
 ?>
 <link rel="stylesheet" href="./styles/tf_quiz.css">
 
 <script type="text/javascript">
     var all_questions = <?php echo json_encode($questions) ?>;
-    var quizID = <?php echo $quizID ?>;
+    var quizID = <?php echo $gameID ?>;
     var playerID = "<?php echo (isset($_SESSION['username'])) ? $_SESSION['username'] : ''; ?>";
     console.log(JSON.stringify(all_questions, null, 2));
 </script>
