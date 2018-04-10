@@ -32,7 +32,7 @@ include_once('./models/loginDB.php');
 ?>
 <tr>
   <td><?php echo $q{'name'} ?></td>
-  <td><?php echo $q{'topic'} ?></td>
+  <td><?php echo $q{'GID'} ?></td>
   <td>
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_tf_quiz">
