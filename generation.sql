@@ -36,13 +36,19 @@ CREATE TABLE tf_question (
   CONSTRAINT CHK_tf CHECK (answer='True' OR answer='False')
 ) ENGINE=INNODB;
 
-INSERT INTO tf_question (`tf_prompt`, `answer`) VALUES
+INSERT INTO tf_question (`QID`, `tf_prompt`, `answer`) VALUES
+-- Avatar questions (GID = 2)
+(1, 'Zuko was the prince of the Fire nation', 'True'),
+(2, "Sokka was a better water bender than his sister,  Katara. ","False"),
+(3, "Princess Yue of the water tribe was very ill as a child, but was saved by Moon Spirit. ","True"),
+(4, "Ba Sing Se is a small Earth bending village that has no protection. ","False"),
+(5, "Roku, the avatar before Aang, started out as an fire-bender.","True"),
+
 ('The Starters from Gen 2 were Totodile, Cyndaquil, and Treecko.', 'False'),
 ('During his adventures in Hoenn, Ash Ketchum caught a Torkoal for his team.','True'),
 (" N was the final boss of Pokemon Black and Pokemon White.", "False"),
 ("In Pokemon Gold and Pokemon Silver, you explore Kanto and Johto regions.", "True"),
 ("The champion of the Sinnoh region is Cynthia", "True"),
-('Zuko was the prince of the Fire nation', 'True'),
 ("Thor’s lightning charged Iron Man's armor to 400% in the first Avengers Movie.", 'True'),
 ("Bucky killed T'Chaka (T'Challa’s Father) in Captain America: Civil War.", 'False'),
 ('In the book The Return of the King, Frodo is captured by orcs in Mordor.', 'False'),
@@ -56,12 +62,7 @@ INSERT INTO tf_question (`tf_prompt`, `answer`) VALUES
 ("In the book, Frodo sold Bag End before taking the ring to Rivendell.", 'True'),
 ("In the book, after completing the quest of the ring, Sam became the mayor of the Shire.", 'True'),
 ("In the book, Boromir blows the horn of Gondor as the Fellowship sets off from Rivendell.", 'True'),
-('In The Lord of the Rings books, Faramir takes Frodo and Sam to Osgiliath before he lets them continue on their quest.', 'False'),
-("Rok, the avatar before, Aang started out as an fire-bender.","True"),
-("Sakka was a better water bender than his sister,  Katara. ","False "),
-("Princess Yue of the water tribe was very ill as a child, but was saved by Moon Spirit. ","True"),
-("Ba Sing Se is a small Earth bending village that has no protection. ","False")
-;
+('In The Lord of the Rings books, Faramir takes Frodo and Sam to Osgiliath before he lets them continue on their quest.', 'False');
 
 
 DROP TABLE IF EXISTS mc_question;
@@ -180,7 +181,7 @@ CREATE TABLE game (
 
 INSERT INTO game (`GID`, `name`, `topic`) VALUES
 (1, "Marvel", "Marvel"),
-(2, "Avatar the Last Airbender", "Avatar the Last Airbender"),
+(2, "The Characters of Avatar", "Avatar the Last Airbender"),
 (3, "Lord of the Rings", "Lord of the Rings"),
 (4, "Pokemon", "Pokemon");
 
@@ -188,10 +189,18 @@ DROP TABLE IF EXISTS have;
 CREATE TABLE have (
   GID        INT(11) NOT NULL,
   QID        INT(11) NOT NULL,
-  FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (QID) REFERENCES mc_question (QID) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (QID) REFERENCES tf_question (QID) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (GID, QID)
 ) ENGINE=INNODB;
+
+INSERT INTO have (`GID`, `QID`) VALUES
+-- Avatar questions (GID:2; QID:1-5)
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(2, 5);
 
 DROP TABLE IF EXISTS plays;
 CREATE TABLE plays (
@@ -218,7 +227,7 @@ CREATE TABLE score (
   quizID      INT(11) NOT NULL,
   score       INT(11),
   duration    INT(11),
-  FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (quizID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (quizID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (username, quizID)
 ) ENGINE=INNODB;
