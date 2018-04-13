@@ -2,6 +2,7 @@ USE CS4750kx3jj;
 GRANT SELECT, INSERT
 ON CS4750kx3jj.* TO 'CS4750kx3jj'@'%';
 
+SET FOREIGN_KEY_CHECKS=0;
 -- create the users and grant priveleges to those users
 DROP TABLE IF EXISTS user;
 CREATE TABLE `user` (
@@ -16,7 +17,6 @@ INSERT INTO `user` (`username`, `password`, `status`) VALUES
 ('user', '45f106ef4d5161e7aa38cf6c666607f25748b6ca', 'Regular');
 
 -- UNCOMMENT THE COMMENT STUFF --> THIS WILL BYPASS THE FORGIGN KEYS
--- SET FOREIGN_KEY_CHECKS=0;
 
 -- ALL OF THE THE TYPES OF QUESTIONS
 DROP TABLE IF EXISTS tf_question;
@@ -276,14 +276,14 @@ CREATE TABLE game (
   GID        INT(11) NOT NULL AUTO_INCREMENT,
   name        VARCHAR(100),
   topic       VARCHAR(300),
+  type        VARCHAR(100),
   PRIMARY KEY (GID)
 ) ENGINE=INNODB;
 
-INSERT INTO game (`GID`, `name`, `topic`) VALUES
-(1, "Marvel", "Marvel"),
-(2, "The Characters of Avatar", "Avatar the Last Airbender"),
-(3, "Lord of the Rings", "Lord of the Rings"),
-(4, "Pokemon", "Pokemon");
+INSERT INTO game (`GID`, `name`, `topic`, type) VALUES
+(1, "Marvel easy", "Marvel", "tf_question"),
+(2, "Marvel medium", "Marvel", "mc_question"),
+(3, "Marvel hard", "Marvel", "c_question");
 
 DROP TABLE IF EXISTS have;
 CREATE TABLE have (
@@ -296,63 +296,21 @@ CREATE TABLE have (
 
 INSERT INTO have (`GID`, `QID`) VALUES
 -- Avatar questions (GID:2; QID:1-5)
+(1, 7),
 (1, 8),
-(1, 28),
-(1, 30),
-(1, 52),
-(1, 48),
-(2, 27),
-(2, 49),
-(2, 48),
+(1, 10),
+(1, 11),
+(1, 12),
 (2, 26),
-(2, 7),
-(3, 8),
-(3, 10),
-(3, 28),
+(2, 27),
+(2, 28),
+(2, 29),
+(2, 30),
+(3, 48),
+(3, 49),
 (3, 50),
-(3, 11),
-(4, 12),
-(4, 29),
-(4, 30),
-(4, 51),
-(4, 52),
-(5, 26),
-(5, 12),
-(5, 30),
-(5, 48),
-(5, 11),
-(6,6),
-(6,66),
-(6,23),
-(6,34),
-(6,25),
-(6,69),
-(7,65),
-(7,32),
-(7,34),
-(7,35),
-(7,24),
-(7,21),
-(7,25),
-(8,25),
-(8,21),
-(8,33),
-(8,69),
-(8,67),
-(8,6),
-(9,32),
-(9,25),
-(9,23),
-(9,68),
-(9,21),
-(9,67),
-(10,22),
-(10,65),
-(10,69),
-(10,32),
-(10,34),
-(10,68)
-;
+(3, 51),
+(3, 52);
 
 DROP TABLE IF EXISTS plays;
 CREATE TABLE plays (
@@ -371,7 +329,7 @@ CREATE TABLE rank (
   -- FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
   -- FOREIGN KEY (LID) REFERENCES leaderboard (LID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
-  PRIMARY KEY (GID, LID, username);
+  PRIMARY KEY (GID, LID, username));
 
 DROP TABLE IF EXISTS score;
 CREATE TABLE score (
@@ -382,7 +340,4 @@ CREATE TABLE score (
   FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (username, GID)
-  -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
-  -- FOREIGN KEY (quizID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
-  PRIMARY KEY (username, quizID)
 ) ENGINE=INNODB;
