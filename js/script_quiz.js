@@ -60,7 +60,7 @@ function spellCheck() {
 
 // Start the timer:
 function start() {
-    testWrapper.prop('readonly', false);
+    testArea.prop('readonly', false);
     let textEnterdLength = testArea.value.length;
     if (textEnterdLength === 0 && !timerRunning) {
         timerRunning = true;
