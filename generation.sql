@@ -280,7 +280,7 @@ CREATE TABLE game (
   PRIMARY KEY (GID)
 ) ENGINE=INNODB;
 
-INSERT INTO game (`GID`, `name`, `topic`) VALUES
+INSERT INTO game (`GID`, `name`, `topic`, type) VALUES
 (1, "Marvel easy", "Marvel", "tf_question"),
 (2, "Marvel medium", "Marvel", "mc_question"),
 (3, "Marvel hard", "Marvel", "c_question");
@@ -310,8 +310,7 @@ INSERT INTO have (`GID`, `QID`) VALUES
 (3, 49),
 (3, 50),
 (3, 51),
-(3, 52),
-;
+(3, 52);
 
 DROP TABLE IF EXISTS plays;
 CREATE TABLE plays (
