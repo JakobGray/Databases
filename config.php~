@@ -1,0 +1,9 @@
+<?php
+$SERVER = 'stardock.cs.virginia.edu';
+$USERNAME = 'CS4750kx3jj';
+$PASSWORD = 'Wh4tth3fuck!';
+$DATABASE = 'CS4750kx3jj';
+$USERID = 'kx3jj';
+$USER = 'CS4750kx3jja';
+$USERPASS = 'Wh4tth3fuck!';
+?>

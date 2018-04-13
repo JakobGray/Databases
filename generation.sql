@@ -18,7 +18,7 @@ INSERT INTO `user` (`username`, `password`, `status`) VALUES
 -- UNCOMMENT THE COMMENT STUFF --> THIS WILL BYPASS THE FORGIGN KEYS
 -- SET FOREIGN_KEY_CHECKS=0;
 
---ALL OF THE THE TYPES OF QUESTIONS
+-- ALL OF THE THE TYPES OF QUESTIONS
 DROP TABLE IF EXISTS tf_question;
 CREATE TABLE tf_question (
   QID        INT(11) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE tf_question (
   PRIMARY KEY (QID),
   CONSTRAINT CHK_tf CHECK (answer='True' OR answer='False')
 ) ENGINE=INNODB;
-INSERT INTO `CS4750srs5sb`.`tf_question` (`QID`, `tf_prompt`, `answer`) VALUES 
+INSERT INTO `tf_question` (`QID`, `tf_prompt`, `answer`) VALUES
 ('1', 'The Starters from Gen 2 were Totodile, Cyndaquil, and Treecko.', 'False'),
 ('2','During his adventures in Hoenn, Ash Ketchum caught a Torkoal for his team.','True'),
 ('3', "N was the final boss of Pokemon Black and Pokemon White.", "False"),
@@ -64,7 +64,7 @@ CREATE TABLE mc_question (
   option3    VARCHAR(100),
   PRIMARY KEY (QID)
 ) ENGINE=INNODB;
-INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`) VALUES
+INSERT INTO mc_question (QID, mc_prompt, answer, option1, option2, option3) VALUES
 ('25',"Azula’s best friends are...", 'Mai and Ty Lee', 'Katara and Toph', 'Ozai and Iroh', 'Momo and Appa'),
 ('26',"After Flash Thompson finished bullying Peter Parker, he became ...", "Agent Venom", "Hobgoblin", "Spider Man", "Crime Master"),
 ('27',"Spider Man's parents are ...", "Richard and Mary", "Frank and Alice", "Bruce and Katherine", "William and Liz"),
@@ -153,11 +153,11 @@ Chong:  There's an old story about a secret pass right through the mountains.
 Katara: Is this real or a legend?
 Chong:  Oh, it's a real legend. And it's as old as earthbending itself. [Begins strumming his lute and singing.] Two lovers, forbidden from one another, the war divides their people and the mountain divides them apart! Built a path to be together! [Stops playing.] Yeah, I forget the next couple of lines, but then it goes ... [Resumes singing.] Secret tunnel! Secret tunnel! Through the mountains, secret, secret, secret, secret tunnel! Yeah!",
 "The Cave of Two Lovers");
---PARENT QUESTION 
+-- PARENT QUESTION
 DROP TABLE IF EXISTS question;
 CREATE TABLE question (
   QID           INT(11) NOT NULL AUTO_INCREMENT,
-  script_text   TEXT,
+  prompt        TEXT,
   answer        VARCHAR(100),
   PRIMARY KEY (QID)
 ) ENGINE=INNODB;
@@ -252,9 +252,9 @@ Sokka: smacks his forehead in frustration.
 Chong:  There's an old story about a secret pass right through the mountains.
 Katara: Is this real or a legend?
 Chong:  Oh, it's a real legend. And it's as old as earthbending itself. [Begins strumming his lute and singing.] Two lovers, forbidden from one another, the war divides their people and the mountain divides them apart! Built a path to be together! [Stops playing.] Yeah, I forget the next couple of lines, but then it goes ... [Resumes singing.] Secret tunnel! Secret tunnel! Through the mountains, secret, secret, secret, secret tunnel! Yeah!",
-"The Cave of Two Lovers")ENGINE=INNODB;
+"The Cave of Two Lovers");
 
---PARENT CHILD RELATIONSHIP -----
+-- PARENT CHILD RELATIONSHIP -----
 ALTER TABLE `tf_question` ADD CONSTRAINT `tf_child` FOREIGN KEY (`QID`) REFERENCES `CS4750srs5sb`.`question`(`QID`) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE `c_question` ADD CONSTRAINT `c_child` FOREIGN KEY (`QID`) REFERENCES `CS4750srs5sb`.`question`(`QID`) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE `mc_question` ADD CONSTRAINT `mc_child` FOREIGN KEY (`QID`) REFERENCES `CS4750srs5sb`.`question`(`QID`) ON DELETE CASCADE ON UPDATE CASCADE;
@@ -296,18 +296,70 @@ CREATE TABLE have (
 
 INSERT INTO have (`GID`, `QID`) VALUES
 -- Avatar questions (GID:2; QID:1-5)
-(2, 1),
-(2, 2),
-(2, 3),
-(2, 4),
-(2, 5);
+(1, 8),
+(1, 28),
+(1, 30),
+(1, 52),
+(1, 48),
+(2, 27),
+(2, 49),
+(2, 48),
+(2, 26),
+(2, 7),
+(3, 8),
+(3, 10),
+(3, 28),
+(3, 50),
+(3, 11),
+(4, 12),
+(4, 29),
+(4, 30),
+(4, 51),
+(4, 52),
+(5, 26),
+(5, 12),
+(5, 30),
+(5, 48),
+(5, 11),
+(6,6),
+(6,66),
+(6,23),
+(6,34),
+(6,25),
+(6,69),
+(7,65),
+(7,32),
+(7,34),
+(7,35),
+(7,24),
+(7,21),
+(7,25),
+(8,25),
+(8,21),
+(8,33),
+(8,69),
+(8,67),
+(8,6),
+(9,32),
+(9,25),
+(9,23),
+(9,68),
+(9,21),
+(9,67),
+(10,22),
+(10,65),
+(10,69),
+(10,32),
+(10,34),
+(10,68)
+;
 
 DROP TABLE IF EXISTS plays;
 CREATE TABLE plays (
   GID INT(11) NOT NULL,
   username  VARCHAR(100) NOT NULL,
-  --FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
-  --FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (GID, username)
 ) ENGINE=INNODB;
 
@@ -316,18 +368,24 @@ CREATE TABLE rank (
   GID INT(11) NOT NULL,
   LID INT(11) NOT NULL,
   username  VARCHAR(100) NOT NULL,
-  --FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
-  --FOREIGN KEY (LID) REFERENCES leaderboard (LID) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (LID) REFERENCES leaderboard (LID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (GID, LID, username)
 
 DROP TABLE IF EXISTS score;
 CREATE TABLE score (
   username    varchar(100) NOT NULL,
-  quizID      INT(11) NOT NULL,
+  GID      INT(11) NOT NULL,
   score       INT(11),
   duration    INT(11),
+<<<<<<< HEAD
+  FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  PRIMARY KEY (username, GID)
+=======
   -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   -- FOREIGN KEY (quizID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (username, quizID)
+>>>>>>> 65d43d65875e5ab3c491875cfaeeae9fb4355f40
 ) ENGINE=INNODB;
