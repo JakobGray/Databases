@@ -27,7 +27,7 @@ CREATE TABLE tf_question (
   PRIMARY KEY (QID),
   CONSTRAINT CHK_tf CHECK (answer='True' OR answer='False')
 ) ENGINE=INNODB;
-INSERT INTO `CS4750srs5sb`.`tf_question` (`QID`, `tf_prompt`, `answer`) VALUES
+INSERT INTO `tf_question` (`QID`, `tf_prompt`, `answer`) VALUES
 ('1', 'The Starters from Gen 2 were Totodile, Cyndaquil, and Treecko.', 'False'),
 ('2','During his adventures in Hoenn, Ash Ketchum caught a Torkoal for his team.','True'),
 ('3', "N was the final boss of Pokemon Black and Pokemon White.", "False"),
