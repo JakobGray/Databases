@@ -296,11 +296,31 @@ CREATE TABLE have (
 
 INSERT INTO have (`GID`, `QID`) VALUES
 -- Avatar questions (GID:2; QID:1-5)
-(2, 1),
-(2, 2),
-(2, 3),
-(2, 4),
-(2, 5);
+(1, 8),
+(1, 28),
+(1, 30),
+(1, 52),
+(1, 48),
+(2, 27),
+(2, 49),
+(2, 48),
+(2, 26),
+(2, 7),
+(3, 8),
+(3, 10),
+(3, 28),
+(3, 50),
+(3, 11),
+(4, 12),
+(4, 29),
+(4, 30),
+(4, 51),
+(4, 52),
+(5, 26),
+(5, 12),
+(5, 30),
+(5, 48),
+(5, 11);
 
 DROP TABLE IF EXISTS plays;
 CREATE TABLE plays (
@@ -327,7 +347,13 @@ CREATE TABLE score (
   GID      INT(11) NOT NULL,
   score       INT(11),
   duration    INT(11),
+<<<<<<< HEAD
   FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (username, GID)
+=======
+  -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (quizID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  PRIMARY KEY (username, quizID)
+>>>>>>> 65d43d65875e5ab3c491875cfaeeae9fb4355f40
 ) ENGINE=INNODB;
