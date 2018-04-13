@@ -53,6 +53,20 @@ function create_new_tf_quiz($quizname, $topic) {
   return $last_id;
 }
 
+function create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3) {
+  global $db;
+  $query = 'INSERT INTO mc_question (mc_prompt, answer, option1, option2, option3)
+          VALUES (:prompt, :answer, :option1, :option2, :option3)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':prompt', $prompt);
+  $statement->bindValue(':answer', $answer);
+  $statement->bindValue(':option1', $choice1);
+  $statement->bindValue(':option2', $choice2);
+  $statement->bindValue(':option3', $choice3);
+  $statement->execute();
+  $statement->closeCursor();
+}
+
 function link_question($quizID, $questionID) {
   global $db;
   $query = 'INSERT INTO have (GID, QID)
