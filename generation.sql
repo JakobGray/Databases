@@ -282,11 +282,8 @@ CREATE TABLE game (
 
 INSERT INTO game (`GID`, `name`, `topic`) VALUES
 (1, "Marvel easy", "Marvel", "tf_question"),
-(1, "Marvel medium", "Marvel", "mc_question"),
-(1, "Marvel hard", "Marvel", "c_question"),
-(2, "The Characters of Avatar", "Avatar the Last Airbender"),
-(3, "Lord of the Rings", "Lord of the Rings"),
-(4, "Pokemon", "Pokemon");
+(2, "Marvel medium", "Marvel", "mc_question"),
+(3, "Marvel hard", "Marvel", "c_question");
 
 DROP TABLE IF EXISTS have;
 CREATE TABLE have (
