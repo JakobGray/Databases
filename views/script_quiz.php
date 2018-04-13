@@ -34,7 +34,7 @@ $scripts = get_scripts();
             </div><!-- #origin-text -->
 
             <div class="test-wrapper">
-                <textarea id="test-area" name="textarea" rows="6" placeholder="The clock starts when you start typing."></textarea>
+                <textarea readonly id="test-area" name="textarea" rows="6" placeholder="The clock starts when you start typing."></textarea>
             </div><!-- .test-wrapper -->
 
             <div class="meta">
