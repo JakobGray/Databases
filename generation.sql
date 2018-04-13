@@ -18,7 +18,7 @@ INSERT INTO `user` (`username`, `password`, `status`) VALUES
 -- UNCOMMENT THE COMMENT STUFF --> THIS WILL BYPASS THE FORGIGN KEYS
 -- SET FOREIGN_KEY_CHECKS=0;
 
---ALL OF THE THE TYPES OF QUESTIONS
+-- ALL OF THE THE TYPES OF QUESTIONS
 DROP TABLE IF EXISTS tf_question;
 CREATE TABLE tf_question (
   QID        INT(11) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE tf_question (
   PRIMARY KEY (QID),
   CONSTRAINT CHK_tf CHECK (answer='True' OR answer='False')
 ) ENGINE=INNODB;
-INSERT INTO `CS4750srs5sb`.`tf_question` (`QID`, `tf_prompt`, `answer`) VALUES 
+INSERT INTO `CS4750srs5sb`.`tf_question` (`QID`, `tf_prompt`, `answer`) VALUES
 ('1', 'The Starters from Gen 2 were Totodile, Cyndaquil, and Treecko.', 'False'),
 ('2','During his adventures in Hoenn, Ash Ketchum caught a Torkoal for his team.','True'),
 ('3', "N was the final boss of Pokemon Black and Pokemon White.", "False"),
@@ -153,7 +153,7 @@ Chong:  There's an old story about a secret pass right through the mountains.
 Katara: Is this real or a legend?
 Chong:  Oh, it's a real legend. And it's as old as earthbending itself. [Begins strumming his lute and singing.] Two lovers, forbidden from one another, the war divides their people and the mountain divides them apart! Built a path to be together! [Stops playing.] Yeah, I forget the next couple of lines, but then it goes ... [Resumes singing.] Secret tunnel! Secret tunnel! Through the mountains, secret, secret, secret, secret tunnel! Yeah!",
 "The Cave of Two Lovers");
---PARENT QUESTION 
+-- PARENT QUESTION
 DROP TABLE IF EXISTS question;
 CREATE TABLE question (
   QID           INT(11) NOT NULL AUTO_INCREMENT,
@@ -254,7 +254,7 @@ Katara: Is this real or a legend?
 Chong:  Oh, it's a real legend. And it's as old as earthbending itself. [Begins strumming his lute and singing.] Two lovers, forbidden from one another, the war divides their people and the mountain divides them apart! Built a path to be together! [Stops playing.] Yeah, I forget the next couple of lines, but then it goes ... [Resumes singing.] Secret tunnel! Secret tunnel! Through the mountains, secret, secret, secret, secret tunnel! Yeah!",
 "The Cave of Two Lovers")ENGINE=INNODB;
 
---PARENT CHILD RELATIONSHIP -----
+-- PARENT CHILD RELATIONSHIP -----
 ALTER TABLE `tf_question` ADD CONSTRAINT `tf_child` FOREIGN KEY (`QID`) REFERENCES `CS4750srs5sb`.`question`(`QID`) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE `c_question` ADD CONSTRAINT `c_child` FOREIGN KEY (`QID`) REFERENCES `CS4750srs5sb`.`question`(`QID`) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE `mc_question` ADD CONSTRAINT `mc_child` FOREIGN KEY (`QID`) REFERENCES `CS4750srs5sb`.`question`(`QID`) ON DELETE CASCADE ON UPDATE CASCADE;
@@ -306,8 +306,8 @@ DROP TABLE IF EXISTS plays;
 CREATE TABLE plays (
   GID INT(11) NOT NULL,
   username  VARCHAR(100) NOT NULL,
-  --FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
-  --FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (GID, username)
 ) ENGINE=INNODB;
 
@@ -316,18 +316,18 @@ CREATE TABLE rank (
   GID INT(11) NOT NULL,
   LID INT(11) NOT NULL,
   username  VARCHAR(100) NOT NULL,
-  --FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
-  --FOREIGN KEY (LID) REFERENCES leaderboard (LID) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  -- FOREIGN KEY (LID) REFERENCES leaderboard (LID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (GID, LID, username)
 
 DROP TABLE IF EXISTS score;
 CREATE TABLE score (
   username    varchar(100) NOT NULL,
-  quizID      INT(11) NOT NULL,
+  GID      INT(11) NOT NULL,
   score       INT(11),
   duration    INT(11),
-  -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
-  -- FOREIGN KEY (quizID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
-  PRIMARY KEY (username, quizID)
+  FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
+  PRIMARY KEY (username, GID)
 ) ENGINE=INNODB;
