@@ -64,7 +64,7 @@ CREATE TABLE mc_question (
   option3    VARCHAR(100),
   PRIMARY KEY (QID)
 ) ENGINE=INNODB;
-INSERT INTO mc_question (`mc_prompt`, `answer`, `option1`, `option2`, `option3`) VALUES
+INSERT INTO mc_question (QID, mc_prompt, answer, option1, option2, option3) VALUES
 ('25',"Azula’s best friends are...", 'Mai and Ty Lee', 'Katara and Toph', 'Ozai and Iroh', 'Momo and Appa'),
 ('26',"After Flash Thompson finished bullying Peter Parker, he became ...", "Agent Venom", "Hobgoblin", "Spider Man", "Crime Master"),
 ('27',"Spider Man's parents are ...", "Richard and Mary", "Frank and Alice", "Bruce and Katherine", "William and Liz"),
@@ -320,7 +320,39 @@ INSERT INTO have (`GID`, `QID`) VALUES
 (5, 12),
 (5, 30),
 (5, 48),
-(5, 11);
+(5, 11),
+(6,6),
+(6,66),
+(6,23),
+(6,34),
+(6,25),
+(6,69),
+(7,65),
+(7,32),
+(7,34),
+(7,35),
+(7,24),
+(7,21),
+(7,25),
+(8,25),
+(8,21),
+(8,33),
+(8,69),
+(8,67),
+(8,6),
+(9,32),
+(9,25),
+(9,23),
+(9,68),
+(9,21),
+(9,67),
+(10,22),
+(10,65),
+(10,69),
+(10,32),
+(10,34),
+(10,68)
+;
 
 DROP TABLE IF EXISTS plays;
 CREATE TABLE plays (
