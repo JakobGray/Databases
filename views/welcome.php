@@ -60,7 +60,7 @@ include_once('./models/quizDB.php');
   <td><?php echo $q{'topic'} ?></td>
   <td>
     <form action='.' method='POST'>
-      <input type="hidden" name="action" value="take_tf_quiz">
+      <input type="hidden" name="action" value="take_mc_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
       <button type="submit" class="btn btn-large btn-primary">Play</a>
     </form>
