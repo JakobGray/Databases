@@ -1,6 +1,7 @@
 <?php
 include('views/header.php');
 include_once('./models/loginDB.php');
+include_once('./models/quizDB.php');
 ?>
 
 <div class="jumbotron">
@@ -22,13 +23,37 @@ include_once('./models/loginDB.php');
 </div>
 
 <?php include('views/login.php'); ?>
-<?php $quizzes = get_tf_quizzes(); ?>
+<?php $tf_quizzes = get_quizzes('tf'); ?>
 
 <div class="container" style="display: inline-block">
   <table border=1>
     <th style="text-align: center">Name</th><th>Topic</th><th>Play</th>
     <?php
-    foreach ($quizzes as $q):
+    foreach ($tf_quizzes as $q):
+?>
+<tr>
+  <td><?php echo $q{'name'} ?></td>
+  <td><?php echo $q{'topic'} ?></td>
+  <td>
+    <form action='.' method='POST'>
+      <input type="hidden" name="action" value="take_tf_quiz">
+      <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
+      <button type="submit" class="btn btn-large btn-primary">Play</a>
+    </form>
+  </td>
+</tr>
+
+<?php endforeach; ?>
+  </table>
+</div>
+
+<?php $mc_quizzes = get_quizzes('mc'); ?>
+
+<div class="container" style="display: inline-block">
+  <table border=1>
+    <th style="text-align: center">Name</th><th>Topic</th><th>Play</th>
+    <?php
+    foreach ($mc_quizzes as $q):
 ?>
 <tr>
   <td><?php echo $q{'name'} ?></td>
