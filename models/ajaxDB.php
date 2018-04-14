@@ -14,7 +14,7 @@ $db->query("SET CHARACTER SET utf8");
 
 function save_results($username, $quizID, $score, $duration) {
   global $db;
-  $query = 'INSERT INTO score (username, quizID, score, duration)
+  $query = 'INSERT INTO score (username, GID, score, duration)
           VALUES (:username, :quizID, :score, :duration)';
   $statement = $db->prepare($query);
   $statement->bindValue(':username', $username);
