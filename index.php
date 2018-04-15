@@ -29,23 +29,6 @@ if ($action == NULL) {
 // }
 
 switch ($action) {
-
-    // case 'home':
-    //     include('views/home.php');
-    //
-    //     global $db;
-    //     $query = 'show tables';
-    //     $statement = $db->prepare($query);
-    //     $statement->execute();
-    //     $entries = $statement->fetchAll();
-    //     $statement->closeCursor();
-    //     $entries;
-    //
-    //     foreach ($entries as $key => $entry) :
-    //         echo '<p>' . $entry[0] . '</p>';
-    //     endforeach;
-    //     break;
-
     case 'show_login':
             include('views/login.php');
             break;
@@ -145,7 +128,7 @@ switch ($action) {
         break;
 
       case "take_script_quiz":
-        include('views/script_quiz.php')
+        include('views/script_quiz.php');
         break;
 
       case "take_c_quiz":
