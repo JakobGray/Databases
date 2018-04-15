@@ -71,6 +71,30 @@ include_once('./models/quizDB.php');
   </table>
 </div>
 
+<?php $c_quizzes = get_quizzes('c'); ?>
+
+<div class="container" style="display: inline-block">
+  <table border=1>
+    <th style="text-align: center">Name</th><th>Topic</th><th>Play</th>
+    <?php
+    foreach ($c_quizzes as $q):
+?>
+<tr>
+  <td><?php echo $q{'name'} ?></td>
+  <td><?php echo $q{'topic'} ?></td>
+  <td>
+    <form action='.' method='POST'>
+      <input type="hidden" name="action" value="take_c_quiz">
+      <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
+      <button type="submit" class="btn btn-large btn-primary">Play</a>
+    </form>
+  </td>
+</tr>
+
+<?php endforeach; ?>
+  </table>
+</div>
+
 <?php
 if (isset($_SESSION['is_valid_user'])) {
   include('./views/add_forms.php');

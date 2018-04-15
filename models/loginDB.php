@@ -156,6 +156,18 @@ function create_new_c_question($c_prompt, $answer) {
   $statement->closeCursor();
 }
 
+function get_c_questions_specific($quizID) {
+  global $db;
+  $query = $db->prepare("SELECT QID, c_prompt, answer
+                        FROM c_question natural join have natural join game
+                        WHERE GID = :quizID");
+  $query->bindValue(':quizID', $quizID);
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
+}
+
 function get_scripts() {
   global $db;
   $query = $db->prepare("SELECT script_text, answer FROM script_question");

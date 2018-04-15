@@ -146,5 +146,9 @@ switch ($action) {
 
       case "take_script_quiz":
         include('views/script_quiz.php');
+        break
+
+      case "take_c_quiz":
+        include('views/c_quiz.php');
         break;
 }
