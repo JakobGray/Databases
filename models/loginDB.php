@@ -180,7 +180,7 @@ function get_scripts() {
 function get_scripts_specific($quizID) {
   global $db;
   $query = $db->prepare("SELECT QID, script_text, answer
-                        FROM script_question natural join have natural join gameID
+                        FROM script_question natural join have natural join game
                         WHERE GID = :quizID");
   $query->bindValue(':quizID', $quizID);
   $query->execute();
