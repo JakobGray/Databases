@@ -1,6 +1,6 @@
-USE CS4750kx3jj;
+USE CS4750bsb9hh;
 GRANT SELECT, INSERT
-ON CS4750kx3jj.* TO 'CS4750kx3jj'@'%';
+ON CS4750bsb9hh.* TO 'CS4750bsb9hha'@'%';
 
 SET FOREIGN_KEY_CHECKS=0;
 -- create the users and grant priveleges to those users
@@ -325,7 +325,22 @@ INSERT INTO have (`GID`, `QID`) VALUES
 (6,32),
 (6,33),
 (6,34),
-(6,35);
+(6,35),
+(7,5),
+(7,4),
+(7,3),
+(7,1),
+(7,2),
+(8,40),
+(8,41),
+(8,39),
+(8,37),
+(8,38),
+(9,70),
+(9,71),
+(9,72),
+(9,73),
+(9,74);
 
 DROP TABLE IF EXISTS plays;
 CREATE TABLE plays (
