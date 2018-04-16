@@ -156,7 +156,7 @@ INSERT INTO c_question (QID, c_prompt, answer) VALUES
 
 DROP TABLE IF EXISTS script_question;
 CREATE TABLE script_question (
-  QID           INT(11) NOT NULL UNIQUE,
+  QID           INT(11) NOT NULL UNIQUE AUTO_INCREMENT,
   script_text   TEXT,
   answer        VARCHAR(100),
   PRIMARY KEY (QID)

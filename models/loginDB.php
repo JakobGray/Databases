@@ -176,3 +176,15 @@ function get_scripts() {
   $query->closeCursor();
   return $result;
 }
+
+function get_scripts_specific($quizID) {
+  global $db;
+  $query = $db->prepare("SELECT QID, script_text, answer
+                        FROM script_question natural join have natural join gameID
+                        WHERE GID = :quizID");
+  $query->bindValue(':quizID', $quizID);
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
+}
