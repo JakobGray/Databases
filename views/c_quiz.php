@@ -2,11 +2,10 @@
 include('views/header.php');
 $gameID = filter_input(INPUT_POST, 'gameID');
 $questions = get_c_questions_specific($gameID);
-print_r($questions);
 ?>
 <!-- <link rel="stylesheet" href="./styles/tf_quiz.css"> -->
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     var all_questions = <?php echo json_encode($questions) ?>;
     var quizID = <?php echo $gameID ?>;
     var playerID = "<?php echo (isset($_SESSION['username'])) ? $_SESSION['username'] : ''; ?>";
@@ -14,8 +13,8 @@ print_r($questions);
 </script>
 <script src="./js/c_quiz.js"></script>
 
-<form action='.' class="cquiz" method="post">
-
+<form action='.' class="cquiz_form" method="post">
+<!-- 
   <label class="pull-left">Quiz Name:</label>
   <input class="pull-left" type='text' name='quizname' maxlength="100" required>
 
@@ -54,11 +53,11 @@ print_r($questions);
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <input type="hidden" name="action" value="new_mc_quiz">
+    <input type="hidden" name="action" value="c_quiz">
     <input type="submit" value="submit" id="form_submit">
-</form> -->
+</form>
 
 <!-- <div class="cover">
   <div class="container">
