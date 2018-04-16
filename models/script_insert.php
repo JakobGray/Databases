@@ -2,7 +2,7 @@
 require('./ajaxDB.php');
 
 $array = filter_input_array(INPUT_POST);
-echo print_r($array);
+// echo print_r($array);
 
 $quizname = $array['quizname'];
 $topic = $array['topic'];
