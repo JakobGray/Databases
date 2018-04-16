@@ -67,6 +67,17 @@ function create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3) 
   $statement->closeCursor();
 }
 
+function create_new_script_question($script, $answer) {
+  global $db;
+  $query = 'INSERT INTO script_question (script_text, answer)
+          VALUES (:script_text, :answer)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':script_text', $script);
+  $statement->bindValue(':answer', $answer);
+  $statement->execute();
+  $statement->closeCursor();
+}
+
 function link_question($quizID, $questionID) {
   global $db;
   $query = 'INSERT INTO have (GID, QID)
