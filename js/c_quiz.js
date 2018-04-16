@@ -2,7 +2,7 @@ form = document.querySelector("#cquiz_form");
 
 function addQuestions() {
 
-  for (i=0; i < Object.key(all_questions).length; i++) {
+  for (i=0; i < Object.keys(all_questions).length; i++) {
     var question_input = $('<input>')
       .attr('id', all_questions[i].GID)
       .attr('type', "text")
