@@ -64,7 +64,10 @@ function create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3) 
   $statement->bindValue(':option2', $choice2);
   $statement->bindValue(':option3', $choice3);
   $statement->execute();
+
+  $last_id = $db->lastInsertId();
   $statement->closeCursor();
+  return $last_id;
 }
 
 function create_new_script_question($script, $answer) {
@@ -75,7 +78,10 @@ function create_new_script_question($script, $answer) {
   $statement->bindValue(':script_text', $script);
   $statement->bindValue(':answer', $answer);
   $statement->execute();
+
+  $last_id = $db->lastInsertId();
   $statement->closeCursor();
+  return $last_id;
 }
 
 function link_question($quizID, $questionID) {
