@@ -28,12 +28,11 @@
 
             <div id="collapseThree" class="panel">
                 <div class="panel-body">
-                  
+
                     <div class="form-group row">
                         <label for="script_text" class="col-sm-3 col-form-label">Script</label>
                         <div class="col-sm-6">
-                            <textarea type="text" name="script_text" rows="4" cols="50">
-                            <input type="text" class="form-control" name="script_text" maxlength="300" placeholder="Dialog Here">
+                            <textarea type="text" name="script_text" rows="4" cols="50"></textarea>
                         </div>
                     </div>
 
