@@ -1,5 +1,6 @@
 <?php
-$scripts = get_scripts_specific();
+$gameID = filter_input(INPUT_POST, 'gameID');
+$scripts = get_scripts_specific($gameID);
 ?>
 <html lang="en-US">
 
