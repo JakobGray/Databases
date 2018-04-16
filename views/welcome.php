@@ -25,19 +25,21 @@ include_once('./models/loginDB.php');
 <?php $quizzes = get_tf_quizzes(); ?>
 
 <div class="container" style="display: inline-block">
-  <table border=1>
-    <th style="text-align: center">Name</th><th>Topic</th><th>Play</th>
+  <table style="width: 60%; margin-left: 20%" border=1>
+    <th style="text-align: center">Name</th>
+    <th style="text-align: center">&nbsp;Topic&nbsp;</th>
+    <th style="text-align: center">&nbsp;Play&nbsp;</th>
     <?php
     foreach ($quizzes as $q):
 ?>
 <tr>
-  <td><?php echo $q{'name'} ?></td>
-  <td><?php echo $q{'topic'} ?></td>
-  <td>
+  <td style="text-align: center"><?php echo $q{'name'} ?></td>
+  <td style="text-align: center"><?php echo $q{'topic'} ?></td>
+  <td style="text-align: center; padding-bottom: 10px">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_tf_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-      <button type="submit" class="btn btn-large btn-primary">Play</a>
+      <button type="submit" style="width: 50%" class="btn btn-large btn-primary">Play</button>
     </form>
   </td>
 </tr>
