@@ -11,3 +11,9 @@ function addQuestions() {
       .appendTo(form);
   }
 }
+
+
+
+$(document).ready(function() {
+  addQuestions()
+}
