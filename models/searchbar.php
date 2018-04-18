@@ -1,7 +1,7 @@
 <?php
 require('../models/ajaxDB.php');
 
-$searchString = filter_input(INPUT_GET, 'searchName', FILTER_SANITIZE_STRING) . '%';
+$searchString = filter_input(INPUT_GET, 'searchName') . '%';
 // '%' . $_GET['searchName'] . '%';
 //
 echo "Here am I";
