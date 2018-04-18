@@ -47,7 +47,7 @@ include_once('./models/quizDB.php');
         </button>
     </span> -->
 
-<div id="searchResults"></div>
+<div id="searchResults">Search Result</div>
 
 
 <?php include('views/login.php'); ?>
