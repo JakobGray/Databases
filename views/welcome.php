@@ -41,14 +41,14 @@ include_once('./models/quizDB.php');
     </form>
 </div>
 
-<input id='searchbar' type="search" class="myInput" placeholder="Search by Topic">
+<input id='searchbar' type="search" class="col-lg-6 col-md-8 myInput" placeholder="Search by Topic">
     <!-- <span class="input-group-btn">
         <button class="btn btn-default btn-add-panel" type="submit">
             <i class="glyphicon glyphicon-plus"></i>
         </button>
     </span> -->
 
-<div id="searchResults">Search Result</div>
+<div id="searchResults" class="col-lg-6 col-md-8">Search Result</div>
 
 
 <?php include('views/login.php'); ?>
