@@ -8,7 +8,7 @@ $results = get_searched_quizzes($searchString);
 //
 //
 //
-$keys = array_keys($results['GID']);
+$keys = array_keys($results);
 echo print_r($keys);
 echo "<table border=1><th style='text-align: center'>Name</th><th>Topic</th><th>Play</th>\n";
 
