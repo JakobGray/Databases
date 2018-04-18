@@ -17,7 +17,7 @@ foreach ($keys as $val) {
   $name = $results['name'][$val];
   $topic = $results['topic'][$val];
 
-  echo "<tr><td>$name</td><td>$topic</td><td><form action='.' method='POST'>; 
+  echo "<tr><td>$name</td><td>$topic</td><td><form action='.' method='POST'>;
         <input type='hidden' name='action' value='take_tf_quiz'>
         <input type='hidden' name='gameID' value='$GID'>
         <button type='submit' class='btn btn-large btn-primary'>Play</a>
@@ -25,4 +25,4 @@ foreach ($keys as $val) {
     </td>
   </tr>";
 }
-echo "</table>";
+// echo "</table>";
