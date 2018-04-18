@@ -25,4 +25,4 @@ echo "<table border=1><th style='text-align: center'>Name</th><th>Topic</th><th>
 //     </td>
 //   </tr>"
 // }
-// echo "</table>"
+echo "</table>"
