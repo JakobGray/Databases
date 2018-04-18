@@ -13,7 +13,6 @@ include_once('./models/quizDB.php');
         data: {searchName: $( "#searchbar" ).val()},
         success: function(data){
           $('#searchResults').html(data);
-
         }
       });
     });

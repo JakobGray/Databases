@@ -4,13 +4,13 @@ require('../models/ajaxDB.php');
 $searchString = filter_input(INPUT_GET, 'searchName') . '%';
 // '%' . $_GET['searchName'] . '%';
 //
-echo "Here am I";
+
 $results = get_searched_quizzes($searchString);
 
 
 $keys = array_keys($results);
 // echo print_r($results);
-echo "<table border=1><th style='text-align: center'>Name</th><th>Topic</th><th>Play</th>\n";
+echo "<table class='myTable' border=1><th style='text-align: center'>Name</th><th>Topic</th><th>Play</th>\n";
 
 foreach ($keys as $val) {
   $GID = $results[$val]['GID'];
