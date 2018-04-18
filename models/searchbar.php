@@ -1,7 +1,7 @@
 <?php
 require('./ajaxDB.php');
 
-$searchString = '%' . $_POST['searchName'] . '%';
+$searchString = '%' . $_GET['searchName'] . '%';
 // filter_input(INPUT_POST, 'searchName', FILTER_SANITIZE_STRING) . '%';
 
 $results = get_searched_quizzes($searchString);

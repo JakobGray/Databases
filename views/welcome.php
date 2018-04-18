@@ -9,7 +9,6 @@ include_once('./models/quizDB.php');
     $( "#searchbar" ).change(function() {
 
       $.ajax({
-        type: 'post',
         url: './models/searchbar.php',
         data: {searchName: $( "#searchbar" ).val()},
         success: function(data){
