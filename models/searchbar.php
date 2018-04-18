@@ -13,9 +13,9 @@ echo print_r($results);
 echo "<table border=1><th style='text-align: center'>Name</th><th>Topic</th><th>Play</th>\n";
 
 foreach ($keys as $val) {
-  $GID = $results['GID'][$val];
-  $name = $results['name'][$val];
-  $topic = $results['topic'][$val];
+  $GID = $results[$val]['GID'];
+  $name = $results[$val]['name'];
+  $topic = $results[$val]['topic'];
   // echo "Hello";
   echo "<tr><td>$name</td><td>$topic</td><td><form action='.' method='POST'>;
         <input type='hidden' name='action' value='take_tf_quiz'>
