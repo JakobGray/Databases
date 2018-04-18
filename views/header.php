@@ -13,13 +13,13 @@
     </head>
 
     <body>
-      <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/~<?php echo $_SESSION['userID'] ?>/Databases/index.php">Quizzy</a>
+                    <a class="navbar-brand" href="http://plato.cs.virginia.edu/~<?php echo $_SESSION['userID']?>/Project/index.php">Quizzy</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
