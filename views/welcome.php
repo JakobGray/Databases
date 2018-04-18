@@ -10,7 +10,7 @@ include_once('./models/quizDB.php');
 
       $.ajax({
         type: 'post',
-        url: '../models/script_insert.php',
+        url: '../models/searchbar.php',
         data: {searchName: $( "#searchNameinput" ).val()},
         success: function(data){
           $('#searchResults').html(data);
@@ -43,11 +43,11 @@ include_once('./models/quizDB.php');
 
 <div class="input-group col-md-6">
     <input id='searchbar' type="search" class="ui-widget col-md-12" placeholder="Search by Topic">
-    <span class="input-group-btn">
+    <!-- <span class="input-group-btn">
         <button class="btn btn-default btn-add-panel" type="submit">
             <i class="glyphicon glyphicon-plus"></i>
         </button>
-    </span>
+    </span> -->
 </div>
 
 <div id="searchResults"></div>
