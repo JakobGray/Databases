@@ -1,5 +1,5 @@
 <?php
-require('./ajaxDB.php');
+require('../models/ajaxDB.php');
 
 $searchString = '%' . $_GET['searchName'] . '%';
 // filter_input(INPUT_POST, 'searchName', FILTER_SANITIZE_STRING) . '%';
