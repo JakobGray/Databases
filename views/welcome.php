@@ -41,7 +41,7 @@ include_once('./models/quizDB.php');
     </form>
 </div>
 
-<input id='searchbar' type="search" class="ui-widget col-md-12" placeholder="Search by Topic">
+<input id='searchbar' type="search" class="myInput" placeholder="Search by Topic">
     <!-- <span class="input-group-btn">
         <button class="btn btn-default btn-add-panel" type="submit">
             <i class="glyphicon glyphicon-plus"></i>
