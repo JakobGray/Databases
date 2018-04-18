@@ -10,7 +10,7 @@ $results = get_searched_quizzes($searchString);
 //
 $keys = array_keys($results['GID']);
 echo print_r($results);
-// echo "<table border=1><th style='text-align: center'>Name</th><th>Topic</th><th>Play</th>";
+echo "<table border=1><th style='text-align: center'>Name</th><th>Topic</th><th>Play</th>\n";
 
 foreach ($keys as $val) {
   $GID = $results['GID'][$val];
