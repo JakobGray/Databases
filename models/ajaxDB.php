@@ -94,3 +94,26 @@ function link_question($quizID, $questionID) {
   $statement->execute();
   $statement->closeCursor();
 }
+
+function get_c_questions_specific($quizID) {
+  global $db;
+  $query = $db->prepare("SELECT QID, c_prompt, answer
+                        FROM c_question natural join have natural join game
+                        WHERE GID = :quizID");
+  $query->bindValue(':quizID', $quizID);
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
+}
+
+function get_searched_quizzes($searchString) {
+  global $db;
+  $query = $db->prepare("SELECT GID, name, topic FROM game
+                          WHERE topic LIKE :search");
+  $query->bindValue(':search', $searchString);
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
+}
