@@ -4,7 +4,7 @@ require('../models/ajaxDB.php');
 $searchString = '%' . $_GET['searchName'] . '%';
 // filter_input(INPUT_POST, 'searchName', FILTER_SANITIZE_STRING) . '%';
 echo "Here am I";
-// $results = get_searched_quizzes($searchString);
+$results = get_searched_quizzes($searchString);
 //
 //
 //
