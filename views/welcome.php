@@ -19,6 +19,8 @@ include_once('./models/quizDB.php');
 
   });
   </script>
+  <link rel="stylesheet" type="text/css" href="http://plato.cs.virginia.edu/~jdg7sh/Databases/styles/tables.css" />
+
 </head>
 
 <div class="jumbotron">
