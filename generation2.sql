@@ -306,7 +306,7 @@ INSERT INTO game (`GID`, `name`, `topic`, `type`) VALUES
 (4, "Pokemon easy", "Pokemon", "tf"),
 (5, "Pokemon medium", "Pokemon", "mc"),
 (6, "Pokemon hard", "Pokemon", "c"),
-(7, "Lord of the Rings easy", "Lord of the Rings", "tf"),
+(7, "Book Truths", "Lord of the Rings", "tf"),
 (8, "Lord of the Rings medium", "Lord of the Rings", "mc"),
 (9, "Lord of the Rings hard", "Lord of the Rings", "c"),
 (10, "Avatar easy", "Avatar", "tf"),
@@ -351,6 +351,14 @@ INSERT INTO have (`GID`, `QID`) VALUES
 -- Pokemon MC
 -- Pokemon C
 -- LOTR TF
+(7,13),
+(7,15),
+(7,16),
+(7,17),
+(7,18),
+(7,19),
+(7,20),
+(7,9),
 -- LOTR MC
 -- LOTR C
 -- Avatar TF
