@@ -161,10 +161,4 @@ include_once('./models/quizDB.php');
 </div>
 </div>
 
-<?php
-if (isset($_SESSION['is_valid_user'])) {
-  include('./views/add_forms.php');
-}
-?>
-
 <?php include('views/footer.php'); ?>
