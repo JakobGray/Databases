@@ -30,7 +30,7 @@
                         <?php
                         //Search Feature, hide on login page
                         if (isset($_SESSION['is_valid_admin'])) {
-                          echo "<li style='display:inline-block'><a href='/~$userID/Databases/index.php?action=logout'>Add Script Quiz</a></li>";
+                          echo "<li style='display:inline-block'><a href='/~$userID/Databases/index.php?action=logout'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
                         } ?>
                     </ul>
                     <!--Intro guide-->
@@ -39,7 +39,7 @@
                     </ul>
                 </div>
             </div>
-            <li><a href="/~<?php echo $userID ?>/Databases/index.php?action=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <!-- <li><a href="/~<?php echo $userID ?>/Databases/index.php?action=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> -->
 
         </nav>
 
