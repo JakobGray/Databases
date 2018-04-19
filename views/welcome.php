@@ -166,22 +166,5 @@ if (isset($_SESSION['is_valid_user'])) {
   include('./views/add_forms.php');
 }
 ?>
-<div class="btn-group">
-<form action='.' method='POST' id="tf_form">
-  <input type="hidden" name="action" value="take_tf_quiz">
-  <input type="hidden" name="quizID" value="5">
-  <button type="submit" form="tf_form" class="btn btn-large btn-primary">Take T/F Quiz</a>
-</form>
-
-<form action='.' method='POST' id="mc_form">
-  <input type="hidden" name="action" value="take_mc_quiz">
-  <button type="submit" form="mc_form" class="btn btn-large btn-warning">Take MC Quiz</a>
-</form>
-
-<form action='.' method='POST' id="script_form">
-  <input type="hidden" name="action" value="take_script_quiz">
-  <button type="submit" form="script_form" class="btn btn-large btn-danger">Take Advanced Quiz</a>
-</form>
-</div>
 
 <?php include('views/footer.php'); ?>
