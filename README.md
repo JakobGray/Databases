@@ -1,5 +1,5 @@
 # CS4750 - Project Introduction
-## The Gamer???? Fantasy Facts???? Quizzie/Quizzy???
+## The Gamer???? Fantasy Facts???? Quizzie/Quizzy??? Let's Get Quizzical?
 
 Our application allows users to play trivia games on many different topics, and is modeled after a popular quiz platform, Sporcle. They can create accounts that allow users to keep track of their progress and score points to get on a leaderboard. The users have to create a unique username and a password to create their account and play games. Regular users cannot create, delete, or edit any quiz questions, but a superuser, aka administrator, have the ability to do so. This ensures that the quizzes make sense and is fair for everyone. 
 
