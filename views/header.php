@@ -23,15 +23,13 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
+                      <?php if (isset($_SESSION['is_valid_admin'])) { ?>
                         <li style='display:inline-block'><a href="./views/add_tf_quiz.php">Add TF Quiz</a></li>
                         <li style='display:inline-block'><a href="./views/add_mc_quiz.php">Add MC Quiz</a></li>
                         <li style='display:inline-block'><a href="./views/add_c_question.php">Add Completion Question</a></li>
                         <li style='display:inline-block'><a href="./views/add_script_quiz.php">Add Script Quiz</a></li>
-                        <?php
-                        //Search Feature, hide on login page
-                        if (isset($_SESSION['is_valid_admin'])) {
-                          echo "<li style='display:inline-block'><a href='/~$userID/Databases/index.php?action=logout'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
-                        } ?>
+                        <li style='display:inline-block'><a href='/~$userID/Databases/index.php?action=logout'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
+                      <?php }; ?>
                     </ul>
                     <!--Intro guide-->
                     <ul class="nav navbar-nav navbar-right">
