@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -23,15 +23,19 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li style='display:inline-block'><a href="./views/add_tf_quiz.php">Add TF Quiz</a></li>
-                        <li style='display:inline-block'><a href="./views/add_mc_quiz.php">Add MC Quiz</a></li>
-                        <li style='display:inline-block'><a href="./views/add_c_question.php">Add Completion Question</a></li>
-                        <li style='display:inline-block'><a href="./views/add_script_quiz.php">Add Script Quiz</a></li>
-                        <?php
-                        //Search Feature, hide on login page
-                        if (isset($_SESSION['is_valid_admin'])) {
-                          echo "<li style='display:inline-block'><a href='/~$userID/Databases/index.php?action=logout'>Logout</a></li>";
+                      <?php
+                      //Search Feature, hide on login page
+                      if (isset($_SESSION['is_valid_user'])) {
+                        echo "<li style='display:inline-block'><a href=''./views/add_tf_quiz.php'>Add TF Quiz</a></li>"
+                        echo "<li style='display:inline-block'><a href='./views/add_mc_quiz.php'>Add MC Quiz</a></li>"
+                        echo "<li style='display:inline-block'><a href='./views/add_c_question.php'>Add Completion Question</a></li>"
+                        echo "<li style='display:inline-block'><a href='./views/add_script_quiz.php'>Add Script Quiz</a></li>"
+                        echo "<li style='display:inline-block'><a href='/~$userID/Databases/index.php?action=logout'>Logout</a></li>";
                         } ?>
+                    </ul>
+                    <!--Intro guide-->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><span class="glyphicon glyphicon-info-sign"></span> Help</a></li>
                     </ul>
                 </div>
             </div>
