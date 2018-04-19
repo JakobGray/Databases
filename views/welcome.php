@@ -26,15 +26,18 @@ include_once('./models/quizDB.php');
 <?php $tf_quizzes = get_quizzes('tf'); ?>
 
 <div class="container" style="display: inline-block">
-  <table border=1>
-    <th style="text-align: center">Name</th><th>Topic</th><th>Play</th>
+
+<div class="row">
+    <div class="col-lg-6" style="display: inline-block">
+  <table style="width: 60%; margin-left: 20%" border=1>
+    <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($tf_quizzes as $q):
 ?>
 <tr>
-  <td><?php echo $q{'name'} ?></td>
-  <td><?php echo $q{'topic'} ?></td>
-  <td>
+  <td style="text-align: center"><?php echo $q{'name'} ?></td>
+  <td style="text-align: center"><?php echo $q{'topic'} ?></td>
+  <td style="text-align: center">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_tf_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
@@ -49,16 +52,16 @@ include_once('./models/quizDB.php');
 
 <?php $mc_quizzes = get_quizzes('mc'); ?>
 
-<div class="container" style="display: inline-block">
-  <table border=1>
-    <th style="text-align: center">Name</th><th>Topic</th><th>Play</th>
+  <div class="col-lg-6" style="display: inline-block">
+  <table style="width: 60%; margin-left: 20%" border=1>
+    <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($mc_quizzes as $q):
 ?>
 <tr>
-  <td><?php echo $q{'name'} ?></td>
-  <td><?php echo $q{'topic'} ?></td>
-  <td>
+  <td style="text-align: center"><?php echo $q{'name'} ?></td>
+  <td style="text-align: center"><?php echo $q{'topic'} ?></td>
+  <td style="text-align: center">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_mc_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
@@ -70,19 +73,23 @@ include_once('./models/quizDB.php');
 <?php endforeach; ?>
   </table>
 </div>
+</div>
 
 <?php $c_quizzes = get_quizzes('c'); ?>
 
-<div class="container" style="display: inline-block">
-  <table border=1>
-    <th style="text-align: center">Name</th><th>Topic</th><th>Play</th>
+<br>
+
+<div class="row">
+    <div class="col-lg-6" style="display: inline-block">
+  <table style="width: 60%; margin-left: 20%" border=1>
+    <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($c_quizzes as $q):
 ?>
 <tr>
-  <td><?php echo $q{'name'} ?></td>
-  <td><?php echo $q{'topic'} ?></td>
-  <td>
+  <td style="text-align: center"><?php echo $q{'name'} ?></td>
+  <td style="text-align: center"><?php echo $q{'topic'} ?></td>
+  <td style="text-align: center">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_c_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
@@ -95,19 +102,18 @@ include_once('./models/quizDB.php');
   </table>
 </div>
 
-
 <?php $script_quizzes = get_quizzes('sc'); ?>
 
-<div class="container" style="display: inline-block">
-  <table border=1>
-    <th style="text-align: center">Name</th><th>Topic</th><th>Play</th>
+    <div class="col-lg-6" style="display: inline-block">
+  <table style="width: 60%; margin-left: 20%" border=1>
+    <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($script_quizzes as $q):
 ?>
 <tr>
-  <td><?php echo $q{'name'} ?></td>
-  <td><?php echo $q{'topic'} ?></td>
-  <td>
+  <td style="text-align: center"><?php echo $q{'name'} ?></td>
+  <td style="text-align: center"><?php echo $q{'topic'} ?></td>
+  <td style="text-align: center">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_script_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
@@ -118,6 +124,8 @@ include_once('./models/quizDB.php');
 
 <?php endforeach; ?>
   </table>
+</div>
+</div>
 </div>
 
 <?php
