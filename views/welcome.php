@@ -58,7 +58,7 @@ include_once('./models/quizDB.php');
 
 <div class="row">
     <div class="col-lg-6" style="display: inline-block">
-  <table style="width: 60%; margin-left: 20%" border=1>
+  <table style="width: 80%; margin-left: 10%" border=1>
     <caption>True/False Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
@@ -71,7 +71,7 @@ include_once('./models/quizDB.php');
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_tf_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-      <button type="submit" style="width: 50%" class="btn btn-large btn-primary">Play</button>
+      <button type="submit" style="width: 70%" class="btn btn-large btn-primary">Play</button>
     </form>
   </td>
 </tr>
@@ -83,7 +83,7 @@ include_once('./models/quizDB.php');
 <?php $mc_quizzes = get_quizzes('mc'); ?>
 
   <div class="col-lg-6" style="display: inline-block">
-  <table style="width: 60%; margin-left: 20%" border=1>
+  <table style="width: 80%; margin-left: 10%" border=1>
     <caption>Multiple Choice Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
@@ -92,11 +92,11 @@ include_once('./models/quizDB.php');
 <tr>
   <td style="text-align: center"><?php echo $q{'name'} ?></td>
   <td style="text-align: center"><?php echo $q{'topic'} ?></td>
-  <td style="text-align: center">
+  <td style="text-align: center; padding-bottom: 10px">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_mc_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-      <button type="submit" class="btn btn-large btn-primary">Play</a>
+      <button type="submit" style="width: 70%" class="btn btn-large btn-primary">Play</button>
     </form>
   </td>
 </tr>
@@ -112,7 +112,7 @@ include_once('./models/quizDB.php');
 
 <div class="row">
     <div class="col-lg-6" style="display: inline-block">
-  <table style="width: 60%; margin-left: 20%" border=1>
+  <table style="width: 80%; margin-left: 10%" border=1>
     <caption>Completion Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
@@ -121,11 +121,11 @@ include_once('./models/quizDB.php');
 <tr>
   <td style="text-align: center"><?php echo $q{'name'} ?></td>
   <td style="text-align: center"><?php echo $q{'topic'} ?></td>
-  <td style="text-align: center">
+  <td style="text-align: center; padding-bottom: 10px">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_c_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-      <button type="submit" class="btn btn-large btn-primary">Play</a>
+      <button type="submit" style="width: 70%" class="btn btn-large btn-primary">Play</button>
     </form>
   </td>
 </tr>
@@ -137,7 +137,7 @@ include_once('./models/quizDB.php');
 <?php $script_quizzes = get_quizzes('sc'); ?>
 
     <div class="col-lg-6" style="display: inline-block">
-  <table style="width: 60%; margin-left: 20%" border=1>
+  <table style="width: 80%; margin-left: 10%" border=1>
     <caption>Script Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
@@ -146,11 +146,11 @@ include_once('./models/quizDB.php');
 <tr>
   <td style="text-align: center"><?php echo $q{'name'} ?></td>
   <td style="text-align: center"><?php echo $q{'topic'} ?></td>
-  <td style="text-align: center">
+  <td style="text-align: center; padding-bottom: 10px">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_script_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-      <button type="submit" class="btn btn-large btn-primary">Play</a>
+      <button type="submit" style="width: 50%" class="btn btn-large btn-primary">Play</button>
     </form>
   </td>
 </tr>
