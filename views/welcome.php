@@ -3,6 +3,25 @@ include('views/header.php');
 include_once('./models/loginDB.php');
 include_once('./models/quizDB.php');
 ?>
+<head>
+  <script>
+  $(document).ready(function() {
+    $( "#searchbar" ).change(function() {
+
+      $.ajax({
+        url: './models/searchbar.php',
+        data: {searchName: $( "#searchbar" ).val()},
+        success: function(data){
+          $('#searchResults').html(data);
+        }
+      });
+    });
+
+  });
+  </script>
+  <link rel="stylesheet" type="text/css" href="http://plato.cs.virginia.edu/~jdg7sh/Databases/styles/tables.css" />
+
+</head>
 
 <div class="jumbotron">
     <h1 data-step="1" data-intro="This is a tooltip!">Welcome to Quizzy</h1>
@@ -21,6 +40,16 @@ include_once('./models/quizDB.php');
       ?>
     </form>
 </div>
+
+<input id='searchbar' type="search" class="col-lg-6 col-md-8 myInput" placeholder="Search by Topic">
+    <!-- <span class="input-group-btn">
+        <button class="btn btn-default btn-add-panel" type="submit">
+            <i class="glyphicon glyphicon-plus"></i>
+        </button>
+    </span> -->
+
+<div id="searchResults" class="col-lg-6 col-md-8">Search Result</div>
+
 
 <?php include('views/login.php'); ?>
 <?php $tf_quizzes = get_quizzes('tf'); ?>
