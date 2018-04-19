@@ -295,6 +295,7 @@ CREATE TABLE game (
   name        VARCHAR(100),
   topic       VARCHAR(300),
   type        VARCHAR(100),
+  date_added  timestamp DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (GID)
 ) ENGINE=INNODB;
 
