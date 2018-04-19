@@ -1,18 +1,23 @@
 <?php include('./header.php'); ?>
-
-<br>
-<div class="input-group col-md-6">
-    <button class="btn btn-default btn-add-panel" type="submit">
-        <i class="glyphicon glyphicon-plus"></i>
-    </button>
+<div class="container">
+<div class="panel panel-warning">
+<div class="panel-heading">
+Create Multiple Choice Quiz
 </div>
-<br><br>
+<div class="panel-body">
+<br>
+    <button class="btn btn-warning btn-add-panel pull-right" type="submit">
+        <i class="glyphicon glyphicon-plus"></i>&nbsp;add question
+    </button>
 <form action='.' class="ajax" method="post">
-  <label class="pull-left">Quiz Name:</label>
+  <label class="pull-left" style="font-size: 1.2em">Quiz Name:&nbsp;</label>
   <input class="pull-left" type='text' name='quizname' maxlength="100" required>
-
-  <label class="pull-left">Quiz Topic:</label>
+  <br>
+  <br>
+  <label class="pull-left" style="font-size: 1.2em">Quiz Topic:&nbsp;</label>
   <input class="pull-left" type='text' name='topic' maxlength="300">
+  <br>
+  <br>
 
     <div class="panel-group" id="accordion">
         <div class="panel panel-default template" id="panel" style="display: none">
@@ -69,8 +74,10 @@
     </div>
 
     <input type="hidden" name="action" value="new_mc_quiz">
-    <input type="submit" value="submit" id="form_submit">
+    <input type="submit" class="btn btn-success" value="Create Quiz" id="form_submit">
 </form>
-
+</div>
+</div>
+</div>
 <script src="../js/new_mc_quiz.js"></script>
 <?php include('./footer.php'); ?>
