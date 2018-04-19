@@ -59,6 +59,7 @@ include_once('./models/quizDB.php');
 <div class="row">
     <div class="col-lg-6" style="display: inline-block">
   <table style="width: 60%; margin-left: 20%" border=1>
+    <caption>True/False Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($tf_quizzes as $q):
@@ -83,6 +84,7 @@ include_once('./models/quizDB.php');
 
   <div class="col-lg-6" style="display: inline-block">
   <table style="width: 60%; margin-left: 20%" border=1>
+    <caption>Multiple Choice Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($mc_quizzes as $q):
@@ -111,6 +113,7 @@ include_once('./models/quizDB.php');
 <div class="row">
     <div class="col-lg-6" style="display: inline-block">
   <table style="width: 60%; margin-left: 20%" border=1>
+    <caption>Completion Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($c_quizzes as $q):
@@ -135,6 +138,7 @@ include_once('./models/quizDB.php');
 
     <div class="col-lg-6" style="display: inline-block">
   <table style="width: 60%; margin-left: 20%" border=1>
+    <caption>Script Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($script_quizzes as $q):
