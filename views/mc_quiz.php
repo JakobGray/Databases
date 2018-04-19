@@ -1,11 +1,14 @@
 <?php
 include('views/header.php');
-$questions = get_mc_questions();
+$gameID = filter_input(INPUT_POST, 'gameID');
+$questions = get_mc_questions_specific($gameID);
 ?>
 <link rel="stylesheet" href="./styles/tf_quiz.css">
 
 <script type="text/javascript">
-    var all_questions = <?php echo json_encode($questions); ?>;
+    var all_questions = <?php echo json_encode($questions) ?>;
+    var quizID = <?php echo $gameID ?>;
+    var playerID = "<?php echo (isset($_SESSION['username'])) ? $_SESSION['username'] : ''; ?>";
     console.log(JSON.stringify(all_questions, null, 2));
 </script>
 <script src="./js/mc_quiz.js"></script>

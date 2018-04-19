@@ -1,5 +1,6 @@
 <?php
-$scripts = get_scripts();
+$gameID = filter_input(INPUT_POST, 'gameID');
+$scripts = get_scripts_specific($gameID);
 ?>
 <html lang="en-US">
 
@@ -10,8 +11,8 @@ $scripts = get_scripts();
 
     <script type="text/javascript">
         var all_scripts = <?php echo json_encode($scripts); ?>;
-        var text = all_scripts[1]['script_text'];
-        var answer = all_scripts[1]['answer'];
+        var text = all_scripts[0]['script_text'];
+        var answer = all_scripts[0]['answer'];
         console.log(JSON.stringify(all_scripts, null, 2));
     </script>
 

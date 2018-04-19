@@ -14,7 +14,7 @@ $db->query("SET CHARACTER SET utf8");
 
 function save_results($username, $quizID, $score, $duration) {
   global $db;
-  $query = 'INSERT INTO score (username, quizID, score, duration)
+  $query = 'INSERT INTO score (username, GID, score, duration)
           VALUES (:username, :quizID, :score, :duration)';
   $statement = $db->prepare($query);
   $statement->bindValue(':username', $username);
@@ -39,13 +39,14 @@ function create_new_tf_question($prompt, $answer) {
   return $last_id;
 }
 
-function create_new_tf_quiz($quizname, $topic) {
+function create_new_quiz($quizname, $topic, $type) {
   global $db;
-  $query = 'INSERT INTO game (name, topic)
-          VALUES (:quizname, :topic)';
+  $query = 'INSERT INTO game (name, topic, type)
+          VALUES (:quizname, :topic, :type)';
   $statement = $db->prepare($query);
   $statement->bindValue(':quizname', $quizname);
   $statement->bindValue(':topic', $topic);
+  $statement->bindValue(':type', $type);
   $statement->execute();
 
   $last_id = $db->lastInsertId();
@@ -64,7 +65,24 @@ function create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3) 
   $statement->bindValue(':option2', $choice2);
   $statement->bindValue(':option3', $choice3);
   $statement->execute();
+
+  $last_id = $db->lastInsertId();
   $statement->closeCursor();
+  return $last_id;
+}
+
+function create_new_script_question($script, $answer) {
+  global $db;
+  $query = 'INSERT INTO script_question (script_text, answer)
+          VALUES (:script_text, :answer)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':script_text', $script);
+  $statement->bindValue(':answer', $answer);
+  $statement->execute();
+
+  $last_id = $db->lastInsertId();
+  $statement->closeCursor();
+  return $last_id;
 }
 
 function link_question($quizID, $questionID) {
@@ -76,4 +94,27 @@ function link_question($quizID, $questionID) {
   $statement->bindValue(':questionID', $questionID);
   $statement->execute();
   $statement->closeCursor();
+}
+
+function get_c_questions_specific($quizID) {
+  global $db;
+  $query = $db->prepare("SELECT QID, c_prompt, answer
+                        FROM c_question natural join have natural join game
+                        WHERE GID = :quizID");
+  $query->bindValue(':quizID', $quizID);
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
+}
+
+function get_searched_quizzes($searchString) {
+  global $db;
+  $query = $db->prepare("SELECT GID, name, topic FROM game
+                          WHERE topic LIKE :search");
+  $query->bindValue(':search', $searchString);
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query->closeCursor();
+  return $result;
 }
