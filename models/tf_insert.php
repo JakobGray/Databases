@@ -6,7 +6,7 @@ echo print_r($array);
 
 $quizname = $array['quizname'];
 $topic = $array['topic'];
-$quizID = create_new_tf_quiz($quizname, $topic);
+$quizID = create_new_quiz($quizname, $topic, 'tf');
 
 $keys = array_keys($array['prompt']);
 // echo print_r($keys);

@@ -6,7 +6,7 @@ $array = filter_input_array(INPUT_POST);
 
 $quizname = $array['quizname'];
 $topic = $array['topic'];
-$quizID = create_new_tf_quiz($quizname, $topic);
+$quizID = create_new_quiz($quizname, $topic, 'sc');
 echo $quizID;
 
 $keys = array_keys($array['answer']);

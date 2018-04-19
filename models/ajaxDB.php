@@ -39,13 +39,14 @@ function create_new_tf_question($prompt, $answer) {
   return $last_id;
 }
 
-function create_new_tf_quiz($quizname, $topic) {
+function create_new_quiz($quizname, $topic, $type) {
   global $db;
-  $query = 'INSERT INTO game (name, topic)
-          VALUES (:quizname, :topic)';
+  $query = 'INSERT INTO game (name, topic, type)
+          VALUES (:quizname, :topic, :type)';
   $statement = $db->prepare($query);
   $statement->bindValue(':quizname', $quizname);
   $statement->bindValue(':topic', $topic);
+  $statement->bindValue(':type', $type);
   $statement->execute();
 
   $last_id = $db->lastInsertId();
