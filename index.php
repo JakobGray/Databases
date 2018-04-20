@@ -90,6 +90,7 @@ switch ($action) {
         break;
 
     case 'home':
+      $leaderboard = get_leaderboard();
       $tf_quizzes = get_quizzes('tf');
       $mc_quizzes = get_quizzes('mc');
       $c_quizzes = get_quizzes('c');
