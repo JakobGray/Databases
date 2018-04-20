@@ -131,7 +131,7 @@ var Question = function(question_string, correct_choice, wrong_choices) {
   this.user_choice_index = null; // Index of the user's choice selection
 
   // Random assign the correct choice an index
-  this.correct_choice_index = Math.floor(Math.random() * (wrong_choices.length + 1));
+  this.correct_choice_index = Math.floor(Math.random() * 4);
   console.log(this.correct_choice_index);
   console.log(wrong_choices.length);
 
