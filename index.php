@@ -65,7 +65,7 @@ switch ($action) {
         $mc_quizzes = get_quizzes('mc');
         $c_quizzes = get_quizzes('c');
         $script_quizzes = get_quizzes('sc');
-        
+
         if (is_valid_user_login($username1, $password1)) {
             $_SESSION['is_valid_user'] = true;
             $_SESSION['username'] = $username1;
@@ -152,6 +152,12 @@ switch ($action) {
         create_new_c_question($c_prompt, $answer);
         header("Location: .");
         break;
+
+      case 'tf_questions':
+        $questions = get_all_quizzes('tf');
+        include('views/tf_questions.php');
+        break;
+
 
       case "take_tf_quiz":
         include('views/tf_quiz.php');

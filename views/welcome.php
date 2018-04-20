@@ -97,8 +97,6 @@ include_once('./models/loginDB.php');
   </table>
 </div>
 
-<?php $mc_quizzes = get_quizzes('mc'); ?>
-
   <div class="col-lg-6" style="display: inline-block">
   <table class="myTable" style="width: 80%; margin-left: 10%" border=1>
     <caption>Multiple Choice Quizzes</caption>
