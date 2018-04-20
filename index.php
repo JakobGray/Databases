@@ -59,6 +59,13 @@ switch ($action) {
         $username1 = filter_input(INPUT_POST, 'username');
         $password1 = filter_input(INPUT_POST, 'password');
         $remember = filter_input(INPUT_POST, 'remember');
+
+        $leaderboard = get_leaderboard();
+        $tf_quizzes = get_quizzes('tf');
+        $mc_quizzes = get_quizzes('mc');
+        $c_quizzes = get_quizzes('c');
+        $script_quizzes = get_quizzes('sc');
+        
         if (is_valid_user_login($username1, $password1)) {
             $_SESSION['is_valid_user'] = true;
             $_SESSION['username'] = $username1;
