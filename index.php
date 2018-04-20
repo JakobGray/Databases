@@ -33,6 +33,7 @@ session_start();
 
 include_once("models/database.php");
 include_once("models/loginDB.php");
+include_once('./models/quizDB.php');
 date_default_timezone_set("America/New_York");
 
 // Designate action variable
