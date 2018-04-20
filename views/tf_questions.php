@@ -5,7 +5,7 @@
 <input type="text" id="fullInput" onkeyup="searchTable()" placeholder="Search by name.." title="Type in a name" />
 
 
-<table id="fullTable" border=1>
+<table id="fullTable" class="center" border=1>
   <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
   <?php foreach ($questions as $q):?>
 
