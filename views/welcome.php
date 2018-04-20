@@ -1,6 +1,6 @@
 <?php
 include('views/header.php');
-// include_once('./models/loginDB.php');
+include_once('./models/loginDB.php');
 // include_once('./models/quizDB.php');
 ?>
 <head>
