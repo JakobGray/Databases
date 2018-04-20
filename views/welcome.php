@@ -67,7 +67,7 @@ include_once('./models/quizDB.php');
 <tr>
   <td style="text-align: center"><?php echo $q{'name'} ?></td>
   <td style="text-align: center"><?php echo $q{'topic'} ?></td>
-  <td style="text-align: center; padding-bottom: 10px">
+  <td style="text-align: center">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_tf_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
@@ -92,7 +92,7 @@ include_once('./models/quizDB.php');
 <tr>
   <td style="text-align: center"><?php echo $q{'name'} ?></td>
   <td style="text-align: center"><?php echo $q{'topic'} ?></td>
-  <td style="text-align: center; padding-bottom: 10px">
+  <td style="text-align: center">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_mc_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
@@ -121,7 +121,7 @@ include_once('./models/quizDB.php');
 <tr>
   <td style="text-align: center"><?php echo $q{'name'} ?></td>
   <td style="text-align: center"><?php echo $q{'topic'} ?></td>
-  <td style="text-align: center; padding-bottom: 10px">
+  <td style="text-align: center">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_c_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
@@ -146,7 +146,7 @@ include_once('./models/quizDB.php');
 <tr>
   <td style="text-align: center"><?php echo $q{'name'} ?></td>
   <td style="text-align: center"><?php echo $q{'topic'} ?></td>
-  <td style="text-align: center; padding-bottom: 10px">
+  <td style="text-align: center">
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_script_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
