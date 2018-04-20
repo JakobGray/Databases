@@ -1,10 +1,14 @@
 <?php include('views/header.php'); ?>
+<link rel="stylesheet" type="text/css" href="http://plato.cs.virginia.edu/~jdg7sh/Databases/styles/full_tables.css" />
 
 <h2>TF Questions</h2>
 
-<input type="text" id="myInput" id="myInput" onkeyup="searchTable()" placeholder="Search for names.." title="Type in a name">
+<div class="form-group has-feedback has-feedback-left">
+  <input type="text" id="fullInput" class="form-control" onkeyup="searchTable()" placeholder="Search by name.." title="Type in a name" />
+  <i class="form-control-feedback glyphicon glyicon-search"
+</div>
 
-<table id="myTable" class="myTable" style="width: 80%; margin-left: 10%" border=1>
+<table id="fullTable"  style="width: 80%; margin-left: 10%" border=1>
   <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
   <?php foreach ($questions as $q):?>
 
@@ -27,9 +31,9 @@
 <script>
 function searchTable() {
   var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
+  input = document.getElementById("fullInput");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
+  table = document.getElementById("fullTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
