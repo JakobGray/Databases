@@ -1,5 +1,4 @@
 <?php include('views/header.php'); ?>
-<link rel="stylesheet" type="text/css" href="http://plato.cs.virginia.edu/~jdg7sh/Databases/styles/full_tables.css" />
 
 <h2>TF Questions</h2>
 
