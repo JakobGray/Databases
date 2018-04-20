@@ -35,7 +35,7 @@ $scripts = get_scripts_specific($gameID);
             </div><!-- #origin-text -->
 
             <div class="test-wrapper">
-                <textarea readonly id="test-area" name="textarea" rows="6" placeholder="The clock starts when you start typing."></textarea>
+                <textarea id="test-area" name="textarea" rows="6" placeholder="The clock starts when you start typing."></textarea>
             </div><!-- .test-wrapper -->
 
             <div class="meta">
