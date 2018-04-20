@@ -1,24 +1,24 @@
 <?php
-require "dbutil.php";
-$db = DbUtil::loginConnection();
-
-$stmt = $db->stmt_init();
-
-if($stmt->prepare("Select MAX(score) as score, username, topic, type from score natural join game group by topic, type") or die(mysqli_error($db))) {
-  //$searchString = '%' . $_GET['searchLastName'] . '%';
-  //  $stmt->bind_param(s, $searchString);
-  $stmt->execute();
-  $stmt->bind_result($score, $username, $topic, $type);
-  echo "<table border=1><th>topic</th><th>type</th><th>username</th><th>score</td>\n";
-  while($stmt->fetch()) {
-    echo "<tr><td>$topic</td><td>$type</td><td>$username</td><td>$score</td></tr>";
-  }
-  echo "</table>";
-
-  $stmt->close();
-}
-
-$db->close();
+// require "dbutil.php";
+// $db = DbUtil::loginConnection();
+//
+// $stmt = $db->stmt_init();
+//
+// if($stmt->prepare("Select MAX(score) as score, username, topic, type from score natural join game group by topic, type") or die(mysqli_error($db))) {
+//   //$searchString = '%' . $_GET['searchLastName'] . '%';
+//   //  $stmt->bind_param(s, $searchString);
+//   $stmt->execute();
+//   $stmt->bind_result($score, $username, $topic, $type);
+//   echo "<table border=1><th>topic</th><th>type</th><th>username</th><th>score</td>\n";
+//   while($stmt->fetch()) {
+//     echo "<tr><td>$topic</td><td>$type</td><td>$username</td><td>$score</td></tr>";
+//   }
+//   echo "</table>";
+//
+//   $stmt->close();
+// }
+//
+// $db->close();
 
 
 // Turn on error reporting
