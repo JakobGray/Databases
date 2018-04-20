@@ -5,10 +5,14 @@
 <input type="text" id="fullInput" onkeyup="searchTable()" placeholder="Search by name.." title="Type in a name" />
 
 
-<table id="fullTable" class="center" border=1>
-  <th>Name</th><th>Topic</th><th>Play</th>
-  <?php foreach ($questions as $q):?>
+<table id="fullTable" class="center">
+  <tr class="header">
+      <th>Name</th>
+      <th>Topic</th>
+      <th>Play</th>
+  </tr>
 
+  <?php foreach ($questions as $q):?>
   <tr>
   <td><?php echo $q{'name'} ?></td>
   <td><?php echo $q{'topic'} ?></td>
@@ -20,8 +24,8 @@
     </form>
   </td>
   </tr>
-
   <?php endforeach; ?>
+  
 </table>
 
 
