@@ -2,7 +2,7 @@
 
 <h2>TF Questions</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<input type="text" id="myInput" onkeyup="searchTable()" placeholder="Search for names.." title="Type in a name">
 
 <table id="myTable" class="myTable" style="width: 80%; margin-left: 10%" border=1>
   <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
