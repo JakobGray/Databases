@@ -4,27 +4,24 @@
 
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
-<div class="col-lg-6" style="display: inline-block">
-<table class="myTable" style="width: 80%; margin-left: 10%" border=1>
+<table id="myTable" class="myTable" style="width: 80%; margin-left: 10%" border=1>
   <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
-  <?php
-  foreach ($questions as $q):
-?>
-<tr>
-<td style="text-align: center"><?php echo $q{'name'} ?></td>
-<td style="text-align: center"><?php echo $q{'topic'} ?></td>
-<td style="text-align: center">
-  <form action='.' method='POST'>
-    <input type="hidden" name="action" value="take_tf_quiz">
-    <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-    <button type="submit" style="width: 70%" class="btn btn-large btn-primary">Play</button>
-  </form>
-</td>
-</tr>
+  <?phpforeach ($questions as $q):?>
 
-<?php endforeach; ?>
+  <tr>
+  <td style="text-align: center"><?php echo $q{'name'} ?></td>
+  <td style="text-align: center"><?php echo $q{'topic'} ?></td>
+  <td style="text-align: center">
+    <form action='.' method='POST'>
+      <input type="hidden" name="action" value="take_tf_quiz">
+      <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
+      <button type="submit" style="width: 70%" class="btn btn-large btn-primary">Play</button>
+    </form>
+  </td>
+  </tr>
+
+  <?php endforeach; ?>
 </table>
-</div>
 
 
 <script>
