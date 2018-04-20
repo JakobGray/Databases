@@ -24,6 +24,9 @@
   <input type='submit' value='Submit' class="btn btn-success pull-left">
 </form> -->
 <br><br>
+<button class="btn btn-primary btn-add-panel pull-right" type="submit">
+      <i class="glyphicon glyphicon-plus"></i>&nbsp;add question
+</button>
 <form action='.' class="ajax" method="post">
 <div class="container">
 <div class="panel panel-primary">
@@ -35,9 +38,7 @@ Create True/False Quiz
   <br>
   <br>
   <input class="pull-left" type='text' name='quizname' maxlength="100" required>
-  <button class="btn btn-primary btn-add-panel pull-right" type="submit">
-        <i class="glyphicon glyphicon-plus"></i>&nbsp;add question
-  </button>
+
 <br>
 <br>
   <label class="pull-left" style="font-size: 1.2em">Quiz Topic:</label>

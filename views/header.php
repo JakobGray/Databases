@@ -19,7 +19,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://plato.cs.virginia.edu/~<?php echo $userID?>/Project/index.php">Quizzy</a>
+                    <a class="navbar-brand" href="http://plato.cs.virginia.edu/~jdg7sh/Databases/index.php">Quizzy</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
