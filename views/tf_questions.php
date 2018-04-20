@@ -2,19 +2,17 @@
 
 <h2>TF Questions</h2>
 
-<div class="form-group has-feedback has-feedback-left">
-  <input type="text" id="fullInput" class="form-control" onkeyup="searchTable()" placeholder="Search by name.." title="Type in a name" />
-  <i class="form-control-feedback glyphicon glyicon-search">
-</div>
+<input type="text" id="fullInput" onkeyup="searchTable()" placeholder="Search by name.." title="Type in a name" />
+
 
 <table id="fullTable"  style="width: 80%; margin-left: 10%" border=1>
   <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
   <?php foreach ($questions as $q):?>
 
   <tr>
-  <td style="text-align: center"><?php echo $q{'name'} ?></td>
-  <td style="text-align: center"><?php echo $q{'topic'} ?></td>
-  <td style="text-align: center">
+  <td><?php echo $q{'name'} ?></td>
+  <td><?php echo $q{'topic'} ?></td>
+  <td>
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="take_tf_quiz">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
