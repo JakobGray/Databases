@@ -1,4 +1,4 @@
-<?php include('./header.php'); ?>
+<?php include('views/header.php'); ?>
 
 <h2>TF Questions</h2>
 
@@ -47,4 +47,4 @@ function searchTable() {
 }
 </script>
 
-<?php include('./footer.php'); ?>
+<?php include('views/footer.php'); ?>
