@@ -27,6 +27,10 @@
   padding: 12px;
 }
 
+#fulltTable th {
+  background-color: #f1f1f1;
+}
+
 #fullTable tr {
   border-bottom: 1px solid #ddd;
 }
