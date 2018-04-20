@@ -1,6 +1,6 @@
 nbproject/*
 config.php
-header.php
+views/header.php
 *.save
 *~
 .idea/*
