@@ -6,7 +6,7 @@
 
 <table id="myTable" class="myTable" style="width: 80%; margin-left: 10%" border=1>
   <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
-  <?phpforeach ($questions as $q):?>
+  <?php foreach ($questions as $q):?>
 
   <tr>
   <td style="text-align: center"><?php echo $q{'name'} ?></td>
