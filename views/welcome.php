@@ -51,7 +51,7 @@ include_once('./models/loginDB.php');
     <!-- <a class="btn btn-large btn-success" href="views/login.php">Log in</a> -->
     <form action='.' method='POST' id="login_form">
       <input type="hidden" name="action" value="show_login">
-      <!-- <button type="submit" form="login_form" class="btn btn-large btn-info">Log in</a> -->
+      <button type="submit" form="login_form" class="btn btn-large btn-info">Log in</a>
       <?php
       if (!isset($_SESSION['is_valid_user'])) {
         echo "<a class='btn btn-large btn-success' onclick=\"document.getElementById('id01').style.display = 'block'\" style=\"width:auto;\">Login Here</a>";
