@@ -74,7 +74,7 @@ include('views/header.php');
 
 <div class="row">
     <div class="col-lg-6" style="display: inline-block">
-  <table style="width: 80%; margin-left: 10%" border=1>
+  <table class="myTable" style="width: 80%; margin-left: 10%" border=1>
     <caption>True/False Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
@@ -99,7 +99,7 @@ include('views/header.php');
 <?php $mc_quizzes = get_quizzes('mc'); ?>
 
   <div class="col-lg-6" style="display: inline-block">
-  <table style="width: 80%; margin-left: 10%" border=1>
+  <table class="myTable" style="width: 80%; margin-left: 10%" border=1>
     <caption>Multiple Choice Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
@@ -126,7 +126,7 @@ include('views/header.php');
 
 <div class="row">
     <div class="col-lg-6" style="display: inline-block">
-  <table style="width: 80%; margin-left: 10%" border=1>
+  <table class="myTable" style="width: 80%; margin-left: 10%" border=1>
     <caption>Completion Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
@@ -149,7 +149,7 @@ include('views/header.php');
 </div>
 
     <div class="col-lg-6" style="display: inline-block">
-  <table style="width: 80%; margin-left: 10%" border=1>
+  <table class="myTable" style="width: 80%; margin-left: 10%" border=1>
     <caption>Script Quizzes</caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
