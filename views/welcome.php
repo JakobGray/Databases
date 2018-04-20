@@ -1,7 +1,7 @@
 <?php
 include('views/header.php');
-include_once('./models/loginDB.php');
-include_once('./models/quizDB.php');
+// include_once('./models/loginDB.php');
+// include_once('./models/quizDB.php');
 ?>
 <head>
   <script>
@@ -50,9 +50,6 @@ include_once('./models/quizDB.php');
 
 <div id="searchResults" class="col-lg-6 col-md-8">Search Result</div>
 
-
-<?php include('views/login.php'); ?>
-<?php $tf_quizzes = get_quizzes('tf'); ?>
 
 <div class="container" style="display: inline-block">
 
@@ -106,8 +103,6 @@ include_once('./models/quizDB.php');
 </div>
 </div>
 
-<?php $c_quizzes = get_quizzes('c'); ?>
-
 <br>
 
 <div class="row">
@@ -133,8 +128,6 @@ include_once('./models/quizDB.php');
 <?php endforeach; ?>
   </table>
 </div>
-
-<?php $script_quizzes = get_quizzes('sc'); ?>
 
     <div class="col-lg-6" style="display: inline-block">
   <table style="width: 80%; margin-left: 10%" border=1>
