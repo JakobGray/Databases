@@ -23,6 +23,25 @@ include('views/header.php');
 
 </head>
 
+<div class="col-lg-6" style="display: inline-block">
+<table style="width: 80%; margin-left: 10%" border=1>
+  <caption>Leaderboard</caption>
+  <th style="text-align: center">Topic</th><th style="text-align: center">Type</th><th style="text-align: center">Username</th><th style="text-align: center">Score</th>
+  <?php
+  foreach ($leaderboard as $l):
+?>
+<tr>
+<td style="text-align: center"><?php echo $l{'topic'} ?></td>
+<td style="text-align: center"><?php echo $l{'type'} ?></td>
+<td style="text-align: center"><?php echo $l{'username'} ?></td>
+<td style="text-align: center"><?php echo $l{'score'} ?></td>
+</tr>
+
+<?php endforeach; ?>
+</table>
+</div>
+
+
 <div class="jumbotron">
     <h1 data-step="1" data-intro="This is a tooltip!">Welcome to Quizzy</h1>
     <p class="lead">This is the website for challenging quizzes and trivia.</p>

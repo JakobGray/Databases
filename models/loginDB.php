@@ -191,7 +191,7 @@ function get_scripts_specific($quizID) {
 
 function get_leaderboard() {
   global $db;
-  $query = $db->prepare("SELECT MAX(score) as as score, username, topic, type
+  $query = $db->prepare("SELECT MAX(score) as score, username, topic, type
                           FROM score natural join game
                           group by topic, type");
   $query->execute();
