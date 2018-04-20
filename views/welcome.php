@@ -54,7 +54,7 @@ include_once('./models/loginDB.php');
       <!-- <button type="submit" form="login_form" class="btn btn-large btn-info">Log in</a> -->
       <?php
       if (!isset($_SESSION['is_valid_user'])) {
-        echo "<a class='btn btn-large btn-success' onclick=\"document.getElementById('id01').style.display = 'block'\" style=\"width:auto;\">Login Here</a>";
+        echo "<a class='btn btn-large btn-success' onclick='document.getElementById('id01').style.display = block' style='width:auto'>Login Here</a>";
       }
       ?>
     </form>
