@@ -132,6 +132,7 @@ var Question = function(question_string, correct_choice, wrong_choices) {
 
   // Random assign the correct choice an index
   this.correct_choice_index = Math.floor(Math.random(0, wrong_choices.length + 1));
+  console.log(this.correct_choice_index);
 
   // Fill in this.choices with the choices
   var number_of_choices = wrong_choices.length + 1;
