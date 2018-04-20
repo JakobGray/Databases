@@ -4,7 +4,7 @@
 
 <div class="form-group has-feedback has-feedback-left">
   <input type="text" id="fullInput" class="form-control" onkeyup="searchTable()" placeholder="Search by name.." title="Type in a name" />
-  <i class="form-control-feedback glyphicon glyicon-search"
+  <i class="form-control-feedback glyphicon glyicon-search">
 </div>
 
 <table id="fullTable"  style="width: 80%; margin-left: 10%" border=1>
