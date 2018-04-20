@@ -85,6 +85,17 @@ function create_new_script_question($script, $answer) {
   return $last_id;
 }
 
+function create_new_c_question($c_prompt, $answer) {
+  global $db;
+  $query = 'INSERT INTO c_question (c_prompt, answer)
+          VALUES (:c_prompt, :answer)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':c_prompt', $c_prompt);
+  $statement->bindValue(':answer', $answer);
+  $statement->execute();
+  $statement->closeCursor();
+}
+
 function link_question($quizID, $questionID) {
   global $db;
   $query = 'INSERT INTO have (GID, QID)
