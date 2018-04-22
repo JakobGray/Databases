@@ -158,7 +158,6 @@ switch ($action) {
         include('views/tf_questions.php');
         break;
 
-
       case "take_tf_quiz":
         include('views/tf_quiz.php');
         break;

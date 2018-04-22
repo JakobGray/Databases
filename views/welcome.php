@@ -60,11 +60,6 @@ include_once('./models/loginDB.php');
 </div>
 
 <input id='searchbar' type="search" class="col-lg-6 col-md-8 myInput" style="width: 60%; margin-left: 20%" placeholder="Search by Topic">
-    <!-- <span class="input-group-btn">
-        <button class="btn btn-default btn-add-panel" type="submit">
-            <i class="glyphicon glyphicon-plus"></i>
-        </button>
-    </span> -->
 
 <div id="searchResults" class="col-lg-6 col-md-8">Search Result</div>
 
@@ -74,7 +69,7 @@ include_once('./models/loginDB.php');
 <div class="row">
     <div class="col-lg-6" style="display: inline-block">
   <table class="myTable" style="width: 80%; margin-left: 10%" border=1>
-    <caption>True/False Quizzes</caption>
+    <caption><a href="/Databases/?action=tf_questions">True/False Quizzes</a></caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($tf_quizzes as $q):

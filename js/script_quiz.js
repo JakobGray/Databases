@@ -3,15 +3,6 @@ const testArea = document.querySelector("#test-area");
 const startButton = document.querySelector("#start");
 const theTimer = document.querySelector(".timer");
 
-// var text = `
-// Katara:	Sokka's right. We need to find King Bumi, so Aang can learn earthbending somewhere safe.
-// Chong:	Sounds like you're headed to Omashu.
-// Sokka: smacks his forehead in frustration.
-// Chong:	There's an old story about a secret pass right through the mountains.
-// Katara:	Is this real or a legend?
-// Chong:	Oh, it's a real legend. And it's as old as earthbending itself. [Begins strumming his lute and singing.] Two lovers, forbidden from one another, the war divides their people and the mountain divides them apart! Built a path to be together! [Stops playing.] Yeah, I forget the next couple of lines, but then it goes ... [Resumes singing.] Secret tunnel! Secret tunnel! Through the mountains, secret, secret, secret, secret tunnel! Yeah!
-// `;
-// var answer = "The Cave of Two Lovers";
 
 const originText = answer;
 
