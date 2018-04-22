@@ -1,5 +1,5 @@
 <?php
-include_once("./config.php");
+include_once("../config.php");
 /* vars for export */
 // database record to be exported
 $db_record = 'score';
