@@ -55,7 +55,7 @@ include_once('./models/loginDB.php');
     if (!isset($_SESSION['is_valid_user'])) {
       echo "<a class='btn btn-large btn-success' onclick=\"document.getElementById('id01').style.display = 'block'\" style=\"width:auto;\">Login Here</a>";
     } else {
-      echo "<a href='/~jdg7sh/Databases/?action=my_quizzes'>View Your Quizzies</a>";
+      echo "<a class='btn btn-large btn-success' href='/~jdg7sh/Databases/?action=my_quizzes'>View Your Quizzies</a>";
     }
     ?>
   </form>
