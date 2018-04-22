@@ -6,7 +6,7 @@ echo print_r($array);
 
 $quizname = $array['quizname'];
 $topic = $array['topic'];
-if ($_SESSION['username'] == NULL) {
+if ($_SESSION['username'] === NULL) {
   echo "Error: can't identify user";
 } else {
   $user = $_SESSION['username'];
