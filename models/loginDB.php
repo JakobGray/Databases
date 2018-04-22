@@ -129,7 +129,7 @@ function get_your_quizzes($user) {
             WHERE creator = :user
             ORDER BY date_added DESC";
   $statement = $db->prepare($query);
-  $statement->bindValue(':quizID', $quizID);
+  $statement->bindValue(':user', $user);
   $statement->execute();
   $statement->closeCursor();
 }
