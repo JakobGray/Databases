@@ -1,4 +1,5 @@
 <?php
+include_once("./config.php");
 /* vars for export */
 // database record to be exported
 $db_record = 'score';
@@ -7,14 +8,14 @@ $where = 'WHERE 1 ORDER BY 1';
 // filename for export
 $csv_filename = 'db_export_'.date('Y-m-d').'.csv';
 // database variables
-$hostname = "stardock.cs.virginia.edu";
-$user = "CS4750kx3jj";
-$password = "Wh4tth3fuck!";
-$database = "CS4750kx3jj";
+$hostname = $SERVER;
+$user = $USERNAME;
+$password = $PASSWORD;
+$database = $DATABASE;
 // Database connecten voor alle services
 mysql_connect($hostname, $user, $password)
 or die('Could not connect: ' . mysql_error());
-					
+
 mysql_select_db($database)
 or die ('Could not select database ' . mysql_error());
 // create var to be filled with export data
@@ -33,9 +34,9 @@ while($row = mysql_fetch_array($query)) {
   // create line with field values
   for($i = 0; $i < $field; $i++) {
     $csv_export.= '"'.$row[mysql_field_name($query,$i)].'",';
-  }	
+  }
   $csv_export.= '
-';	
+';
 }
 // Export the data and prompt a csv file for download
 header("Content-type: text/x-csv");
