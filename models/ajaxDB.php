@@ -39,21 +39,6 @@ function create_new_tf_question($prompt, $answer) {
   return $last_id;
 }
 
-function create_new_quiz($quizname, $topic, $type) {
-  global $db;
-  $query = 'INSERT INTO game (name, topic, type)
-          VALUES (:quizname, :topic, :type)';
-  $statement = $db->prepare($query);
-  $statement->bindValue(':quizname', $quizname);
-  $statement->bindValue(':topic', $topic);
-  $statement->bindValue(':type', $type);
-  $statement->execute();
-
-  $last_id = $db->lastInsertId();
-  $statement->closeCursor();
-  return $last_id;
-}
-
 function create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3) {
   global $db;
   $query = 'INSERT INTO mc_question (mc_prompt, answer, option1, option2, option3)
@@ -96,6 +81,21 @@ function create_new_c_question($c_prompt, $answer) {
   $statement->closeCursor();
 }
 
+function create_new_quiz($quizname, $topic, $type) {
+  global $db;
+  $query = 'INSERT INTO game (name, topic, type)
+          VALUES (:quizname, :topic, :type)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':quizname', $quizname);
+  $statement->bindValue(':topic', $topic);
+  $statement->bindValue(':type', $type);
+  $statement->execute();
+
+  $last_id = $db->lastInsertId();
+  $statement->closeCursor();
+  return $last_id;
+}
+
 function link_question($quizID, $questionID) {
   global $db;
   $query = 'INSERT INTO have (GID, QID)
@@ -105,18 +105,6 @@ function link_question($quizID, $questionID) {
   $statement->bindValue(':questionID', $questionID);
   $statement->execute();
   $statement->closeCursor();
-}
-
-function get_c_questions_specific($quizID) {
-  global $db;
-  $query = $db->prepare("SELECT QID, c_prompt, answer
-                        FROM c_question natural join have natural join game
-                        WHERE GID = :quizID");
-  $query->bindValue(':quizID', $quizID);
-  $query->execute();
-  $result = $query->fetchAll(PDO::FETCH_ASSOC);
-  $query->closeCursor();
-  return $result;
 }
 
 function get_searched_quizzes($searchString) {
