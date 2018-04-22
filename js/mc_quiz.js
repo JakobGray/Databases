@@ -81,8 +81,8 @@ Quiz.prototype.render = function(container) {
     var percentage = score / self.questions.length;
     console.log(percentage);
 
-    $('#quiz-results-score').html('You got <b>' + score + '/' + self.questions.length + '</b> questions correct.');
-    $("a[href='tweet-result']").prop('href', 'https://twitter.com/home?status=This%20is%20my%20score%20' + score + '%20https://www.animalfriends.org.uk/');
+    $('#quiz-results-score').html('You got <b>' + percentage + '/' + self.questions.length + '</b> questions correct.');
+    $("a[href='tweet-result']").prop('href', 'https://twitter.com/home?status=This%20is%20my%20score%20' + percentage + '%20http://plato.cs.virginia.edu/~jdg7sh/Databases/');
     $('#quiz-results').slideDown();
     $('#quiz button').hide();
 
