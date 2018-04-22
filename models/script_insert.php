@@ -6,6 +6,11 @@ $array = filter_input_array(INPUT_POST);
 
 $quizname = $array['quizname'];
 $topic = $array['topic'];
+if ($_SESSION['username'] == NULL) {
+  echo "Error: can't identify user";
+} else {
+  $user = $_SESSION['username'];
+}
 $quizID = create_new_quiz($quizname, $topic, 'sc', $user);
 echo $quizID;
 
