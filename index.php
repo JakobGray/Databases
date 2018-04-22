@@ -135,6 +135,7 @@ switch ($action) {
 
       case 'my_quizzes':
         $user = $_SESSION['username'];
+        echo $_SESSION['username'];
         $my_quizzes = get_your_quizzes($user);
         include('views/my_quizzes.php');
         break;
