@@ -84,7 +84,7 @@ include_once('./models/loginDB.php');
               <form action='.' method='POST'>
                 <input type="hidden" name="action" value="take_tf_quiz">
                 <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-                <button type="submit" style="width: 70%" class="btn btn-large btn-primary">Play</button>
+                <button type="submit" style="width: 90%" class="btn btn-large btn-primary">Play</button>
               </form>
             </td>
           </tr>
@@ -107,7 +107,7 @@ include_once('./models/loginDB.php');
               <form action='.' method='POST'>
                 <input type="hidden" name="action" value="take_mc_quiz">
                 <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-                <button type="submit" style="width: 70%" class="btn btn-large btn-primary">Play</button>
+                <button type="submit" style="width: 90%" class="btn btn-large btn-primary">Play</button>
               </form>
             </td>
           </tr>
@@ -134,7 +134,7 @@ include_once('./models/loginDB.php');
               <form action='.' method='POST'>
                 <input type="hidden" name="action" value="take_c_quiz">
                 <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-                <button type="submit" style="width: 70%" class="btn btn-large btn-primary">Play</button>
+                <button type="submit" style="width: 90%" class="btn btn-large btn-primary">Play</button>
               </form>
             </td>
           </tr>
@@ -157,7 +157,7 @@ include_once('./models/loginDB.php');
               <form action='.' method='POST'>
                 <input type="hidden" name="action" value="take_script_quiz">
                 <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-                <button type="submit" style="width: 50%" class="btn btn-large btn-primary">Play</button>
+                <button type="submit" style="width: 90%" class="btn btn-large btn-primary">Play</button>
               </form>
             </td>
           </tr>
