@@ -131,7 +131,9 @@ function get_your_quizzes($user) {
   $statement = $db->prepare($query);
   $statement->bindValue(':user', $user);
   $statement->execute();
+  $result = $statement->fetchAll(PDO::FETCH_ASSOC);
   $statement->closeCursor();
+  return $result;
 }
 
 
