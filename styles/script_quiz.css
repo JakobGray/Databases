@@ -135,6 +135,7 @@ body {
 .test-area {
     margin-bottom: 4em;
     padding: 0 2em;
+		text-align: left;
 }
 
 .test-wrapper {
@@ -152,6 +153,7 @@ body {
 #origin-text p {
     margin: 0;
     padding-bottom: 1em;
+		text-align: left;
 }
 
 .test-wrapper {
