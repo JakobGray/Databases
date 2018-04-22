@@ -194,6 +194,7 @@ CREATE TABLE game (
   name        VARCHAR(100),
   topic       VARCHAR(300),
   type        VARCHAR(100),
+  creator     VARCHAR(100) NOT NULL,
   date_added  timestamp DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (GID)
 ) ENGINE=INNODB;
@@ -215,7 +216,6 @@ CREATE TABLE score (
   GID      INT(11) NOT NULL,
   score       INT(11),
   duration    INT(11),
-  creator     VARCHAR(100) NOT NULL,
   -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   -- FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (username, GID)
