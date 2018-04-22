@@ -22,8 +22,26 @@ include_once('./models/loginDB.php');
   </script>
 </head>
 
-<div class="col-lg-6" style="display: inline-block">
-  <table style="width: 80%; margin-left: 10%" border=1>
+<div>
+<a href="views/dump.php" target="_blank">Download leaderboard data</a>
+</div>
+<?php if (!isset($_SESSION['is_valid_user'])) : ?>
+<div class="jumbotron">
+  <h1 data-step="1" data-intro="This is a tooltip!">Welcome to Quizzy</h1>
+  <p class="lead">This is the website for challenging quizzes and trivia.</p>
+  <a class="btn btn-large btn-success" href="views/signup.php">Sign Up</a>
+  <br>
+  <br>
+  <form action='.' method='POST' id="login_form">
+    <input type="hidden" name="action" value="show_login">
+    <?php
+      echo "<a class='btn btn-large btn-success' onclick=\"document.getElementById('id01').style.display = 'block'\" style=\"width:auto;\">Login Here</a>";
+    ?>
+  </form>
+</div>
+<?php else : ?>
+  <div>
+  <table style="width: 60%; margin-left: 20%" border=1>
     <caption>Leaderboard</caption>
     <th style="text-align: center">Topic</th><th style="text-align: center">Type</th><th style="text-align: center">Username</th><th style="text-align: center">Score</th>
     <?php
@@ -38,32 +56,12 @@ include_once('./models/loginDB.php');
 
     <?php endforeach; ?>
   </table>
-</div>
-
-<div>
-<a href="views/dump.php" target="_blank">Download leaderboard data</a>
-</div>
-
-<div class="jumbotron">
-  <h1 data-step="1" data-intro="This is a tooltip!">Welcome to Quizzy</h1>
-  <p class="lead">This is the website for challenging quizzes and trivia.</p>
-  <a class="btn btn-large btn-success" href="views/signup.php">Sign Up</a>
-  <br>
-  <br>
-  <!-- <a class="btn btn-large btn-success" href="views/login.php">Log in</a> -->
-  <form action='.' method='POST' id="login_form">
-    <input type="hidden" name="action" value="show_login">
-    <!-- <button type="submit" form="login_form" class="btn btn-large btn-info">Log in</a> -->
-    <?php
-    if (!isset($_SESSION['is_valid_user'])) {
-      echo "<a class='btn btn-large btn-success' onclick=\"document.getElementById('id01').style.display = 'block'\" style=\"width:auto;\">Login Here</a>";
-    } else {
-      echo "<a class='btn btn-large btn-success' href='/~jdg7sh/Databases/?action=my_quizzes'>View Your Quizzies</a>";
-    }
-    ?>
-  </form>
-</div>
-
+  </div>
+<br>
+  <?php echo "<a class='btn btn-large btn-success' href='/~jdg7sh/Databases/?action=my_quizzes'>View Your Quizzies</a>"; ?>
+<?php endif; ?>
+<br>
+<br>
 
 <input id='searchbar' type="search" class="col-lg-6 col-md-8 myInput" style="width: 60%; margin-left: 20%" placeholder="Search by Topic">
 
