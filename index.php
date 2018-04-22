@@ -95,22 +95,22 @@ switch ($action) {
 
       case 'tf_questions':
         $questions = get_all_quizzes('tf');
-        include('views/all_questions.php');
+        include('views/full_question_list.php');
         break;
 
       case 'mc_questions':
         $questions = get_all_quizzes('mc');
-        include('views/all_questions.php');
+        include('views/full_question_list.php');
         break;
 
       case 'c_questions':
         $questions = get_all_quizzes('c');
-        include('views/all_questions.php');
+        include('views/full_question_list.php');
         break;
 
       case 'script_questions':
         $questions = get_all_quizzes('sc');
-        include('views/all_questions.php');
+        include('views/full_question_list.php');
         break;
 
       case "take_tf_quiz":
