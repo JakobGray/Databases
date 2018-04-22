@@ -40,6 +40,9 @@ include_once('./models/loginDB.php');
   </table>
 </div>
 
+<div>
+<a href="views/dump.php" target="_blank">Download leaderboard data</a>
+</div>
 
 <div class="jumbotron">
   <h1 data-step="1" data-intro="This is a tooltip!">Welcome to Quizzy</h1>
