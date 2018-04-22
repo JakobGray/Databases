@@ -1,6 +1,6 @@
 <?php include('views/header.php'); ?>
 
-<h2>TF Questions</h2>
+<h2>Full Question Listing</h2>
 
 <input type="text" id="fullInput" onkeyup="searchTable()" placeholder="Search by name.." title="Type in a name" />
 
@@ -25,7 +25,7 @@
   </td>
   </tr>
   <?php endforeach; ?>
-  
+
 </table>
 
 

@@ -1,25 +1,4 @@
 <?php
-// require "dbutil.php";
-// $db = DbUtil::loginConnection();
-//
-// $stmt = $db->stmt_init();
-//
-// if($stmt->prepare("Select MAX(score) as score, username, topic, type from score natural join game group by topic, type") or die(mysqli_error($db))) {
-//   //$searchString = '%' . $_GET['searchLastName'] . '%';
-//   //  $stmt->bind_param(s, $searchString);
-//   $stmt->execute();
-//   $stmt->bind_result($score, $username, $topic, $type);
-//   echo "<table border=1><th>topic</th><th>type</th><th>username</th><th>score</td>\n";
-//   while($stmt->fetch()) {
-//     echo "<tr><td>$topic</td><td>$type</td><td>$username</td><td>$score</td></tr>";
-//   }
-//   echo "</table>";
-//
-//   $stmt->close();
-// }
-//
-// $db->close();
-
 
 // Turn on error reporting
 ini_set('display_errors', 1);
@@ -30,11 +9,12 @@ error_reporting(E_ALL);
 //$lifetime = 60 * 60 * 24 * 14;  // 2 weeks
 //session_set_cookie_params($lifetime);
 session_start();
+date_default_timezone_set("America/New_York");
 
+// Include model files
 include_once("models/database.php");
 include_once("models/loginDB.php");
 include_once('./models/quizDB.php');
-date_default_timezone_set("America/New_York");
 
 // Designate action variable
 $action = filter_input(INPUT_POST, 'action');
@@ -45,10 +25,6 @@ if ($action == NULL) {
     }
 }
 
-// // Verify login status
-// if (!isset($_SESSION['is_valid_admin']) && $action != 'login') {
-//     $action = 'show_login';
-// }
 
 switch ($action) {
     case 'show_login':
@@ -117,45 +93,24 @@ switch ($action) {
         }
       break;
 
-      case 'add_tf_question':
-        $prompt = filter_input(INPUT_POST, 'prompt');
-        $answer = filter_input(INPUT_POST, 'answer');
-        create_new_tf_question($prompt, $answer);
-        header("Location: .");
-        break;
-
-      case 'new_tf_quiz':
-        $prompt = filter_input(INPUT_POST, 'prompt');
-        $answer = filter_input(INPUT_POST, 'answer');
-        $quizname = filter_input(INPUT_POST, 'quizname');
-        $topic = filter_input(INPUT_POST, 'topic');
-
-        $quizID = create_new_tf_quiz($quizname, $topic);
-        $questionID = create_new_tf_question($prompt, $answer);
-        link_question($quizID, $questionID);
-        header("Location: .");
-        break;
-
-      case 'add_mc_question':
-        $prompt = filter_input(INPUT_POST, 'prompt');
-        $answer = filter_input(INPUT_POST, 'answer');
-        $choice1 = filter_input(INPUT_POST, 'choice1');
-        $choice2 = filter_input(INPUT_POST, 'choice2');
-        $choice3 = filter_input(INPUT_POST, 'choice3');
-        create_new_mc_question($prompt, $answer, $choice1, $choice2, $choice3);
-        header("Location: .");
-        break;
-
-      case 'add_c_question':
-        $c_prompt = filter_input(INPUT_POST, 'c_prompt');
-        $answer = filter_input(INPUT_POST, 'answer');
-        create_new_c_question($c_prompt, $answer);
-        header("Location: .");
-        break;
-
       case 'tf_questions':
         $questions = get_all_quizzes('tf');
-        include('views/tf_questions.php');
+        include('views/all_questions.php');
+        break;
+
+      case 'mc_questions':
+        $questions = get_all_quizzes('mc');
+        include('views/all_questions.php');
+        break;
+
+      case 'c_questions':
+        $questions = get_all_quizzes('c');
+        include('views/all_questions.php');
+        break;
+
+      case 'script_questions':
+        $questions = get_all_quizzes('sc');
+        include('views/all_questions.php');
         break;
 
       case "take_tf_quiz":
