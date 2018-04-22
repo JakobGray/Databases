@@ -329,6 +329,15 @@ INSERT INTO have (`GID`, `QID`) VALUES
 (13,76);
 
 
+DELIMITER //
+CREATE TRIGGER log_patron_delete AFTER DELETE on patrons
+FOR EACH ROW
+BEGIN
+DELETE FROM patron_info
+    WHERE patron_info.pid = old.id;
+END; //
+DELIMITER ;
+
 
 -- DELIMITER //
 -- CREATE TRIGGER question_before_insert
