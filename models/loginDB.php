@@ -112,6 +112,28 @@ function link_question($quizID, $questionID) {
   $statement->closeCursor();
 }
 
+function delete_quiz($quizID) {
+  global $db;
+  $query = 'DELETE FROM game
+          WHERE GID = :quizID';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':quizID', $quizID);
+  $statement->execute();
+  $statement->closeCursor();
+}
+
+function get_your_quizzes($user) {
+  global $db;
+  $query = "SELECT GID, name, topic
+            FROM game
+            WHERE creator = :user
+            ORDER BY date_added DESC";
+  $statement = $db->prepare($query);
+  $statement->bindValue(':quizID', $quizID);
+  $statement->execute();
+  $statement->closeCursor();
+}
+
 
 
 // Unused

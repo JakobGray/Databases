@@ -132,4 +132,20 @@ switch ($action) {
       case "take_c_quiz":
         include('views/c_quiz.php');
         break;
+
+      case 'my_quizzes':
+        $user = $_SESSION['username'];
+        $my_quizzes = get_your_quizzes($user);
+        include('views/my_quizzes.php');
+        break;
+
+      case 'delete_quiz':
+        $delete_game = filter_input(INPUT_POST, 'gameID');
+        if ($delete_game == NULL) {
+            echo "ERROR DELETING GAME!!!!";
+        } else {
+            delete_quiz($delete_game);
+            header("Location: .");
+        }
+        break;
 }

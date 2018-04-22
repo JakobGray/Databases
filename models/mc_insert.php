@@ -6,7 +6,12 @@ echo print_r($array);
 
 $quizname = $array['quizname'];
 $topic = $array['topic'];
-$quizID = create_new_quiz($quizname, $topic, 'c');
+if ($_SESSION['username'] == NULL) {
+  echo "Error: can't identify user";
+} else {
+  $user = $_SESSION['username'];
+}
+$quizID = create_new_quiz($quizname, $topic, 'mc', $user);
 
 $keys = array_keys($array['prompt']);
 // echo print_r($keys);

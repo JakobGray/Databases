@@ -81,14 +81,15 @@ function create_new_c_question($c_prompt, $answer) {
   $statement->closeCursor();
 }
 
-function create_new_quiz($quizname, $topic, $type) {
+function create_new_quiz($quizname, $topic, $type, $user) {
   global $db;
-  $query = 'INSERT INTO game (name, topic, type)
-          VALUES (:quizname, :topic, :type)';
+  $query = 'INSERT INTO game (name, topic, type, creator)
+          VALUES (:quizname, :topic, :type, :creator)';
   $statement = $db->prepare($query);
   $statement->bindValue(':quizname', $quizname);
   $statement->bindValue(':topic', $topic);
   $statement->bindValue(':type', $type);
+  $statement->bindValue(':creator', $user);
   $statement->execute();
 
   $last_id = $db->lastInsertId();
