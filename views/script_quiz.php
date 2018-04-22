@@ -1,18 +1,16 @@
 <?php
+include('views/header.php');
 $gameID = filter_input(INPUT_POST, 'gameID');
 $scripts = get_scripts_specific($gameID);
 ?>
-<html lang="en-US">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Episode Trivia</title>
-
     <script type="text/javascript">
         var all_scripts = <?php echo json_encode($scripts); ?>;
         var text = all_scripts[0]['script_text'];
         var answer = all_scripts[0]['answer'];
+        var quizID = <?php echo $gameID ?>;
+        var playerID = "<?php echo (isset($_SESSION['username'])) ? $_SESSION['username'] : ''; ?>";
         console.log(JSON.stringify(all_scripts, null, 2));
     </script>
 
@@ -50,4 +48,4 @@ $scripts = get_scripts_specific($gameID);
 
 </body>
 
-</html>
+<?php include('views/footer.php'); ?>

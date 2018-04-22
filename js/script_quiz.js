@@ -40,6 +40,30 @@ function spellCheck() {
         console.log(timer[3])
         pauseText = true;
         testWrapper.style.borderColor = "#429890";
+
+        let savedata = {
+          'quizID': quizID,
+          'username': playerID,
+          'score': 100,
+          'duration': timer[3]*10
+        }
+        // Save results to database
+        if (playerID != '') {
+          $.ajax({
+            type: 'GET',
+            url: './models/saveResults.php',
+            data: savedata,
+            contentType: 'application/json; charset=utf-8',
+            success: function(data) {
+              console.log("Results saved!");
+              console.log(data);
+            },
+            error: function(xhr, status, error) {
+                alert(xhr.responseText);
+            }
+          });
+        }
+
     } else {
         if (textEntered == originTextMatch) {
             testWrapper.style.borderColor = "#65CCf3";
