@@ -69,7 +69,7 @@ include_once('./models/loginDB.php');
 <div class="row">
     <div class="col-lg-6" style="display: inline-block">
   <table class="myTable" style="width: 80%; margin-left: 10%" border=1>
-    <caption><a href="/Databases/?action=tf_questions">True/False Quizzes</a></caption>
+    <caption><a href="/~jdg7sh/Databases/?action=tf_questions">True/False Quizzes</a></caption>
     <th style="text-align: center">Name</th><th style="text-align: center">Topic</th><th style="text-align: center">Play</th>
     <?php
     foreach ($tf_quizzes as $q):
