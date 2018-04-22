@@ -9,7 +9,7 @@
       <th>Delete?</th>
   </tr>
 
-  <?php foreach ($questions as $q):?>
+  <?php foreach ($my_quizzes as $q):?>
   <tr>
   <td><?php echo $q{'name'} ?></td>
   <td><?php echo $q{'topic'} ?></td>

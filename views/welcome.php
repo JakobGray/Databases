@@ -57,7 +57,6 @@ include_once('./models/loginDB.php');
     } else {
       echo "<a class='btn btn-large btn-success' href='/~jdg7sh/Databases/?action=my_quizzes'>View Your Quizzies</a>";
     }
-    echo $_SESSION['is_valid_user'];
     ?>
   </form>
 </div>
