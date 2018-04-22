@@ -215,26 +215,27 @@ CREATE TABLE score (
   GID      INT(11) NOT NULL,
   score       INT(11),
   duration    INT(11),
+  creator     VARCHAR(100) NOT NULL,
   -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   -- FOREIGN KEY (GID) REFERENCES game (GID) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (username, GID)
 ) ENGINE=INNODB;
 
 
-INSERT INTO game (`GID`, `name`, `topic`, `type`) VALUES
-(1, "Marvel easy", "Marvel", "tf"),
-(2, "Marvel medium", "Marvel", "mc"),
-(3, "Marvel hard", "Marvel", "c"),
-(4, "Pokemon easy", "Pokemon", "tf"),
-(5, "Pokemon medium", "Pokemon", "mc"),
-(6, "Pokemon hard", "Pokemon", "c"),
-(7, "Book Truths", "Lord of the Rings", "tf"),
-(8, "Lord of the Rings medium", "Lord of the Rings", "mc"),
-(9, "Lord of the Rings hard", "Lord of the Rings", "c"),
-(10, "Avatar easy", "Avatar", "tf"),
-(11, "Avatar medium", "Avatar", "mc"),
-(12, "Avatar hard", "Avatar", "c"),
-(13, "Avatar Very Hard", "Avatar", "sc");
+INSERT INTO game (`GID`, `name`, `topic`, `type`, `creator`) VALUES
+(1, "Marvel easy", "Marvel", "tf", "user"),
+(2, "Marvel medium", "Marvel", "mc", "user"),
+(3, "Marvel hard", "Marvel", "c", "user"),
+(4, "Pokemon easy", "Pokemon", "tf", "user"),
+(5, "Pokemon medium", "Pokemon", "mc", "user"),
+(6, "Pokemon hard", "Pokemon", "c", "user"),
+(7, "Book Truths", "Lord of the Rings", "tf", "user"),
+(8, "Lord of the Rings medium", "Lord of the Rings", "mc", "user"),
+(9, "Lord of the Rings hard", "Lord of the Rings", "c", "user"),
+(10, "Avatar easy", "Avatar", "tf", "user"),
+(11, "Avatar medium", "Avatar", "mc", "user"),
+(12, "Avatar hard", "Avatar", "c", "user"),
+(13, "Avatar Very Hard", "Avatar", "sc", "user");
 
 
 INSERT INTO have (`GID`, `QID`) VALUES

@@ -7,7 +7,7 @@
       <th>Name</th>
       <th>Topic</th>
       <th>Delete?</th>
-  </tr>
+  </tr> 
 
   <?php foreach ($my_quizzes as $q):?>
   <tr>
