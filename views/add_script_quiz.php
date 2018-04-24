@@ -1,4 +1,4 @@
-<?php include('./header.php'); ?>
+<?php include('./views/header.php'); ?>
 
 <div class="container">
 <div class="panel panel-danger">
@@ -60,5 +60,5 @@ Create Script Quiz
 </div>
 </div>
 </div>
-<script src="../js/new_script_quiz.js"></script>
-<?php include('./footer.php'); ?>
+<script src="./js/new_script_quiz.js"></script>
+<?php include('./views/footer.php'); ?>

@@ -1,4 +1,4 @@
-<?php include('./header.php'); ?>
+<?php include('./views/header.php'); ?>
 
 <br><br>
 
@@ -70,6 +70,6 @@ Create True/False Quiz
     </div>
     </div>
 
-<script src="../js/new_quiz.js"></script>
+<script src="./js/new_quiz.js"></script>
 </body>
-<?php include('./footer.php'); ?>
+<?php include('./views/footer.php'); ?>

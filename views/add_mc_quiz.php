@@ -1,4 +1,4 @@
-<?php include('./header.php'); ?>
+<?php include('./views/header.php'); ?>
 <div class="container">
 <div class="panel panel-warning">
 <div class="panel-heading">
@@ -80,5 +80,5 @@ Create Multiple Choice Quiz
 </div>
 </div>
 </div>
-<script src="../js/new_mc_quiz.js"></script>
-<?php include('./footer.php'); ?>
+<script src="./js/new_mc_quiz.js"></script>
+<?php include('./views/footer.php'); ?>
