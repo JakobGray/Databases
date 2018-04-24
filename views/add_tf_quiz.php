@@ -70,6 +70,6 @@ Create True/False Quiz
     </div>
     </div>
 
-<script src="./js/new_quiz.js"></script>
+<script src="./js/new_tf_quiz.js"></script>
 </body>
 <?php include('./views/footer.php'); ?>

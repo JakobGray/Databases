@@ -31,7 +31,7 @@ $(function () {
         $('form.ajax').on('submit', function (e) {
             $.ajax({
                 type: 'post',
-                url: '../models/mc_insert.php',
+                url: './models/mc_insert.php',
                 data: $('form.ajax').serialize(),
                 success: function (data) {
                     console.log('trying to send');
