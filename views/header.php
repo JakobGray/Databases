@@ -30,10 +30,10 @@
                       <?php
                       //Search Feature, hide on login page
                       if (isset($_SESSION['is_valid_user'])) {
-                        echo "<li style='display:inline-block'><a href='./views/add_tf_quiz.php'>Add TF Quiz</a></li>";
-                        echo "<li style='display:inline-block'><a href='./views/add_mc_quiz.php'>Add MC Quiz</a></li>";
-                        echo "<li style='display:inline-block'><a href='./views/add_c_quiz.php'>Add Completion Quiz</a></li>";
-                        echo "<li style='display:inline-block'><a href='./views/add_script_quiz.php'>Add Script Quiz</a></li>";
+                        echo "<li style='display:inline-block'><a href='/~jdg7sh/Databases/?action=add_tf_quiz''>Add TF Quiz</a></li>";
+                        echo "<li style='display:inline-block'><a href='/~jdg7sh/Databases/?action=add_mc_quiz'>Add MC Quiz</a></li>";
+                        echo "<li style='display:inline-block'><a href='/~jdg7sh/Databases/?action=add_c_quiz'>Add Completion Quiz</a></li>";
+                        echo "<li style='display:inline-block'><a href='/~jdg7sh/Databases/?action=add_script_quiz'>Add Script Quiz</a></li>";
                         echo "<li style='display:inline-block'><a href='/~$userID/Databases/index.php?action=logout'>Logout</a></li>";
                         } ?>
                     </ul>

@@ -3,8 +3,6 @@
 <div class="panel panel-warning">
 <div class="panel-heading">
 Create Multiple Choice Quiz
-<?php echo $_SESSION['username'];
-echo "Hello"; ?>
 </div>
 <div class="panel-body">
 <br>
@@ -76,6 +74,7 @@ echo "Hello"; ?>
     </div>
 
     <input type="hidden" name="action" value="new_mc_quiz">
+    <input type="hidden" name="user" value="<?php echo $user ?>">
     <input type="submit" class="btn btn-success" value="Create Quiz" id="form_submit">
 </form>
 </div>

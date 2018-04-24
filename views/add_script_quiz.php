@@ -54,6 +54,7 @@ Create Script Quiz
     </div>
     <br>
     <input type="hidden" name="action" value="new_script_quiz">
+    <input type="hidden" name="user" value="<?php echo $user ?>">
     <input type="submit" class="btn btn-success" value="submit" id="form_submit">
 </form>
 </div>

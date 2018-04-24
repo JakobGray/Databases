@@ -62,6 +62,7 @@ Create True/False Quiz
         </div>
 
     <input type="hidden" name="action" value="new_tf_quiz">
+    <input type="hidden" name="user" value="<?php echo $user ?>">
     <input type="submit" class="btn btn-success" value="Create Quiz" id="form_submit">
     <br>
     <br>
