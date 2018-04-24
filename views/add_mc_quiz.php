@@ -3,7 +3,8 @@
 <div class="panel panel-warning">
 <div class="panel-heading">
 Create Multiple Choice Quiz
-<?php echo $_SESSION['username']; ?>
+<?php echo $_SESSION['username'];
+echo "Hello"; ?>
 </div>
 <div class="panel-body">
 <br>
