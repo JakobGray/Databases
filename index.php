@@ -141,22 +141,22 @@ switch ($action) {
 
       case "add_tf_quiz":
         $user = $_SESSION['username'];
-        include('views/tf_quiz.php');
+        include('views/add_tf_quiz.php');
         break;
 
       case "add_mc_quiz":
         $user = $_SESSION['username'];
-        include('views/mc_quiz.php');
+        include('views/add_mc_quiz.php');
         break;
 
       case "add_script_quiz":
         $user = $_SESSION['username'];
-        include('views/script_quiz.php');
+        include('views/add_script_quiz.php');
         break;
 
       case "add_c_quiz":
         $user = $_SESSION['username'];
-        include('views/c_quiz.php');
+        include('views/add_c_quiz.php');
         break;
 
       case 'my_quizzes':
