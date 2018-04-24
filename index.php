@@ -124,6 +124,8 @@ switch ($action) {
         break;
 
       case "take_mc_quiz":
+        $gameID = filter_input(INPUT_POST, 'gameID');
+        $scripts = get_mc_questions_specific($gameID);
         include('views/mc_quiz.php');
         break;
 
