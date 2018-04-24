@@ -34,12 +34,15 @@
                         echo "<li style='display:inline-block'><a href='/~jdg7sh/Databases/?action=add_mc_quiz'>Add MC Quiz</a></li>";
                         echo "<li style='display:inline-block'><a href='/~jdg7sh/Databases/?action=add_c_quiz'>Add Completion Quiz</a></li>";
                         echo "<li style='display:inline-block'><a href='/~jdg7sh/Databases/?action=add_script_quiz'>Add Script Quiz</a></li>";
-                        echo "<li style='display:inline-block'><a href='/~$userID/Databases/index.php?action=logout'>Logout</a></li>";
+
                         } ?>
                     </ul>
                     <!--Intro guide-->
                     <ul class="nav navbar-nav navbar-right">
-                        <li><span class="glyphicon glyphicon-info-sign"></span> Help</a></li>
+                        <?php
+                        if (isset($_SESSION['is_valid_user'])) {
+                            echo "<li style='display:inline-block'><a href='/~$userID/Databases/index.php?action=logout'>Logout <span class='glyphicon glyphicon-log-out'></a></li>";
+                        } ?>
                     </ul>
                 </div>
             </div>
