@@ -118,6 +118,8 @@ switch ($action) {
         break;
 
       case "take_tf_quiz":
+        $gameID = filter_input(INPUT_POST, 'gameID');
+        $questions = get_tf_questions_specific($gameID);
         include('views/tf_quiz.php');
         break;
 
@@ -126,10 +128,14 @@ switch ($action) {
         break;
 
       case "take_script_quiz":
+        $gameID = filter_input(INPUT_POST, 'gameID');
+        $scripts = get_scripts_specific($gameID);
         include('views/script_quiz.php');
         break;
 
       case "take_c_quiz":
+        $gameID = filter_input(INPUT_POST, 'gameID');
+        $questions = get_mc_questions_specific($gameID);
         include('views/c_quiz.php');
         break;
 
