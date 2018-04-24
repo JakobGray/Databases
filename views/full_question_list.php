@@ -6,7 +6,7 @@
 
 
 <table id="fullTable" class="center">
-  <tr class="header">
+  <tr class="header" style="background-color: #339966; color: white">
       <th>Name</th>
       <th>Topic</th>
       <th>Play</th>
