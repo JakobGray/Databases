@@ -7,7 +7,7 @@ $answers = array();
 
 <form action="." class="ajax" method="post">
   <?php
-  for ($i = 0; $i < sizeof($questions)); $i++) {
+  for ($i = 0; $i < sizeof($questions); $i++) {
     $question = $questions[$i];
     $answers[] = $question['answer'];
 
@@ -23,7 +23,9 @@ $answers = array();
   <?php
   foreach($questions as $q)
   {
-    echo '<input type="hidden" name="questions[]" value="'. $q. '">';
+    echo '<input type="hidden" name="questions[]" value="';
+    echo $q;
+    echo '">';
   }
   ?>
   <input type="submit">
