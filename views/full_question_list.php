@@ -6,7 +6,7 @@
 
 
 <table id="fullTable" class="center">
-  <tr class="header">
+  <tr class="header" style="background-color: #339966; color: white">
       <th>Name</th>
       <th>Topic</th>
       <th>Play</th>
@@ -20,7 +20,7 @@
     <form action='.' method='POST'>
       <input type="hidden" name="action" value="<?php echo $post_val ?>">
       <input type="hidden" name="gameID" value="<?php echo $q{'GID'} ?>">
-      <button type="submit" class="btn btn-large btn-primary">Play</button>
+      <button type="submit" class="btn btn-xs btn-primary" style="margin: 5px">Play</button>
     </form>
   </td>
   </tr>
