@@ -16,3 +16,17 @@ Quiz.prototype.add_question = function(question) {
 Quiz.prototype.render = function(container) {
     $('#quiz-name').text(this.quiz_name);
 }
+
+  $.ajax({
+    type: 'GET',
+    url: './models/saveResults.php',
+    data: savedata,
+    contentType: 'application/json; charset=utf-8',
+    success: function(data) {
+      console.log("Results saved!");
+      console.log(data);
+    },
+    error: function(xhr, status, error) {
+        alert(xhr.responseText);
+    }
+  });
