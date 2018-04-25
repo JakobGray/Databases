@@ -118,25 +118,25 @@ switch ($action) {
         break;
 
       case "take_tf_quiz":
-        $gameID = filter_input(INPUT_POST, 'gameID');
+        $gameID = filter_input(INPUT_POST, 'gameID', FILTER_VALIDATE_INT);
         $questions = get_tf_questions_specific($gameID);
         include('views/tf_quiz.php');
         break;
 
       case "take_mc_quiz":
-        $gameID = filter_input(INPUT_POST, 'gameID');
+        $gameID = filter_input(INPUT_POST, 'gameID', FILTER_VALIDATE_INT);
         $questions = get_mc_questions_specific($gameID);
         include('views/mc_quiz.php');
         break;
 
       case "take_script_quiz":
-        $gameID = filter_input(INPUT_POST, 'gameID');
+        $gameID = filter_input(INPUT_POST, 'gameID', FILTER_VALIDATE_INT);
         $scripts = get_scripts_specific($gameID);
         include('views/script_quiz.php');
         break;
 
       case "take_c_quiz":
-        $gameID = filter_input(INPUT_POST, 'gameID');
+        $gameID = filter_input(INPUT_POST, 'gameID', FILTER_VALIDATE_INT);
         $questions = get_mc_questions_specific($gameID);
         include('views/c_quiz.php');
         break;
@@ -168,7 +168,7 @@ switch ($action) {
         break;
 
       case 'delete_quiz':
-        $delete_game = filter_input(INPUT_POST, 'gameID');
+        $delete_game = filter_input(INPUT_POST, 'gameID', FILTER_VALIDATE_INT);
         if ($delete_game == NULL) {
             echo "ERROR DELETING GAME!!!!";
         } else {
