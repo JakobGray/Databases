@@ -7,7 +7,7 @@ $answers = array();
 
 <form action="." class="ajax" method="post">
   <?php
-  for ($i = 0; $i < sizeof($questions)); $i++) {
+  for ($i = 0; $i < sizeof($questions); $i++) {
     $question = $questions[$i];
     $answers[] = $question['answer'];
 
