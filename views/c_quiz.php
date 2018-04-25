@@ -1,26 +1,21 @@
 <?php
-include('views/header.php');
-// $numQuestions = count($questions);
-$answers = array();
-?>
-<script src="./js/c_quiz.js"></script>
-
-<form action="." class="ajax" method="post">
+  include_once('./models/loginDB.php');
+  $questions = get_c_questions_specific($gameID);
+  $numQuestions = count($questions); ?>
+  <form action="c_quiz_action.php" method="post">
   <?php
-  for ($i = 0; $i < sizeof($questions); $i++) {
-    $question = $questions[$i];
-    $answers[] = $question['answer'];
-
-    echo $question['c_prompt'];
-    ?>
-    <input type="text" name="<?php echo $x ?>">
-    <br>
-    <?php
-      }
-    ?>
-  <input type='hidden' name='numQuestions' value='<?php echo sizeof($questions);?>'/>
+  for ($x=0; $x < $numQuestions; $x++) {
+  $question = $questions[$x];
+  echo $question{'c_prompt'}; ?>
+  <input type="text" name="q<?php echo $x ?>">
+  <br>
+  <?php
+  }
+  ?>
+  <input type='hidden' name='numQuestions' value='<?php echo $numQuestions;?>'/>
   <input type='hidden' name='GID' value='<?php echo $gameID;?>'/>
   <?php
+
   foreach($questions as $q)
   {
     echo '<input type="hidden" name="questions[]" value="';
@@ -29,24 +24,9 @@ $answers = array();
   }
   ?>
   <input type="submit">
-</form>
+  </form>
 
 
-<script>
-$(function () {
-        $('form.ajax').on('submit', function (e) {
-            $.ajax({
-                type: 'post',
-                url: 'pheno_insert.php',
-                data: $('form.ajax').serialize(),
-                success: function (data) {
-                    console.log('trying to send');
-                    alert(data);
-                }
-            });
-            e.preventDefault();
-        });
-    });
-</script>
 
 <?php include('views/footer.php'); ?>
+
