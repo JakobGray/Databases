@@ -9,7 +9,7 @@ $topic = $array['topic'];
 $user = $array['user'];
 
 $quizID = create_new_quiz($quizname, $topic, 'sc', $user);
-echo $quizID;
+// echo $quizID;
 
 $keys = array_keys($array['answer']);
 // echo print_r($keys);
