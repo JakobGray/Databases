@@ -356,6 +356,21 @@ BEGIN
       DELETE FROM tf_question WHERE QID IN (SELECT QID FROM have WHERE GID = OLD.GID);
     END IF;
 
+    if (OLD.type = 'mc')
+    then
+      DELETE FROM mc_question WHERE QID IN (SELECT QID FROM have WHERE GID = OLD.GID);
+    END IF;
+
+    if (OLD.type = 'c')
+    then
+      DELETE FROM c_question WHERE QID IN (SELECT QID FROM have WHERE GID = OLD.GID);
+    END IF;
+
+    if (OLD.type = 'sc')
+    then
+      DELETE FROM script_question WHERE QID IN (SELECT QID FROM have WHERE GID = OLD.GID);
+    END IF;
+
     DELETE FROM `have` WHERE GID = OLD.GID;
 END; $$
 DELIMITER ;
