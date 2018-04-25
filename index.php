@@ -137,7 +137,7 @@ switch ($action) {
 
       case "take_c_quiz":
         $gameID = filter_input(INPUT_POST, 'gameID', FILTER_VALIDATE_INT);
-        $questions = get_mc_questions_specific($gameID);
+        $questions = get_c_questions_specific($gameID);
         include('views/c_quiz.php');
         break;
 
