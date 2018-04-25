@@ -23,7 +23,9 @@ $answers = array();
   <?php
   foreach($questions as $q)
   {
-    echo '<input type="hidden" name="questions[]" value="'. $q. '">';
+    echo '<input type="hidden" name="questions[]" value="';
+    echo $q;
+    echo '">';
   }
   ?>
   <input type="submit">
