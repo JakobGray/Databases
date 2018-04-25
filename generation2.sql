@@ -347,24 +347,17 @@ CREATE TABLE rank (
   -- FOREIGN KEY (username) REFERENCES user (username) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (GID, LID, username));
 
-DELIMITER //
-CREATE TRIGGER log_patron_delete AFTER DELETE on patrons
-FOR EACH ROW
+DELIMITER $$
+CREATE TRIGGER tf_question_after_delete
+  AFTER DELETE ON game FOR EACH ROW
 BEGIN
-DELETE FROM patron_info
-    WHERE patron_info.pid = old.id;
-END; //
+    if (OLD.type = 'tf')
+    then
+      DELETE FROM tf_question WHERE QID IN (SELECT QID FROM have WHERE GID = OLD.GID);
+    END IF;
+
+    DELETE FROM `have` WHERE GID = OLD.GID;
+END; $$
 DELIMITER ;
-
-
--- DELIMITER //
--- CREATE TRIGGER question_before_insert
---   BEFORE INSERT ON tf_question
--- BEGIN
---   FOR EACH ROW
---     INSERT INTO `question` (type)
---     VALUES ('TF');
--- END; //
--- DELIMITER ;
 
 SET FOREIGN_KEY_CHECKS=1;
